@@ -1,6 +1,6 @@
 <?PHP
 
-
+    session_start();
 
 ?>
 
@@ -17,30 +17,16 @@
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
 </head>
 <body>
-<div id="fb-root"></div>
-<script>
-    window.fbAsyncInit = function() {
-        FB.init({
-            appId      : '369182239939237',
-            xfbml      : true,
-            version    : 'v2.3'
-        });
-    };
+ 
+    <?php if ($_SESSION['FBID']): ?>
+       <img src="https://graph.facebook.com/<?php echo $_SESSION['FBID']; ?>/picture">
+       <h1>Hello <?php echo $_SESSION['FULLNAME']; ?></h1>
+       <div><a href="logout.php">Logout</a></div>
+    <?php else: ?>
+        <div class="container">
+            <a href="fbconfig.php">Login with Facebook</a>
+        </div>
+    <?php endif ?>
 
-    (function(d, s, id){
-        var js, fjs = d.getElementsByTagName(s)[0];
-        if (d.getElementById(id)) {return;}
-        js = d.createElement(s); js.id = id;
-        js.src = "//connect.facebook.net/en_US/sdk.js";
-        fjs.parentNode.insertBefore(js, fjs);
-    }(document, 'script', 'facebook-jssdk'));
-</script>
-
-<div
-    class="fb-like"
-    data-share="true"
-    data-width="450"
-    data-show-faces="true">
-</div>
 </body>
 </html>
