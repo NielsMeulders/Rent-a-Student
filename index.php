@@ -18,15 +18,18 @@
 </head>
 <body>
  
-    <?php if ($_SESSION['FBID']): ?>
+    <?php if (isset($_SESSION['FBID'])): ?>
        <img src="https://graph.facebook.com/<?php echo $_SESSION['FBID']; ?>/picture">
        <h1>Hello <?php echo $_SESSION['FULLNAME']; ?></h1>
        <div><a href="logout.php">Logout</a></div>
+       <?php echo $_SESSION['EMAIL']; ?>
     <?php else: ?>
         <div class="container">
             <a href="fbconfig.php">Login with Facebook</a>
         </div>
     <?php endif ?>
+    
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perspiciatis fuga laudantium recusandae nobis quo labore, velit magnam officiis culpa iste aliquid consequuntur hic architecto incidunt ducimus reprehenderit ea nemo officia!</p>
 
 </body>
 </html>
