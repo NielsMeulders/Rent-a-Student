@@ -26,7 +26,14 @@
                 case 'Email':
                     if ($p_vValue!="")
                     {
-                        $this->m_sEmail = $p_vValue;
+                        if ($this->checkEmail($p_vValue) === true)
+                        {
+                            $this->m_sEmail = $p_vValue;
+                        }
+                        else
+                        {
+                            throw new Exception("Email is already in use!");
+                        }
                     }
                     else
                     {
@@ -63,6 +70,23 @@
                     return $this->m_sPicture;
                     break;
             }
+        }
+
+        public function checkEmail($p_sCheckEmail)
+        {
+            $ret = true;
+
+            $all_mails = $this->getAll();
+            while($row = $all_mails->fetch(PDO::FETCH_ASSOC)) {
+
+                if($row['email'] == $p_sCheckEmail)
+                {
+                    $ret = false;
+                }
+
+            }
+
+            return $ret;
         }
 
         public function save()

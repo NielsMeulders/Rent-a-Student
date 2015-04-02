@@ -7,12 +7,19 @@
 
     if (!empty($_POST))
     {
-        $b->Name = $_POST['name'];
-        $b->Email = $_POST['email'];
-        $b->Picture = "https://graph.facebook.com/".  $_SESSION['FBID']. "/picture";
-        $b->save();
+        try
+        {
+            $b->Name = $_POST['name'];
+            $b->Email = $_POST['email'];
+            $b->Picture = "https://graph.facebook.com/".  $_SESSION['FBID']. "/picture";
+            $b->save();
 
-        header("Location: index.php");
+            header("Location: index.php");
+        }
+        catch(Exception $e)
+        {
+            echo $e->getMessage();
+        }
     }
 
     $all_users = $b->getAll();
@@ -38,7 +45,7 @@
 
         <form action="" method="post">
             <label for="name">Naam</label>
-            <input type="text" name="name" id="name" value="<?php echo $_SESSION['FULLNAME']; ?>"/>
+            <input type="text" name="name" id="name" <?php echo " value='". $_SESSION['FULLNAME']."'"; ?>/>
 
             <label for="email">Email</label>
             <input type="email" name="email" id="email"/>
