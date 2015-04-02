@@ -20,7 +20,7 @@ if (!empty($_POST))
         $b->Branch = $_POST['branch'];
         $b->Description = $_POST['description'];
         $b->save();
-        
+
         //header("Location: index.php");
     }
     catch(Exception $e)
@@ -41,7 +41,7 @@ $all_users = $b->getAll();
     <script src="js/script.js"></script>
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/style.css">
-    <meta name="keywords" content="Rentastudent, rent a student, imd, interactive, multimedia, design, thomas, more, mechelen, app">
+    <meta name="keywords" content="Rent-a-student, rent a student, imd, interactive, multimedia, design, thomas, more, mechelen, app">
     <meta name="description" content="Zin om een dagje mee te volgen met een IMD-student? Boek hier je persoonlijke IMD-gids!" />
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
 </head>
@@ -69,6 +69,7 @@ $all_users = $b->getAll();
 
         <label for="branch">Keuzerichting</label>
         <select name="branch">
+            <option value="null"></option>
             <option value="1">Design</option>
             <option value="2">Development</option>
         </select>
