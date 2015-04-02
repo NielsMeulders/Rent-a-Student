@@ -8,7 +8,7 @@
 		{
 			if( self::$db === null )
 			{
-				self::$db = new PDO("mysql:host=localhost; dbname=phples", "root", "root");
+				self::$db = new PDO("mysql:host=localhost; dbname=project_php", "root", "root");
 				self::$db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 				return self::$db;
 			}

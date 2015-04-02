@@ -16,7 +16,7 @@ use Facebook\HttpClients\FacebookHttpable;
 // init app with app id and secret
 FacebookSession::setDefaultApplication( '369182239939237','08d8f9b8d93af2f96b5b77ee7b639178' );
 // login helper with redirect_uri
-    $helper = new FacebookRedirectLoginHelper('http://nielsmeulders.be/ras/fbconfig.php' );
+    $helper = new FacebookRedirectLoginHelper('http://localhost:8888/Rent-a-Student/fbconfig.php' );
 try {
   $session = $helper->getSessionFromRedirect();
 } catch( FacebookRequestException $ex ) {
@@ -39,7 +39,7 @@ if ( isset( $session ) ) {
         $_SESSION['FULLNAME'] = $fbfullname;
 	    $_SESSION['EMAIL'] =  $femail;
     /* ---- header location after session ----*/
-  header("Location: index.php");
+  header("Location: registreer_bezoeker.php");
 } else {
   $loginUrl = $helper->getLoginUrl();
  header("Location: ".$loginUrl);
