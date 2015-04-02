@@ -1,7 +1,7 @@
 <?PHP
 
     include("Db.class.php");
-    class User
+    abstract class User
     {
 
         private $m_sName;
@@ -87,27 +87,6 @@
             }
 
             return $ret;
-        }
-
-        public function save()
-        {
-
-            $conn = Db::getInstance();
-            // errors doorsturen van de database
-            // $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-            $statement = $conn->prepare('INSERT INTO user (name,email,picture) VALUES  ( :name, :email,:picture )');
-
-            $statement->bindValue(':name',$this->m_sName);
-            $statement->bindValue(':email',$this->m_sEmail);
-            $statement->bindValue(':picture',$this->m_sPicture);
-            $statement->execute();
-        }
-
-        public function getAll()
-        {
-            $conn = Db::getInstance();
-            $allposts = $conn->query("SELECT * FROM user");
-            return $allposts;
         }
 
     }

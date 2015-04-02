@@ -1,9 +1,10 @@
 <?PHP
 
     include_once("classes/User.class.php");
+    include_once("classes/Bezoeker.class.php");
 
     session_start();
-    $b = new User();
+    $b = new Bezoeker();
 
     if (!empty($_POST))
     {
@@ -14,7 +15,7 @@
             $b->Picture = "https://graph.facebook.com/".  $_SESSION['FBID']. "/picture";
             $b->save();
 
-            header("Location: index.php");
+            //header("Location: index.php");
         }
         catch(Exception $e)
         {
