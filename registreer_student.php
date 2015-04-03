@@ -21,6 +21,10 @@ if (!empty($_POST))
         $b->Description = $_POST['description'];
         $b->save();
 
+        $dir = $_POST['email'];
+        mkdir("images/profile_pics/$dir", 0777, true);
+        include_once("upload.php");
+
         //header("Location: index.php");
     }
     catch(Exception $e)
@@ -47,7 +51,7 @@ $all_users = $b->getAll();
 </head>
 <body>
 
-    <form action="" method="post">
+    <form action="" method="post" enctype="multipart/form-data">
         <label for="name">Naam</label>
         <input type="text" name="name" id="name" />
 
@@ -78,7 +82,7 @@ $all_users = $b->getAll();
         <textarea name="description" id="description" cols="30" rows="10"></textarea>
 
         <label for="pic">Profielfoto</label>
-        <input type="file" id="pic"/>
+        <input type="file" name="fileToUpload" id="fileToUpload">
 
         <button id="post_btn">Registreer!</button>
     </form>
