@@ -3,7 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="6313ee07-faa8-4d25-ba5f-7c6a283132fa" name="Default" comment="added class">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.php" afterPath="$PROJECT_DIR$/index.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/upload.php" afterPath="$PROJECT_DIR$/upload.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/registreer_student.php" afterPath="$PROJECT_DIR$/registreer_student.php" />
     </list>
     <ignored path="Rent-a-Student.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -71,21 +71,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="registreer_student.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="registreer_student.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/registreer_student.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-8.75" vertical-offset="150" max-vertical-offset="1440">
-              <caret line="24" column="35" selection-start-line="24" selection-start-column="35" selection-end-line="24" selection-end-column="35" />
+            <state vertical-scroll-proportion="0.17073171" vertical-offset="150" max-vertical-offset="1440">
+              <caret line="17" column="107" selection-start-line="17" selection-start-column="107" selection-end-line="17" selection-end-column="107" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="upload.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="upload.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/upload.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.9756098" vertical-offset="0" max-vertical-offset="735">
-              <caret line="40" column="78" selection-start-line="40" selection-start-column="78" selection-end-line="40" selection-end-column="78" />
+            <state vertical-scroll-proportion="-18.125" vertical-offset="120" max-vertical-offset="735">
+              <caret line="37" column="80" selection-start-line="37" selection-start-column="80" selection-end-line="37" selection-end-column="80" />
               <folding />
             </state>
           </provider>
@@ -153,8 +153,8 @@
         <option value="$PROJECT_DIR$/classes/User.class.php" />
         <option value="$PROJECT_DIR$/classes/Bezoeker.class.php" />
         <option value="$PROJECT_DIR$/classes/Imd_student.class.php" />
-        <option value="$PROJECT_DIR$/registreer_student.php" />
         <option value="$PROJECT_DIR$/upload.php" />
+        <option value="$PROJECT_DIR$/registreer_student.php" />
       </list>
     </option>
   </component>
@@ -671,18 +671,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/registreer_student.php">
+    <entry file="file://$PROJECT_DIR$/upload.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-8.75" vertical-offset="150" max-vertical-offset="1440">
-          <caret line="24" column="35" selection-start-line="24" selection-start-column="35" selection-end-line="24" selection-end-column="35" />
+        <state vertical-scroll-proportion="-18.125" vertical-offset="120" max-vertical-offset="735">
+          <caret line="37" column="80" selection-start-line="37" selection-start-column="80" selection-end-line="37" selection-end-column="80" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/upload.php">
+    <entry file="file://$PROJECT_DIR$/registreer_student.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.9756098" vertical-offset="0" max-vertical-offset="735">
-          <caret line="40" column="78" selection-start-line="40" selection-start-column="78" selection-end-line="40" selection-end-column="78" />
+        <state vertical-scroll-proportion="0.17073171" vertical-offset="150" max-vertical-offset="1440">
+          <caret line="17" column="107" selection-start-line="17" selection-start-column="107" selection-end-line="17" selection-end-column="107" />
           <folding />
         </state>
       </provider>

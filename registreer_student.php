@@ -15,7 +15,7 @@ if (!empty($_POST))
         $b->Name = $_POST['name'];
         $b->Email = $_POST['email'];
         $b->Password = $_POST['pass'];
-        $b->Picture = "lel";
+        $b->Picture = "images/profile_pics/".$_POST['email']."/".basename( $_FILES["fileToUpload"]["name"]);
         $b->Year = $_POST['year'];
         $b->Branch = $_POST['branch'];
         $b->Description = $_POST['description'];
