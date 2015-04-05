@@ -38,3 +38,4 @@ strong{font-family: "Nexa Bold";}
 /*--form--*/
 .form-control{text-align: center;max-width: 600px;border-radius: 0;}
 input{margin: auto;border: none;}
+textarea.form-control{margin-left: auto;margin-right: auto;}

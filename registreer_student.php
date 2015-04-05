@@ -43,49 +43,65 @@ $all_users = $b->getAll();
     <meta charset="UTF-8">
     <title>Rent-a-Student</title>
     <script src="js/script.js"></script>
-    <link rel="stylesheet" href="css/reset.css">
-    <link rel="stylesheet" href="css/style.css">
+    <!-- Bootstrap -->    
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+        <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+          <![endif]-->
     <meta name="keywords" content="Rent-a-student, rent a student, imd, interactive, multimedia, design, thomas, more, mechelen, app">
     <meta name="description" content="Zin om een dagje mee te volgen met een IMD-student? Boek hier je persoonlijke IMD-gids!" />
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
 </head>
 <body>
-
-    <form action="" method="post" enctype="multipart/form-data">
-        <label for="name">Naam</label>
-        <input type="text" name="name" id="name" />
-
-        <label for="email">Email</label>
-        <input type="email" name="email" id="email"/>
-
-        <label for="pass">Wachtwoord</label>
-        <input type="password" name="pass" id="pass"/>
-
-        <label for="pass_rep">Herhaal wachtwoord</label>
-        <input type="password" name="pass_rep" id="pass_rep"/>
-
-        <label for="year">Opleidingsjaar</label>
-        <select name="year">
-            <option value="1">1</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-        </select>
-
-        <label for="branch">Keuzerichting</label>
-        <select name="branch">
-            <option value="null"></option>
-            <option value="1">Design</option>
-            <option value="2">Development</option>
-        </select>
-
-        <label for="description">Motivatie</label>
-        <textarea name="description" id="description" cols="30" rows="10"></textarea>
-
-        <label for="pic">Profielfoto</label>
-        <input type="file" name="fileToUpload" id="fileToUpload">
-
-        <button id="post_btn">Registreer!</button>
-    </form>
-
+    
+    <div class="col-md-1 styleguide">
+			<h2>Registreer je hier!</h2>
+			<form action="" method="post" enctype="multipart/form-data">
+				  <div class="form-group">
+				    <label for="name">Naam</label>
+				    <input type="text" class="form-control" id="name">
+				  </div>
+				  <div class="form-group">
+				    <label for="email">Email</label>
+				    <input type="email" class="form-control" id="email">
+				  </div>
+				  <div class="form-group">
+				    <label for="pass">Wachtwoord</label>
+				    <input type="password" class="form-control" id="pass">
+				  </div>
+				  <div class="form-group">
+				    <label for="pass_rep">Wachtwoord herhalen</label>
+				    <input type="password" class="form-control" id="pass_rep">
+				  </div>
+				  <div class="form-group">
+				    <label for="year">Opleidingsjaar</label>
+				    <select name="year" id="year">
+				        <option value="1">1</option>
+				        <option value="2">2</option>
+				        <option value="3">3</option>
+				    </select>
+				  </div>
+				  <div class="form-group">
+				    <label for="branch">Keuzerichting</label>
+				    <select name="branch" id="year">
+				        <option value="null"></option>
+				        <option value="1">Design</option>
+				        <option value="2">Development</option>
+				    </select>
+				  </div>
+				  <div class="form-group">
+				    <label for="description">Motivatie</label>
+				    <textarea name="description" class="form-control" id="description" cols="30" rows="10"></textarea>
+				  </div>
+				  <div class="form-group">
+				    <label for="pic">Profielfoto</label>
+				    <input type="file" name="fileToUpload" id="fileToUpload">
+				  </div>
+				  <button type="submit" class="btn btn-default">Submit</button>
+			</form>
+		</div>
+		
 </body>
 </html>
