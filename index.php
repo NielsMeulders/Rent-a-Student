@@ -42,7 +42,7 @@
             <div id="icon1"></div>
             <h2>Ontdek IMD!</h2>
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. <strong>Quam ratione</strong>, fugiat illum non corporis iure sint fuga tempora pariatur nesciunt repellat error. Non exercitationem adipisci amet voluptate eius earum vero?</p>
-            <p><a class="btn btn-primary btn-lg" href="registreer_bezoeker.php" role="button">Sign up</a></p>
+            <p><a class="btn btn-primary btn-lg" href="registreer_bezoeker.php" role="button">Registreer!</a></p>
         </div>
        </div>
       <div id="colrechts"class="col-md-6">
@@ -50,9 +50,10 @@
             <div id="icon2"></div>
             <h2>Start als gids</h2>
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quam ratione, fugiat illum non corporis iure sint fuga tempora pariatur nesciunt repellat error. Non exercitationem adipisci amet voluptate eius earum vero?</p>
-            <p><a class="btn btn-primary btn-lg" href="registreer_student.php" role="button">Sign up</a></p>
+            <p><a class="btn btn-primary btn-lg" href="registreer_student.php" role="button">Registreer!</a></p>
         </div>
        </div>
+    <!-- end row -->
 
        <footer class="footer">&copy Thomas More</footer>
 

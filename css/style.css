@@ -8,6 +8,7 @@ body {text-align:center;font-family: "Nexa Light";}
 
 /*--Home--*/
 #homecontainer {padding: 0;background-image: url("../img/banner.jpg");background-attachment: fixed;background-position:center; background-repeat: no-repeat;background-size: cover;}
+.registercontainer {padding:0;}
 #welcomehead {background-color: yellow;}
 #welcomeleft {background-color: red;}
 #welcomeright {background-color: blue;}
@@ -23,14 +24,14 @@ h2{font-family: "Nexa Bold";}
 #topbar {position:fixed;z-index:3;top:0;background-color: #D1C1C1;opacity: 0.8;width: 100%;}
 #topbar .btn{color: black;margin: 10px;float: right;}
 #jumbohead h1{color:black;font-family: "Nexa Bold";}
- .btn{border-radius: 0;border: none; background-color: #377BA5;}
+ .btn{border-radius: 0;border: none; background-color: #377BA5;
+     -webkit-transition: background-color 500ms ease-in-out, color 500ms ease-in-out;
+    -moz-transition: background-color 500ms ease-in-out, color 500ms ease-in-out;
+    -o-transition: background-color 500ms ease-in-out, color 500ms ease-in-out;
+    transition: background-color 500ms ease-in-out, color 500ms ease-in-out;}
  .btn:hover {
  	background-color:#B1CEE0;
- 	color: black; font-weight: bold;
-    -webkit-transition: background-color 500ms ease-in-out;
-    -moz-transition: background-color 500ms ease-in-out;
-    -o-transition: background-color 500ms ease-in-out;
-    transition: background-color 500ms ease-in-out;
+ 	color: black; font-weight: normal;
 }
 strong{font-family: "Nexa Bold";}
 .footer{background-color:#377BA5;padding: 20px;}

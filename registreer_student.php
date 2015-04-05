@@ -56,6 +56,8 @@ $all_users = $b->getAll();
 </head>
 <body>
     
+<div class="container-fluid registercontainer">
+    
     <div class="col-md-1 styleguide">
 			<h2>Registreer je hier!</h2>
 			<form action="" method="post" enctype="multipart/form-data">
@@ -89,7 +91,7 @@ $all_users = $b->getAll();
 				        <option value="null"></option>
 				        <option value="1">Design</option>
 				        <option value="2">Development</option>
-				    </select>
+				    </select
 				  </div>
 				  <div class="form-group">
 				    <label for="description">Motivatie</label>
@@ -102,6 +104,7 @@ $all_users = $b->getAll();
 				  <button type="submit" class="btn btn-default">Submit</button>
 			</form>
 		</div>
-		
+	
+</div> <!-- end container -->
 </body>
 </html>
