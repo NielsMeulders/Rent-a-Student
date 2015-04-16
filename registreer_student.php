@@ -19,11 +19,14 @@ if (!empty($_POST))
         $b->Year = $_POST['year'];
         $b->Branch = $_POST['branch'];
         $b->Description = $_POST['description'];
-        $b->save();
 
         $dir = $_POST['email'];
-        mkdir("images/profile_pics/$dir", 0777, true);
+        if (!file_exists("images/profile_pics/$dir")) {
+            mkdir("images/profile_pics/$dir", 0777, true);
+        }
         include_once("upload.php");
+
+        $b->save();
 
         //header("Location: index.php");
     }
@@ -63,19 +66,19 @@ $all_users = $b->getAll();
 			<form action="" method="post" enctype="multipart/form-data">
 				  <div class="form-group">
 				    <label for="name">Naam</label>
-				    <input type="text" class="form-control" id="name">
+				    <input type="text" class="form-control" id="name" name="name">
 				  </div>
 				  <div class="form-group">
 				    <label for="email">Email</label>
-				    <input type="email" class="form-control" id="email">
+				    <input type="email" class="form-control" id="email" name="email">
 				  </div>
 				  <div class="form-group">
 				    <label for="pass">Wachtwoord</label>
-				    <input type="password" class="form-control" id="pass">
+				    <input type="password" class="form-control" id="pass" name="pass">
 				  </div>
 				  <div class="form-group">
 				    <label for="pass_rep">Wachtwoord herhalen</label>
-				    <input type="password" class="form-control" id="pass_rep">
+				    <input type="password" class="form-control" id="pass_rep" name="pass_rep">
 				  </div>
 				  <div class="form-group">
 				    <label for="year">Opleidingsjaar</label>
@@ -98,7 +101,7 @@ $all_users = $b->getAll();
 				    <textarea name="description" class="form-control" id="description" cols="30" rows="10"></textarea>
 				  </div>
 				  <div class="form-group">
-				    <label for="pic">Profielfoto</label>
+				    <label for="pic">Profielfoto (max 500Kb)</label>
 				    <input type="file" name="fileToUpload" id="fileToUpload">
 				  </div>
 				  <button type="submit" class="btn btn-default">Submit</button>

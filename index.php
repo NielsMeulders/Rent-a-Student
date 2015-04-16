@@ -26,7 +26,7 @@
 <div class="container-fluid" id="homecontainer">
 
         <div id="topbar">
-            <a href="#" class="btn">Login</a>
+            <a href="login_page.php" class="btn">Login</a>
         </div>
     <!--jumbohead-->
         <div class="jumbotron" id="jumbohead">
