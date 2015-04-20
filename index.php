@@ -24,38 +24,55 @@
 </head>
 <body>
 <div class="container-fluid" id="homecontainer">
-
+    <div class="row"> 
+    <div class="col-md-12 no-padding">
         <div id="topbar">
             <a href="login_page.php" class="btn">Login</a>
         </div>
-    <!--jumbohead-->
+
+        <!--jumbohead-->
         <div class="jumbotron" id="jumbohead">
         
-        <h1>Welkom!</h1>
-        <p>Ontdek de wereld van <strong>Interactive Multimedia Design!</strong></p>
-    </div> <!--end jumbotron-->
-
+            <h1>Welkom!</h1>
+            <p><h2>Ontdek de wereld van <strong>Interactive Multimedia Design!</strong></h2></p>
+        </div> <!--end jumbotron-->
+    </div>
+     </div><!--end row-->
    
-    <div class="row">
+    <div class="row rowhomepage">
+    <div id="welcomewrap">
       <div id="collinks"class="col-md-6">
         <div class="jumbotron">
             <div id="icon1"></div>
-            <h2>Ontdek IMD!</h2>
+            <h3>Ontdek IMD!</h3>
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. <strong>Quam ratione</strong>, fugiat illum non corporis iure sint fuga tempora pariatur nesciunt repellat error. Non exercitationem adipisci amet voluptate eius earum vero?</p>
             <p><a class="btn btn-primary btn-lg" href="registreer_bezoeker.php" role="button">Registreer!</a></p>
         </div>
-       </div>
+       </div><!--end collinks-->
       <div id="colrechts"class="col-md-6">
         <div class="jumbotron">
             <div id="icon2"></div>
-            <h2>Start als gids</h2>
+            <h3>Start als gids</h3>
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quam ratione, fugiat illum non corporis iure sint fuga tempora pariatur nesciunt repellat error. Non exercitationem adipisci amet voluptate eius earum vero?</p>
             <p><a class="btn btn-primary btn-lg" href="registreer_student.php" role="button">Registreer!</a></p>
         </div>
-       </div>
-    <!-- end row -->
+       </div><!--end colrechts-->
+    </div><!--end welcomewrap-->
+    </div><!-- end row -->
 
-       <footer class="footer">&copy Thomas More</footer>
+    <div class="row" >        
+        <div class="col-md-12" id="relatedlinks">
+            <ul>
+                <li><a href="http://www.thecreativitygym.be/"><img src="img/gym_logo.png" alt="Creativity Gym logo"></a></li>
+                <li><a id="weareimd" href="http://www.weareimd.be/"><img src="img/weareimd_logo.svg" alt="We Are IMD logo"></a></li>
+                <li><a id="thomasmore" href="http://www.thomasmore.be/interactive-multimedia-design-imd"><img src="img/thomasmore_logo.png" alt="Thomas More logo"></a></li>
+            </ul>
+        </div><!--end relatedlinks-->
+    </div><!--end row-->
+
+
+
+    <footer class="footer">&copy Thomas More</footer>
 
 
 </div> <!--end container-->
