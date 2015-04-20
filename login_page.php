@@ -80,30 +80,43 @@ if (!empty($_POST))
 </head>
 <body>
 
-<div class="container-fluid registercontainer">
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-xs-12 no-padding">
+        <div id="topbar"></div>
+        <div class="jumbotron" id="jumbologin"><h1>Login</h1></div> <!--end jumbotron-->
+            <form id="loginform" method="post" action="">
+                <div class="form-group">
+                    <label for="type">Ik ben een </label>
+                    <select name="type" id="type">
+                        <option value="1">bezoeker</option>
+                        <option value="2">student</option>
+                        <option value="3">administrator</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" class="form-control" id="email" name="email">
+                </div>
+                <div class="form-group">
+                    <label for="pass">Wachtwoord</label>
+                    <input type="password" class="form-control" id="pass" name="pass">
+                </div>
+                <button type="submit" class="btn btn-default">Log in!</button>
+            </form>
+        </div>
+    </div> <!--end row-->
 
-    <div class="col-md-1 styleguide">
-        <h2>Login!</h2>
-        <form method="post" action="">
-            <div class="form-group">
-                <label for="type">Ik ben een </label>
-                <select name="type" id="type">
-                    <option value="1">bezoeker</option>
-                    <option value="2">student</option>
-                    <option value="3">administrator</option>
-                </select
-            </div>
-            <div class="form-group">
-                <label for="email">Email</label>
-                <input type="email" class="form-control" id="email" name="email">
-            </div>
-            <div class="form-group">
-                <label for="pass">Wachtwoord</label>
-                <input type="password" class="form-control" id="pass" name="pass">
-            </div>
-            <button type="submit" class="btn btn-default">Log in!</button>
-        </form>
-    </div>
+    <div class="row" >        
+    <div class="col-xs-12" id="relatedlinks">
+        <ul>
+           <li><a href="http://www.thecreativitygym.be/"><img src="img/gym_logo.png" alt="Creativity Gym logo"></a></li>
+           <li><a id="weareimd" href="http://www.weareimd.be/"><img src="img/weareimd_logo.svg" alt="We Are IMD logo"></a></li>
+           <li><a id="thomasmore" href="http://www.thomasmore.be/interactive-multimedia-design-imd"><img src="img/thomasmore_logo.png" alt="Thomas More logo"></a></li>
+        </ul>
+    </div><!--end relatedlinks-->
+    </div><!--end row-->
+    <footer class="footer">&copy Thomas More</footer>
 
 </div> <!-- end container -->
 

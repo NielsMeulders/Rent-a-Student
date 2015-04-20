@@ -4,26 +4,25 @@ body {text-align:center;font-family: "Nexa Light", sans-serif;background-color:#
 
 /*--Home--*/
 
-#homecontainer {padding: 0;}
+.container-fluid {padding: 0;}
 .jumbotron {border-radius: 0;margin-bottom:0;background-color: transparent;}
 .row{margin: 0; }.rowhomepage{background-color: #FCEDCC;}
-.jumbotron h1{font-family: "Nexa Bold"; color: black;}		h3{font-family: "Nexa Bold";} .jumbotron h2{color:black;}
+.jumbotron h1{font-family: "Nexa Bold"; color: #EDEDED;}	h3{font-family: "Nexa Bold";font-size: 28px;} .jumbotron h2{color:#EDEDED;}
 #collinks, #colrechts {;background-color: #FCEDCC; min-height: 100px; opacity: 0.8}
-#jumbohead {margin-bottom: 0;;padding: 120px;margin: 0;border-radius: 0;background-image: url("../img/banner.jpg");background-attachment: fixed;background-size: cover;background-position: bottom;background-color:#B3B3B3;-webkit-box-shadow: inset 0px 21px 40px -27px rgba(0,0,0,0.75);
+#jumbohead {margin-bottom: 0;padding: 120px;margin: 0;border-radius: 0;background-image: url("../img/banner.jpg");background-attachment: fixed;background-size: cover;background-position: bottom;background-color:#B3B3B3;-webkit-box-shadow: inset 0px 21px 40px -27px rgba(0,0,0,0.75);
 -moz-box-shadow: inset 0px 21px 40px -27px rgba(0,0,0,0.75);
 box-shadow: inset 0px 21px 40px -27px rgba(0,0,0,0.75);}
-#carbg{max-width: 1000px;margin: auto; }
 #icon1, #icon2{display:block;height:64px;width:64px;margin:auto;background-repeat: no-repeat;}
 #icon1{background-image: url("../img/compass.png");}
 #icon2{background-image: url("../img/worker.png");}
-#welcomewrap{max-width: 1200px;margin: auto;}
+#welcomewrap{max-width: 1600px;margin: auto;}
 
 
 #topbar {height:50px;background-color: #FCEDCC;width: 100%;}
-#topbar .btn{color: black;margin: 10px;float: right;}
+#topbar .btn{margin: 10px;float: right;font-size: 16px;}
 .no-padding{margin: 0;padding: 0;}
 
- .btn{border-radius: 0;border: none; background-color: #377BA5;-webkit-transition: background-color 200ms ease-in-out;
+ .btn{font-family: "Nexa Bold";color:white;border-radius: 0;border: none; background-color: #377BA5;-webkit-transition: background-color 200ms ease-in-out;
     -moz-transition: background-color 200ms ease-in-out;
     -o-transition: background-color 200ms ease-in-out;
     transition: background-color 200ms ease-in-out;}
@@ -33,7 +32,7 @@ box-shadow: inset 0px 21px 40px -27px rgba(0,0,0,0.75);}
 
 
 /*--styleguide--*/
-.styleguide {background-color:#B1CEE0;width: 100%;opacity: 0.8;padding: 10px;}
+.styleguide {width: 100%;padding: 10px;}
 
 
 /*--form--*/
@@ -48,9 +47,22 @@ html {  position: relative;  min-height: 100%;}body { /* Margin bottom by footer
 
 
 /*--Related Links--*/
-#relatedlinks {width: 100%;background-color:#B3B3B3;-webkit-box-shadow: inset 0px 21px 40px -27px rgba(0,0,0,0.75);
+#relatedlinks,#bezhometitle {width: 100%;background-color:#B3B3B3;-webkit-box-shadow: inset 0px 21px 40px -27px rgba(0,0,0,0.75);
 -moz-box-shadow: inset 0px 21px 40px -27px rgba(0,0,0,0.75);
-box-shadow: inset 0px 21px 40px -27px rgba(0,0,0,0.75);}
+box-shadow: inset 0px 21px 30px -27px rgba(0,0,0,0.75);}
 #relatedlinks ul {max-width: 1200px; min-height: 180px; margin: auto;padding: 40px 0 0 0;}
 #relatedlinks ul li{float: left;list-style-type:none;width: 33%;}
 #relatedlinks ul li img {;width:100%;max-width: 160px;padding: 20px;}
+
+/*--Login--*/
+#jumbologin {padding: 20px;margin: 0;border-radius: 0;background-image: url("../img/banner.jpg");background-attachment: fixed;background-size: cover;background-position: bottom;background-color:#B3B3B3;-webkit-box-shadow: inset 0px 21px 40px -27px rgba(0,0,0,0.75);}
+
+#loginform {background-color: #FCEDCC;padding: 20px;}
+
+/*--Home Visitor--*/
+#btnlogout{ padding: 8px;margin: 7px;color: white;}
+.navbar{margin-bottom: 0;background-color: #FCEDCC;border: none;}
+.navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:focus, .navbar-default .navbar-nav>.active>a:hover {background-color:#B6AF9F;color: white;}
+
+h1 {font-family: "Nexa Bold"; color: #333;margin: 0;}
+#bezhometitle{padding: 30px;}

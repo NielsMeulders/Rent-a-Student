@@ -1,14 +1,8 @@
-<?PHP
-
-    session_start();
-
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Rent-a-Student</title>
+    <title>Home | Bezoeker</title>
     <script src="js/script.js"></script>
     <!-- Bootstrap -->    
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -17,44 +11,60 @@
       <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
           <![endif]-->
-    <meta name="keywords" content="Rentastudent, rent a student, imd, interactive, multimedia, design, thomas, more, mechelen, app">
-	<meta name="description" content="Zin om een dagje mee te volgen met een IMD-student? Boek hier je persoonlijke IMD-gids!" />
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
 </head>
+
 <body>
 <div class="container-fluid" >
-    <div class="row"> 
-    <div class="col-md-12 no-padding">
-        <div id="topbar">
-            <a href="login_page.php" class="btn">Login</a>
-        </div>
 
-        <!--jumbohead-->
-        <div class="jumbotron" id="jumbohead">
-        
-            <h1>Welkom!</h1>
-            <p><h2>Ontdek de wereld van <strong>Interactive Multimedia Design!</strong></h2></p>
-        </div> <!--end jumbotron-->
+<!--nav-->
+     <nav class="navbar navbar-default navbar-static-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">Rent-a-Student</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="#">Browse</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Instellingen</a></li>
+            
+          </ul>
+          <ul class="nav navbar-nav navbar-right">
+            <li><a class="btn" id="btnlogout" href="../navbar-fixed-top/">Logout</a></li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav><!--end nav-->
+
+    <div class="col-md-12" id="bezhometitle">          
+               <h1>Kies je gids</h1>
     </div>
-     </div><!--end row-->
+
    
     <div class="row rowhomepage">
     <div id="welcomewrap">
       <div id="collinks"class="col-sm-6">
         <div class="jumbotron">
-            <div id="icon1"></div>
-            <h3>Ontdek IMD!</h3>
+            <div id="icon2"></div>
+            <h3>Per Soon</h3>
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. <strong>Quam ratione</strong>, fugiat illum non corporis iure sint fuga tempora pariatur nesciunt repellat error. Non exercitationem adipisci amet voluptate eius earum vero?</p>
-            <p><a class="btn btn-primary btn-lg" href="registreer_bezoeker.php" role="button">Registreer!</a></p>
+            <p><a class="btn btn-primary btn-lg" href="registreer_bezoeker.php" role="button">Maak afspraak</a></p>
         </div>
        </div><!--end collinks-->
       <div id="colrechts"class="col-sm-6">
         <div class="jumbotron">
             <div id="icon2"></div>
-            <h3>Start als gids</h3>
+            <h3>Per Soon</h3>
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quam ratione, fugiat illum non corporis iure sint fuga tempora pariatur nesciunt repellat error. Non exercitationem adipisci amet voluptate eius earum vero?</p>
-            <p><a class="btn btn-primary btn-lg" href="registreer_student.php" role="button">Registreer!</a></p>
+            <p><a class="btn btn-primary btn-lg" href="registreer_student.php" role="button">Maak afspraak</a></p>
         </div>
        </div><!--end colrechts-->
     </div><!--end welcomewrap-->
