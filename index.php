@@ -10,6 +10,15 @@
             $conn = Db::getInstance();
             // errors doorsturen van de database
             // $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+            $allmails = $conn->query("SELECT * FROM email");
+            while($row = $allmails->fetch(PDO::FETCH_ASSOC)) {
+
+                if($row['email'] == $_POST['email'])
+                {
+                    throw new Exception("Uw email adres is reeds geregistreerd");
+                }
+
+            }
             $statement = $conn->prepare('INSERT INTO email (email) VALUES  (:email)');
 
             $statement->bindValue(':email',$_POST['email']);

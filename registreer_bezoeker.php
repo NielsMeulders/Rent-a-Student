@@ -54,7 +54,7 @@
                 </div>
                 <div class="form-group">
                     <label for="name">Naam</label>
-                    <input type="text" class="form-control" name="name" id="name" <?php echo " value='". $_SESSION['FULLNAME']."'"; ?>/>
+                    <input type="text" class="form-control" name="name" id="name" <?php echo " value='". $_SESSION['FULLNAME']."'"; echo 'disabled= "disabled"' ?>/>
                 </div>
                 <div class="form-group">
                     <label for="email" >Email</label>
