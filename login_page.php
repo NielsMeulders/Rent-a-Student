@@ -55,7 +55,7 @@ if (!empty($_POST))
     }
     catch(Exception $e)
     {
-        echo $e->getMessage();
+        $error = $e->getMessage();        
     }
 }
 
@@ -86,6 +86,12 @@ if (!empty($_POST))
         <div id="topbar"></div>
         <div class="jumbotron" id="jumbologin"><h1>Login</h1></div> <!--end jumbotron-->
             <form id="loginform" method="post" action="">
+               
+               <?PHP if(isset($error)): ?>
+                   
+                   <div class="alert alert-danger" role="alert"><?PHP echo $error; ?></div>
+                   
+               <?PHP endif; ?>
                 <div class="form-group">
                     <label for="type">Ik ben een </label>
                     <select name="type" id="type">
