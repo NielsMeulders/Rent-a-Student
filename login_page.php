@@ -32,17 +32,17 @@ if (!empty($_POST))
             {
                 case 1:
                     $_SESSION['type']='bezoeker';
-                    header('location: http://nielsmeulders.be');
+                    header('location: bezoeker_home.php');
                     break;
 
                 case 2:
                     $_SESSION['type']='student';
-                    header('location: http://nielsmeulders.be');
+                    header('location: bezoeker_home.php');
                     break;
 
                 case 3:
                     $_SESSION['type']='admin';
-                    header('location: http://nielsmeulders.be');
+                    header('location: bezoeker_home.php');
                     break;
             }
         }
