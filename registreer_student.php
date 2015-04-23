@@ -63,13 +63,10 @@ $all_users = $b->getAll();
 <div class="container-fluid">
     <div class="row">
     	<div class="col-xs-12 no-padding" >
-    
-<<<<<<< HEAD
     		 <div id="topbar"></div>
     		 <div class="jumbotron" id="jumbologin"><h1>Registreer</h1></div>
 
 			<form id="loginform" action="" method="post" enctype="multipart/form-data">
-=======
     <div class="col-md-1 styleguide">
 			<h2>Registreer je hier!</h2>
 			<?PHP if(isset($error)): ?>
@@ -78,7 +75,6 @@ $all_users = $b->getAll();
                    
                <?PHP endif; ?>
 			<form action="" method="post" enctype="multipart/form-data">
->>>>>>> origin/master
 				  <div class="form-group">
 				    <label for="name">Naam</label>
 				    <input type="text" class="form-control" id="name" name="name">
