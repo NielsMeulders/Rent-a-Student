@@ -32,7 +32,7 @@ if (!empty($_POST))
     }
     catch(Exception $e)
     {
-        echo $e->getMessage();
+        $error = $e->getMessage();
     }
 }
 
@@ -63,6 +63,11 @@ $all_users = $b->getAll();
     
     <div class="col-md-1 styleguide">
 			<h2>Registreer je hier!</h2>
+			<?PHP if(isset($error)): ?>
+                   
+                   <div class="alert alert-danger" role="alert" ><?PHP echo $error;?></div>
+                   
+               <?PHP endif; ?>
 			<form action="" method="post" enctype="multipart/form-data">
 				  <div class="form-group">
 				    <label for="name">Naam</label>
