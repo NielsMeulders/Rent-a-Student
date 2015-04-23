@@ -2,6 +2,25 @@
 
     session_start();
 
+    if(!empty($_POST))
+    {
+        if (!empty($_POST['email']))
+        {
+            include_once("classes/Db.class.php");
+            $conn = Db::getInstance();
+            // errors doorsturen van de database
+            // $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+            $statement = $conn->prepare('INSERT INTO email (email) VALUES  (:email)');
+
+            $statement->bindValue(':email',$_POST['email']);
+            $statement->execute();
+        }
+        else
+        {
+            throw new Exception("Vul aub uw emailadres in");
+        }
+    }
+
 ?>
 
 <!DOCTYPE html>
@@ -56,7 +75,16 @@
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quam ratione, fugiat illum non corporis iure sint fuga tempora pariatur nesciunt repellat error. Non exercitationem adipisci amet voluptate eius earum vero?</p>
             <p><a class="btn btn-primary btn-lg" href="registreer_student.php" role="button">Registreer!</a></p>
         </div>
-       </div><!--end colrechts-->
+       </div><!--end colrechts-->       
+       <div class="jumbotron">
+            <form action="" method="post">
+            <p>Blijf op de hoogte van al onze <strong>updates</strong></p>
+            <div class="form-group">
+                    <input type="email" class="form-control" id="email" name="email" placeholder="Uw emailadres" style="text-align: left">
+                </div>
+            <p><button type="submit" class="btn btn-default">Hou me op de hoogte!</button></p>
+            </form>
+        </div>
     </div><!--end welcomewrap-->
     </div><!-- end row -->
 
