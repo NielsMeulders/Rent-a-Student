@@ -2,32 +2,39 @@
 
     session_start();
 
-    if(!empty($_POST))
+    try
     {
-        if (!empty($_POST['email']))
+        if(!empty($_POST))
         {
-            include_once("classes/Db.class.php");
-            $conn = Db::getInstance();
-            // errors doorsturen van de database
-            // $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-            $allmails = $conn->query("SELECT * FROM email");
-            while($row = $allmails->fetch(PDO::FETCH_ASSOC)) {
+            if (!empty($_POST['email']))
+            {
+                include_once("classes/Db.class.php");
+                $conn = Db::getInstance();
+                // errors doorsturen van de database
+                // $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+                $allmails = $conn->query("SELECT * FROM email");
+                while($row = $allmails->fetch(PDO::FETCH_ASSOC)) {
 
-                if($row['email'] == $_POST['email'])
-                {
-                    throw new Exception("Uw email adres is reeds geregistreerd");
+                    if($row['email'] == $_POST['email'])
+                    {
+                        throw new Exception("Uw email adres is reeds geregistreerd");
+                    }
+
                 }
+                $statement = $conn->prepare('INSERT INTO email (email) VALUES  (:email)');
 
+                $statement->bindValue(':email',$_POST['email']);
+                $statement->execute();
             }
-            $statement = $conn->prepare('INSERT INTO email (email) VALUES  (:email)');
-
-            $statement->bindValue(':email',$_POST['email']);
-            $statement->execute();
+            else
+            {
+                throw new Exception("Vul aub uw emailadres in");
+            }
         }
-        else
-        {
-            throw new Exception("Vul aub uw emailadres in");
-        }
+    }
+    catch (Exception $e)
+    {
+        $error = $e->getMessage();
     }
 
 ?>
@@ -41,6 +48,7 @@
     <!-- Bootstrap -->    
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no;">
         <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
@@ -55,6 +63,11 @@
     <div class="row"> 
     <div class="col-md-12 no-padding">
         <div id="topbar">
+           <?PHP if(isset($error)): ?>
+                   
+                   <div class="alert alert-danger" role="alert" style="position: fixed; top: 0; width: 100%; z-index: 101"><?PHP echo $error;?></div>
+                   
+               <?PHP endif; ?>
             <a href="login_page.php" class="btn">Login</a>
         </div>
 
@@ -88,6 +101,8 @@
        <div class="jumbotron">
             <form action="" method="post">
             <p>Blijf op de hoogte van al onze <strong>updates</strong></p>
+            
+               <a name="form_tag" id="form_tag"></a>
             <div class="form-group">
                     <input type="email" class="form-control" id="email" name="email" placeholder="Uw emailadres" style="text-align: left">
                 </div>
