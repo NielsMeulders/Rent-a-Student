@@ -48,6 +48,7 @@ $all_users = $b->getAll();
     <script src="js/script.js"></script>
     <!-- Bootstrap -->    
     <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
         <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
@@ -59,11 +60,14 @@ $all_users = $b->getAll();
 </head>
 <body>
     
-<div class="container-fluid registercontainer">
+<div class="container-fluid">
+    <div class="row">
+    	<div class="col-xs-12 no-padding" >
     
-    <div class="col-md-1 styleguide">
-			<h2>Registreer je hier!</h2>
-			<form action="" method="post" enctype="multipart/form-data">
+    		 <div id="topbar"></div>
+    		 <div class="jumbotron" id="jumbologin"><h1>Registreer</h1></div>
+
+			<form id="loginform" action="" method="post" enctype="multipart/form-data">
 				  <div class="form-group">
 				    <label for="name">Naam</label>
 				    <input type="text" class="form-control" id="name" name="name">
@@ -82,11 +86,11 @@ $all_users = $b->getAll();
 				  </div>
 				  <div class="form-group">
 				    <label for="year">Opleidingsjaar</label>
-				    <select name="year" id="year">
+				    <select name="year" id="year" >
 				        <option value="1">1</option>
 				        <option value="2">2</option>
 				        <option value="3">3</option>
-				    </select>
+				    </select >
 				  </div>
 				  <div class="form-group">
 				    <label for="branch">Keuzerichting</label>
@@ -94,19 +98,34 @@ $all_users = $b->getAll();
 				        <option value="null"></option>
 				        <option value="1">Design</option>
 				        <option value="2">Development</option>
-				    </select
+				    </select>
 				  </div>
 				  <div class="form-group">
 				    <label for="description">Motivatie</label>
-				    <textarea name="description" class="form-control" id="description" cols="30" rows="10"></textarea>
+				    <textarea class="studarea form-control" name="description" class="form-control" id="description" cols="30" rows="10"></textarea>
 				  </div>
 				  <div class="form-group">
 				    <label for="pic">Profielfoto (max 500Kb)</label>
 				    <input type="file" name="fileToUpload" id="fileToUpload">
-				  </div>
+				  </div></br></br>
 				  <button type="submit" class="btn btn-default">Submit</button>
 			</form>
-		</div>
+			</div>
+		</div><!--end row-->
+
+
+
+		    <div class="row" >        
+   		 		<div class="col-xs-12" id="relatedlinks">
+       		 		<ul>
+           				<li><a href="http://www.thecreativitygym.be/"><img src="img/gym_logo.png" alt="Creativity Gym logo"></a></li>
+          				<li><a id="weareimd" href="http://www.weareimd.be/"><img src="img/weareimd_logo.svg" alt="We Are IMD logo"></a></li>
+         				<li><a id="thomasmore" href="http://www.thomasmore.be/interactive-multimedia-design-imd"><img src="img/thomasmore_logo.png" alt="Thomas More logo"></a></li>
+        			</ul>
+    			</div><!--end relatedlinks-->
+   			</div><!--end row-->
+
+    <footer class="footer">&copy Thomas More</footer>
 	
 </div> <!-- end container -->
 </body>

@@ -72,3 +72,5 @@ h1 {font-family: "Nexa Bold"; color: #333;margin: 0;}
 
 #loginwithfb{background-color: red;background-image: url("../img/loginfb.jpg");display: inline-block;height: 50px;width: 260px;text-indent: -99999px}
 .regfb {background-color: #F2F2F2;padding: 30px;}
+
+.studarea {text-align: center;width: 100%;max-width: 600px; margin: auto;}
