@@ -26,7 +26,7 @@ box-shadow: inset 0px 21px 40px -27px rgba(0,0,0,0.75);}
     -moz-transition: background-color 200ms ease-in-out;
     -o-transition: background-color 200ms ease-in-out;
     transition: background-color 200ms ease-in-out;}
- .btn:hover { 	background-color:#B1CEE0;color: black; font-weight: bold;
+ .btn:hover { 	background-color:#B1CEE0;color: black;
 } strong{font-family: "Nexa Bold";}
 
 
@@ -43,7 +43,7 @@ input{margin: auto;border: none;}
 /*--Sticky footer-- */
 .footer{width:100%;background-color:#377BA5;padding: 20px;color: white;font-family: "Nexa Bold";}
 html {  position: relative;  min-height: 100%;}body { /* Margin bottom by footer height */  margin-bottom: 60px;}
-.footer {  position: absolute;  bottom: 0;  width: 100%;  /* Set the fixed height of the footer here */  height: 60px;}
+.footer {  position: absolute;  bottom: 0;  width: 100%;  /* Set the fixed height of the footer here */ }
 
 
 /*--Related Links--*/
@@ -66,3 +66,9 @@ box-shadow: inset 0px 21px 30px -27px rgba(0,0,0,0.75);}
 
 h1 {font-family: "Nexa Bold"; color: #333;margin: 0;}
 #bezhometitle{padding: 30px;}
+
+/*--Registreer Bezoeker--*/
+.register h1{font-size: 30px;}
+
+#loginwithfb{background-color: red;background-image: url("../img/loginfb.jpg");display: inline-block;height: 50px;width: 260px;text-indent: -99999px}
+.regfb {background-color: #F2F2F2;padding: 30px;}

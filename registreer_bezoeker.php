@@ -42,13 +42,12 @@
 </head>
 <body>
 
-    <?php if (isset($_SESSION['FBID'])): ?>
-        <?php echo $_SESSION['EMAIL']; ?>
     <div class="container-fluid">
     <div class="row">
         <div class="col-xs-12 no-padding">
             <div id="topbar"></div>
             <div class="jumbotron register" id="jumbologin"><h1>Registreer via Facebook</h1></div> <!--end jumbotron-->
+            <?php if (isset($_SESSION['FBID'])): ?>
             <form id="loginform" action="" method="post">
                  <div class="form-group">
                     <img src="https://graph.facebook.com/<?php echo $_SESSION['FBID']; ?>/picture" alt="Pic"/>
@@ -67,6 +66,13 @@
                 <button id="post_btn" class="btn btn-default">Registreer!</button>
                 <div><a href="logout.php">Logout</a></div>
             </form>
+            <?php else: ?>
+
+            <div class="col-xs-12 no-padding regfb">
+                <a href="fbconfig.php" id="loginwithfb">Login with Facebook</a>
+
+    </div>
+    <?php endif ?>
         </div><!--end column-->
     </div><!--end row-->
 
@@ -79,11 +85,7 @@
         </ul>
     </div><!--end relatedlinks-->
     </div><!--end row-->
-    <?php else: ?>
-        <div class="container">
-            <a href="fbconfig.php" id="loginwithfb">Login with Facebook</a>
-    </div>
-    <?php endif ?>
+    
 
     <?PHP
     /*while($row = $all_users->fetch(PDO::FETCH_ASSOC)) {
