@@ -41,7 +41,7 @@
 </head>
 <body>
 
-    <?php if (isset($_SESSION['FBID'])): ?>
+    <?php if (!isset($_SESSION['FBID'])): ?>
         <?php echo $_SESSION['EMAIL']; ?>
 
         <form action="" method="post">
