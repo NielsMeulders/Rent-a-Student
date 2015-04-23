@@ -38,13 +38,13 @@
             
           </ul>
           <ul class="nav navbar-nav navbar-right">
-            <li><a class="btn" id="btnlogout" href="../navbar-fixed-top/">Logout</a></li>
+            <li><a class="btn" id="btnlogout" href="logout.php">Logout</a></li>
           </ul>
         </div><!--/.nav-collapse -->
       </div>
     </nav><!--end nav-->
 
-    <div class="col-md-12" id="bezhometitle">          
+    <div class="col-md-12" id="bezhometitle">
                <h1>Kies je gids</h1>
     </div>
 
