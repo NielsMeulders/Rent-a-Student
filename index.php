@@ -2,6 +2,24 @@
 
     session_start();
 
+    if (!empty($_SESSION['loggedIn']))
+    {
+        switch($_SESSION['type'])
+        {
+            case 'bezoeker':
+                header('location: bezoeker_home.php');
+                break;
+
+            case 'student':
+                header('location: bezoeker_home.php');
+                break;
+
+            case 'admin':
+                header('location: bezoeker_home.php');
+                break;
+        }
+    }
+
     try
     {
         if(!empty($_POST))
@@ -57,6 +75,15 @@
 	<meta name="description" content="Zin om een dagje mee te volgen met een IMD-student? Boek hier je persoonlijke IMD-gids!" />
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/instafeed.min.js"></script>
+    <script type="text/javascript">
+        var feed = new Instafeed({
+            get: 'tagged',
+            tagName: 'weAreImd',
+            clientId: 'b5d9a213f21d4b9591913672aec5053c'
+        });
+        feed.run();
+    </script>
 </head>
 <body>
 <div class="container-fluid" >
@@ -76,6 +103,7 @@
         
             <h1>Welkom!</h1>
             <p><h2>Ontdek de wereld van <strong>Interactive Multimedia Design!</strong></h2></p>
+            <div id="instafeed"></div>
         </div> <!--end jumbotron-->
     </div>
      </div><!--end row-->
@@ -122,7 +150,6 @@
         </div><!--end relatedlinks-->
     </div><!--end row-->
     <footer class="footer">&copy Thomas More</footer>
-
 
 </div> <!--end container-->
 </body>
