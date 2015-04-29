@@ -103,7 +103,6 @@
         
             <h1>Welkom!</h1>
             <p><h2>Ontdek de wereld van <strong>Interactive Multimedia Design!</strong></h2></p>
-            <div id="instafeed"></div>
         </div> <!--end jumbotron-->
     </div>
      </div><!--end row-->
@@ -142,6 +141,7 @@
 
     <div class="row" >        
         <div class="col-md-12" id="relatedlinks">
+            <div id="instafeed" style="max-height: 300px; overflow: hidden"></div>
             <ul>
                 <li><a href="http://www.thecreativitygym.be/"><img src="img/gym_logo.png" alt="Creativity Gym logo"></a></li>
                 <li><a id="weareimd" href="http://www.weareimd.be/"><img src="img/weareimd_logo.svg" alt="We Are IMD logo"></a></li>
