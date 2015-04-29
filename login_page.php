@@ -48,9 +48,9 @@ if (!empty($_POST))
         }
         elseif (!isset($row['password']))
         {
-            throw new Exception('User does not exist!');
+            throw new Exception('Ongeldig emailadres. Probeer het opnieuw!');
         } else {
-            throw new Exception("Password is incorrect!");
+            throw new Exception("Ongeldig wachtwoord!");
         }
     }
     catch(Exception $e)
