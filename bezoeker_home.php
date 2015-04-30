@@ -1,6 +1,10 @@
 <?PHP
+include_once('classes/Imd_student.class.php');
+   session_start();
+$a = new Imd_student();
+$allstudents = $a->getAll();
 
-    session_start();
+
 
 ?>
 
@@ -57,31 +61,26 @@
 
    
     <div class="row rowhomepage">
-    <div id="welcomewrap">
-      <div id="collinks"class="col-sm-4">
-        <div class="jumbotron">
-            <div id="icon2"></div>
-            <h3>Per Soon</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. <strong>Quam ratione</strong>, fugiat illum non corporis iure sint fuga tempora pariatur nesciunt repellat error. Non exercitationem adipisci amet voluptate eius earum vero?</p>
-            <p><a class="btn btn-primary btn-lg" href="registreer_bezoeker.php" role="button">Maak afspraak</a></p>
-        </div>
+    <div id="welcomewrap"><div class="jumbotron">
+
+            <?php
+        while($gebruiker = $allstudents->fetch(PDO::FETCH_ASSOC)): ?>
+
+
+            <div id="collinks"class="col-sm-4">
+                <?PHP $style = "background-image:url(". $gebruiker['picture'] .");" ?>
+                <div class="profile_pic"  style=<?PHP echo $style?>></div>
+               
+                <h3><?php echo $gebruiker['name'] ?> </h3>
+                <p><?php echo $gebruiker['description'] ?></p>
+                <p><a class="btn btn-primary btn-lg" href="detailstudent.php?id=<?php echo $gebruiker['id']?>" role="button">Maak afspraak</a></p>
        </div><!--end collinks-->
-      <div id="colrechts"class="col-sm-4">
-        <div class="jumbotron">
-            <div id="icon2"></div>
-            <h3>Per Soon</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quam ratione, fugiat illum non corporis iure sint fuga tempora pariatur nesciunt repellat error. Non exercitationem adipisci amet voluptate eius earum vero?</p>
-            <p><a class="btn btn-primary btn-lg" href="registreer_student.php" role="button">Maak afspraak</a></p>
-        </div>
-       </div><!--end colrechts-->
-        <div id="colrechts"class="col-sm-4">
-            <div class="jumbotron">
-                <div id="icon2"></div>
-                <h3>Per Soon</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quam ratione, fugiat illum non corporis iure sint fuga tempora pariatur nesciunt repellat error. Non exercitationem adipisci amet voluptate eius earum vero?</p>
-                <p><a class="btn btn-primary btn-lg" href="registreer_student.php" role="button">Maak afspraak</a></p>
-            </div>
-        </div><!--end colrechts-->
+
+    <?php endwhile; ?>
+    </div>
+
+
+
     </div><!--end welcomewrap-->
     </div><!-- end row -->
 
