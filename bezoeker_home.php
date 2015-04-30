@@ -23,7 +23,7 @@
 
 <body>
 
-<?PHP if (!empty($_SESSION['loggedIn']) && $_SESSION['type']=='bezoeker'): ?>
+<?PHP if (!empty($_SESSION['loggedIn']) && $_SESSION['type']=='student'): ?>
 <div class="container-fluid" >
 
 <!--nav-->
@@ -41,7 +41,6 @@
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
             <li class="active"><a href="#">Browse</a></li>
-            <li><a href="#">About</a></li>
             <li><a href="#">Instellingen</a></li>
             
           </ul>
@@ -59,7 +58,7 @@
    
     <div class="row rowhomepage">
     <div id="welcomewrap">
-      <div id="collinks"class="col-sm-6">
+      <div id="collinks"class="col-sm-4">
         <div class="jumbotron">
             <div id="icon2"></div>
             <h3>Per Soon</h3>
@@ -67,7 +66,7 @@
             <p><a class="btn btn-primary btn-lg" href="registreer_bezoeker.php" role="button">Maak afspraak</a></p>
         </div>
        </div><!--end collinks-->
-      <div id="colrechts"class="col-sm-6">
+      <div id="colrechts"class="col-sm-4">
         <div class="jumbotron">
             <div id="icon2"></div>
             <h3>Per Soon</h3>
@@ -75,6 +74,14 @@
             <p><a class="btn btn-primary btn-lg" href="registreer_student.php" role="button">Maak afspraak</a></p>
         </div>
        </div><!--end colrechts-->
+        <div id="colrechts"class="col-sm-4">
+            <div class="jumbotron">
+                <div id="icon2"></div>
+                <h3>Per Soon</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quam ratione, fugiat illum non corporis iure sint fuga tempora pariatur nesciunt repellat error. Non exercitationem adipisci amet voluptate eius earum vero?</p>
+                <p><a class="btn btn-primary btn-lg" href="registreer_student.php" role="button">Maak afspraak</a></p>
+            </div>
+        </div><!--end colrechts-->
     </div><!--end welcomewrap-->
     </div><!-- end row -->
 
@@ -115,7 +122,7 @@
 
     <div class="row rowhomepage">
         <div id="welcomewrap">
-            <div id="collinks"class="col-xs-6 text-left">
+            <div id="collinks"class="col-xs-12 text-left container">
                 <div class="jumbotron">
                     <h3>U heeft geen toegang tot deze pagina!</h3>
                     <p>Sorry,</p>

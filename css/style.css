@@ -62,7 +62,7 @@ box-shadow: inset 0px 21px 30px -27px rgba(0,0,0,0.75);}
 /*--Home Visitor--*/
 #btnlogout{ padding: 8px;margin: 7px;color: white;}
 .navbar{margin-bottom: 0;background-color: #F2F2F2;border: none;}
-.navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:focus, .navbar-default .navbar-nav>.active>a:hover {background-color:#B6AF9F;color: white;}
+.navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:focus, .navbar-default .navbar-nav>.active>a:hover {background-color:#B6B9BB;color: white;}
 
 h1 {font-family: "Nexa Bold"; color: #333;margin: 0;}
 #bezhometitle{padding: 30px;}
@@ -74,3 +74,5 @@ h1 {font-family: "Nexa Bold"; color: #333;margin: 0;}
 .regfb {background-color: #F2F2F2;padding: 30px;}
 
 .studarea {text-align: center;width: 100%;max-width: 600px; margin: auto;}
+
+#instafeed {max-height: 300px; overflow: hidden; margin-top: 40px;}

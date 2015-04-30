@@ -141,7 +141,7 @@
 
     <div class="row" >        
         <div class="col-md-12" id="relatedlinks">
-            <div id="instafeed" style="max-height: 300px; overflow: hidden"></div>
+            <div id="instafeed"></div>
             <ul>
                 <li><a href="http://www.thecreativitygym.be/"><img src="img/gym_logo.png" alt="Creativity Gym logo"></a></li>
                 <li><a id="weareimd" href="http://www.weareimd.be/"><img src="img/weareimd_logo.svg" alt="We Are IMD logo"></a></li>
