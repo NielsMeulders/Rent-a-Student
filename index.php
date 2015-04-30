@@ -80,8 +80,23 @@
         var feed = new Instafeed({
             get: 'tagged',
             tagName: 'weAreImd',
-            clientId: 'b5d9a213f21d4b9591913672aec5053c'
+            clientId: 'b5d9a213f21d4b9591913672aec5053c',
+            filter: function(image) {
+                var blockedUsernames = [
+                    'imtoofabluv'
+                ];
+
+                // check for blocked users
+                for (var i=0; i<blockedUsernames.length; i++) {
+                    if (image.user.username === blockedUsernames[i]) {
+                        return false;
+                    }
+                }
+
+                return true;
+            }
         });
+
         feed.run();
     </script>
 </head>
