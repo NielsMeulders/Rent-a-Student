@@ -37,7 +37,8 @@ if (!empty($_POST))
 
                 case 2:
                     $_SESSION['type']='student';
-                    header('location: bezoeker_home.php');
+                    $getId = $conn->prepare("SELECT id FROM student WHERE email=?");
+                    header('location: student_home.php');
                     break;
 
                 case 3:
@@ -45,6 +46,9 @@ if (!empty($_POST))
                     header('location: bezoeker_home.php');
                     break;
             }
+            $getId->execute(array($_POST['email']));
+            $getterId = $getId->fetch(PDO::FETCH_ASSOC);
+            $_SESSION['id']=$getterId['id'];
         }
         elseif (!isset($row['password']))
         {
