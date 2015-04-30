@@ -32,12 +32,15 @@ if (!empty($_POST))
             {
                 case 1:
                     $_SESSION['type']='bezoeker';
+                    $getId = $conn->prepare("SELECT id FROM bezoeker WHERE email=?");
+                    $getId->execute(array($_POST['email']));
                     header('location: bezoeker_home.php');
                     break;
 
                 case 2:
                     $_SESSION['type']='student';
                     $getId = $conn->prepare("SELECT id FROM student WHERE email=?");
+                    $getId->execute(array($_POST['email']));
                     header('location: student_home.php');
                     break;
 
@@ -46,7 +49,6 @@ if (!empty($_POST))
                     header('location: bezoeker_home.php');
                     break;
             }
-            $getId->execute(array($_POST['email']));
             $getterId = $getId->fetch(PDO::FETCH_ASSOC);
             $_SESSION['id']=$getterId['id'];
         }

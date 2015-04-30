@@ -31,22 +31,6 @@ $user = $statement->fetch(PDO::FETCH_ASSOC);
     <script src="js/bootstrap.min.js"></script>
 </head>
 
-<style>
-
-    .login_icon
-    {
-        height: 40px;
-        width: 40px;
-        margin-top: 5px;
-        border-radius: 50%;
-        background-size: cover;
-        background-position: center;
-        margin-left: auto;
-        margin-right: auto;
-    }
-
-</style>
-
 <body>
 
 <?PHP if (!empty($_SESSION['loggedIn']) && $_SESSION['type']=='student'): ?>
@@ -85,27 +69,41 @@ $user = $statement->fetch(PDO::FETCH_ASSOC);
 
 
     <div class="row rowhomepage">
-        <div id="welcomewrap"><div class="jumbotron">
+        <div id="welcomewrap">
+            <div id="collinks"class="col-sm-6 text-left" >
+                <div class="jumbotron">
+                    <?PHP $style = "background-image:url(".$user['picture'].");" ?>
+                    <div class="profile_pic_full" style=<?PHP echo $style?>;></div>
+                </div>
+            </div><!--end collinks-->
+            <div id="colrechts"class="col-sm-6 text-left">
+                <div class="jumbotron">
+                    <p>Email: <?PHP echo $user['email']; ?></p>
+                    <p>Jaar: <?PHP echo $user['year']; ?></p>
+                    <?PHP
 
-                <?php
-                while($gebruiker = $allstudents->fetch(PDO::FETCH_ASSOC)): ?>
+                        switch($user['branch'])
+                        {
+                            case '1':
+                                $branch = "Design";
+                                break;
 
+                            case '2':
+                                $branch = "Development";
+                                break;
+                        }
 
-                    <div id="collinks"class="col-sm-4">
-                        <?PHP $style = "background-image:url(". $gebruiker['picture'] .");" ?>
-                        <div class="profile_pic"  style=<?PHP echo $style?>></div>
-
-                        <h3><?php echo $gebruiker['name'] ?> </h3>
-                        <p><?php echo $gebruiker['description'] ?></p>
-                        <p><a class="btn btn-primary btn-lg" href="detailstudent.php?id=<?php echo $gebruiker['id']?>" role="button">Maak afspraak</a></p>
-                    </div><!--end collinks-->
-
-                <?php endwhile; ?>
-            </div>
-
-
-
+                    ?>
+                    <p>Opleiding: <?PHP echo $branch ?></p>
+                </div>
+            </div><!--end colrechts-->
         </div><!--end welcomewrap-->
+        <div id="collinks"class="col-sm-12 text-left" >
+            <div class="jumbotron">
+                <h3>Meer over mij:</h3>
+                <p><?PHP echo nl2br($user['description']); ?></p>
+            </div>
+        </div><!--end collinks-->
     </div><!-- end row -->
 
     <div class="row" >

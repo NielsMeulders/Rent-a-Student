@@ -80,4 +80,9 @@ h1 {font-family: "Nexa Bold"; color: #333;margin: 0;}
 
 /*instafeed*/
 
-.profile_pic {height: 150px;width: 150px;margin:auto;background-size: cover;	}
+.profile_pic {height: 150px;width: 150px;margin:auto;background-size: cover; background-position: center center}
+
+.login_icon{height: 40px;width: 40px;margin-top: 5px;border-radius: 50%;background-size: cover;background-position: center;margin-left: auto;margin-right: auto;
+}
+
+.profile_pic_full {height: 400px;width:400px;max-width:100%;margin:auto;background-size: cover; background-position: center center}

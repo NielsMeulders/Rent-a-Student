@@ -4,6 +4,15 @@ include_once('classes/Imd_student.class.php');
 $a = new Imd_student();
 $allstudents = $a->getAll();
 
+$conn = Db::getInstance();
+
+$statement = $conn->prepare('SELECT * FROM bezoeker WHERE id=:id');
+
+$statement->bindParam(':id',$_SESSION['id']);
+$statement->execute();
+$user = $statement->fetch(PDO::FETCH_ASSOC);
+
+//echo '<pre>' . print_r($_SESSION, TRUE) . '</pre>';
 
 
 ?>
@@ -27,7 +36,7 @@ $allstudents = $a->getAll();
 
 <body>
 
-<?PHP if (!empty($_SESSION['loggedIn']) && $_SESSION['type']=='student'): ?>
+<?PHP if (!empty($_SESSION['loggedIn']) && $_SESSION['type']=='bezoeker'): ?>
 <div class="container-fluid" >
 
 <!--nav-->
@@ -49,7 +58,8 @@ $allstudents = $a->getAll();
             
           </ul>
           <ul class="nav navbar-nav navbar-right">
-            <li><a class="btn" id="btnlogout" href="logout.php">Logout</a></li>
+              <?PHP $style = "background-image:url(". $user['picture'] .");" ?>
+              <li class="login_icon" style=<?PHP echo $style ?>></li>
             <li><a class="btn" id="btnlogout" href="logout.php">Logout</a></li>
           </ul>
         </div><!--/.nav-collapse -->
@@ -90,7 +100,7 @@ $allstudents = $a->getAll();
 
 
 
-                <p><a class="btn btn-primary btn-lg" href="detailstudent.php?id=<?php echo $gebruiker['id']?>" role="button">Maak afspraak</a></p>
+                <p><a class="btn btn-primary btn-lg" href="detailstudent.php?id=<?php echo $gebruiker['id']?>" role="button">Meer info</a></p>
        </div><!--end collinks-->
 
     <?php endwhile; ?>

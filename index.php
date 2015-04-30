@@ -11,11 +11,11 @@
                 break;
 
             case 'student':
-                header('location: bezoeker_home.php');
+                header('location: student_home.php');
                 break;
 
             case 'admin':
-                header('location: bezoeker_home.php');
+                header('location: admin_home.php');
                 break;
         }
     }

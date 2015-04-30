@@ -4,6 +4,7 @@
     abstract class User
     {
 
+        private $m_sPassword;
         private $m_sName;
         private $m_sEmail;
         private $m_sPicture;
@@ -12,6 +13,18 @@
         {
             switch ($p_sProperty)
             {
+                case 'Password':
+                    if ($p_vValue!="")
+                    {
+                        $options = array('cost' => 12);
+                        $this->m_sPassword = password_hash($p_vValue, PASSWORD_BCRYPT, $options);
+                    }
+                    else
+                    {
+                        throw new Exception("Password is required!");
+                    }
+                    break;
+
                 case 'Name':
                     if ($p_vValue!="")
                     {
@@ -58,6 +71,10 @@
         {
             switch ($p_sProperty)
             {
+                case 'Password':
+                    return $this->m_sPassword;
+                    break;
+
                 case 'Name':
                     return $this->m_sName;
                     break;

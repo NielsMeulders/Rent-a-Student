@@ -30,7 +30,7 @@ if (!empty($_GET))
 
 <body>
 
-<?PHP if (!empty($_SESSION['loggedIn']) && $_SESSION['type']=='student'): ?>
+<?PHP if (!empty($_SESSION['loggedIn']) && $_SESSION['type']=='bezoeker'): ?>
 <div class="container-fluid" >
 
     <!--nav-->
@@ -73,12 +73,32 @@ if (!empty($_GET))
             </div><!--end collinks-->
             <div id="colrechts"class="col-sm-6 text-left">
                 <div class="jumbotron">
-                    <h3>Per Soon</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quam ratione, fugiat illum non corporis iure sint fuga tempora pariatur nesciunt repellat error. Non exercitationem adipisci amet voluptate eius earum vero?</p>
-                    <p><a class="btn btn-primary btn-lg" href="registreer_student.php" role="button">Maak afspraak</a></p>
+                    <p>Email: <?PHP echo $current_student['email']; ?></p>
+                    <p>Jaar: <?PHP echo $current_student['year']; ?></p>
+                    <?PHP
+
+                    switch($current_student['branch'])
+                    {
+                        case '1':
+                            $branch = "Design";
+                            break;
+
+                        case '2':
+                            $branch = "Development";
+                            break;
+                    }
+
+                    ?>
+                    <p>Opleiding: <?PHP echo $branch ?></p>
                 </div>
             </div><!--end colrechts-->
         </div><!--end welcomewrap-->
+        <div id="collinks"class="col-sm-12 text-left" >
+            <div class="jumbotron">
+                <h3>Meer over mij:</h3>
+                <p><?PHP echo nl2br($current_student['description']); ?></p>
+            </div>
+        </div><!--end collinks-->
     </div><!-- end row -->
 
     <div class="row" >

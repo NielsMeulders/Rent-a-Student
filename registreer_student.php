@@ -28,7 +28,7 @@ if (!empty($_POST))
 
         $b->save();
 
-        //header("Location: index.php");
+        header("Location: index.php");
     }
     catch(Exception $e)
     {
@@ -112,7 +112,7 @@ $all_users = $b->getAll();
 				    <textarea class="studarea form-control" name="description" class="form-control" id="description" cols="30" rows="10"></textarea>
 				  </div>
 				  <div class="form-group">
-				    <label for="pic">Profielfoto (max 500Kb)</label>
+				    <label for="pic">Profielfoto (max 1Mb)</label>
 				    <input type="file" name="fileToUpload" id="fileToUpload">
 				  </div></br></br>
 				  <button type="submit" class="btn btn-default">Submit</button>

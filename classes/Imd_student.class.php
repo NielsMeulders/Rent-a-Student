@@ -5,7 +5,6 @@
     class Imd_student extends User
     {
 
-        private $m_sPassword;
         private $m_iYear;
         private $m_sBranch;
         private $m_sDescription;
@@ -15,18 +14,6 @@
 
             switch ($p_sProperty)
             {
-                case 'Password':
-                    if ($p_vValue!="")
-                    {
-                        $options = array('cost' => 12);
-                        $this->m_sPassword = password_hash($p_vValue, PASSWORD_BCRYPT, $options);
-                    }
-                    else
-                    {
-                        throw new Exception("Password is required!");
-                    }
-                    break;
-
                 case 'Year':
                     $this->m_iYear = $p_vValue;
                     break;
@@ -64,10 +51,6 @@
         {
             switch ($p_sProperty)
             {
-                case 'Password':
-                    $vResult = $this->m_sPassword;
-                    break;
-
                 case 'Year':
                     $vResult = $this->m_iYear;
                     break;

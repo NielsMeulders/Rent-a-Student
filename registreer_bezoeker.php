@@ -10,12 +10,15 @@
     {
         try
         {
+            $b->checkPass($_POST['pass'],$_POST['pass_rep']);
+
             $b->Name = $_POST['name'];
             $b->Email = $_POST['email'];
+            $b->Password = $_POST['pass'];
             $b->Picture = "https://graph.facebook.com/".  $_SESSION['FBID']. "/picture";
             $b->save();
 
-            //header("Location: index.php");
+            header("Location: login_page.php");
         }
         catch(Exception $e)
         {
@@ -54,11 +57,19 @@
                 </div>
                 <div class="form-group">
                     <label for="name">Naam</label>
-                    <input type="text" class="form-control" name="name" id="name" <?php echo " value='". $_SESSION['FULLNAME']."'"; echo 'disabled= "disabled"' ?>/>
+                    <input type="text" class="form-control" name="name" id="name" <?php echo " value='". $_SESSION['FULLNAME']."'"; echo 'readonly' ?>/>
                 </div>
                 <div class="form-group">
                     <label for="email" >Email</label>
                     <input type="email" class="form-control" name="email" id="email"/>
+                </div>
+                <div class="form-group">
+                    <label for="pass">Wachtwoord</label>
+                    <input type="password" class="form-control" id="pass" name="pass">
+                </div>
+                <div class="form-group">
+                    <label for="pass_rep">Wachtwoord herhalen</label>
+                    <input type="password" class="form-control" id="pass_rep" name="pass_rep">
                 </div>
                 
 
