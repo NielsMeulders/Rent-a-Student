@@ -50,6 +50,7 @@ $allstudents = $a->getAll();
           </ul>
           <ul class="nav navbar-nav navbar-right">
             <li><a class="btn" id="btnlogout" href="logout.php">Logout</a></li>
+            <li><a class="btn" id="btnlogout" href="logout.php">Logout</a></li>
           </ul>
         </div><!--/.nav-collapse -->
       </div>
@@ -72,7 +73,23 @@ $allstudents = $a->getAll();
                 <div class="profile_pic"  style=<?PHP echo $style?>></div>
                
                 <h3><?php echo $gebruiker['name'] ?> </h3>
-                <p><?php echo $gebruiker['description'] ?></p>
+                <p><strong><?php 
+
+                switch ($gebruiker['branch']) {
+                    case '1':
+                        echo "Design";
+                        break;
+                    
+                    case '2':
+                        echo "Development";
+                        break;
+                }?> </strong></p>
+
+
+                <p><?php echo substr($gebruiker['description'], 0, 100) ."..."?></p>
+
+
+
                 <p><a class="btn btn-primary btn-lg" href="detailstudent.php?id=<?php echo $gebruiker['id']?>" role="button">Maak afspraak</a></p>
        </div><!--end collinks-->
 

@@ -65,15 +65,14 @@ if (!empty($_GET))
 
     <div class="row rowhomepage">
         <div id="welcomewrap">
-            <div id="collinks"class="col-sm-6">
+            <div id="collinks"class="col-sm-6 text-left" >
                 <div class="jumbotron">
                     <?PHP $style = "background-image:url(".$current_student['picture'].");" ?>
-                    <div class="profile_pic" style=<?PHP echo $style;?></div>
+                    <div class="profile_pic" style=<?PHP echo $style?>;></div>
                 </div>
             </div><!--end collinks-->
-            <div id="colrechts"class="col-sm-6">
+            <div id="colrechts"class="col-sm-6 text-left">
                 <div class="jumbotron">
-                    <div id="icon2"></div>
                     <h3>Per Soon</h3>
                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quam ratione, fugiat illum non corporis iure sint fuga tempora pariatur nesciunt repellat error. Non exercitationem adipisci amet voluptate eius earum vero?</p>
                     <p><a class="btn btn-primary btn-lg" href="registreer_student.php" role="button">Maak afspraak</a></p>
