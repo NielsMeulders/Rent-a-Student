@@ -83,8 +83,8 @@ $user = $statement->fetch(PDO::FETCH_ASSOC);
                 <div class="profile_pic"  style=<?PHP echo $style?>></div>
                
                 <h3><?php echo $gebruiker['name'] ?> </h3>
-                <p><strong><?php 
-
+                <p><strong><?php
+                echo $gebruiker['year'] . "de - ";
                 switch ($gebruiker['branch']) {
                     case '1':
                         echo "Design";
