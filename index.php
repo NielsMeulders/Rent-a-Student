@@ -43,6 +43,7 @@
 
                 $statement->bindValue(':email',$_POST['email']);
                 $statement->execute();
+                $feedback = "Uw email adres werd geregistreerd!";
             }
             else
             {
@@ -110,6 +111,11 @@
                    <div class="alert alert-danger" role="alert" style="position: fixed; top: 0; width: 100%; z-index: 101"><?PHP echo $error;?></div>
                    
                <?PHP endif; ?>
+            <?PHP if(isset($feedback)): ?>
+
+                <div class="alert alert-success" role="alert" style="position: fixed; top: 0; width: 100%; z-index: 101"><?PHP echo $feedback;?></div>
+
+            <?PHP endif; ?>
             <a href="login_page.php" class="btn">Login</a>
         </div>
 

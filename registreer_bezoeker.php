@@ -50,6 +50,14 @@
         <div class="col-xs-12 no-padding">
             <div id="topbar"></div>
             <div class="jumbotron register" id="jumbologin"><h1>Registreer via Facebook</h1></div> <!--end jumbotron-->
+
+
+                <?PHP if(isset($error)): ?>
+
+                    <div class="alert alert-danger" role="alert" ><?PHP echo $error;?></div>
+
+                <?PHP endif; ?>
+
             <?php if (isset($_SESSION['FBID'])): ?>
             <form id="loginform" action="" method="post">
                  <div class="form-group">
