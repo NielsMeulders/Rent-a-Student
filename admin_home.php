@@ -53,11 +53,11 @@ if (isset($_REQUEST['download']))
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="#">Rent-a-Student</a>
+                <a class="navbar-brand" href="admin_home.php">Rent-a-Student</a>
             </div>
             <div id="navbar" class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li class="active"><a href="#">Home</a></li>
+                    <li class="active"><a href="admin_home.php">Home</a></li>
                     <li><a href="registreer_admin.php">Account toevoegen</a></li>
 
                 </ul>
@@ -133,7 +133,7 @@ if (isset($_REQUEST['download']))
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="#">Rent-a-Student</a>
+                    <a class="navbar-brand" href="admin_home.php">Rent-a-Student</a>
                 </div>
                 <div id="navbar" class="navbar-collapse collapse">
                     <ul class="nav navbar-nav navbar-right">

@@ -97,13 +97,15 @@ $user = $statement->fetch(PDO::FETCH_ASSOC);
                     <p>Opleiding: <?PHP echo $branch ?></p>
                 </div>
             </div><!--end colrechts-->
-        </div><!--end welcomewrap-->
+
+        <div class="clearfix"></div>
         <div id="collinks"class="col-sm-12 text-left" >
             <div class="jumbotron">
                 <h3>Meer over mij:</h3>
                 <p><?PHP echo nl2br($user['description']); ?></p>
             </div>
         </div><!--end collinks-->
+        </div><!--end welcomewrap-->
     </div><!-- end row -->
 
     <div class="row" >

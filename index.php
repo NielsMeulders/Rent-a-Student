@@ -116,7 +116,9 @@
                 <div class="alert alert-success" role="alert" style="position: fixed; top: 0; width: 100%; z-index: 101"><?PHP echo $feedback;?></div>
 
             <?PHP endif; ?>
+            <div id="welcomewrap">
             <a href="login_page.php" class="btn">Login</a>
+            </div>
         </div>
 
         <!--jumbohead-->
