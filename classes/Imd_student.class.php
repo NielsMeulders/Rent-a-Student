@@ -89,6 +89,24 @@
             $statement->bindValue(':description',$this->Description);
             $statement->execute();
         }
+        
+        public function update($name, $pass, $year, $branch, $description)
+        {
+            $conn = Db::getInstance();
+            // errors doorsturen van de database
+            // $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+            $current_id = $_SESSION['id'];
+            if (empty($pass))
+            {
+                $statement = $conn->prepare('UPDATE student SET name=?,year=?,branch=?,description=? WHERE id=?');
+                $statement->execute(array($name, $year, $branch, $description, $current_id));
+            }
+
+            header('location: student_home.php');
+
+            /*$statement = $conn->prepare('UPDATE student SET name=?,email=?,password=?,picture=?,year=?,branch=?,description=?');
+            $statement->execute(array($this->Name, $this->Email, $this->Password, $this->Picture, $this->Year, $this->Branch, $this->Description));*/
+        }
 
         public function getAll()
         {
