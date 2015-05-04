@@ -68,7 +68,7 @@ if (!empty($_GET))
             <div id="collinks"class="col-sm-6 text-left" >
                 <div class="jumbotron">
                     <?PHP $style = "background-image:url(".$current_student['picture'].");" ?>
-                    <div class="profile_pic" style=<?PHP echo $style?>;></div>
+                    <div class="profile_pic_full" style=<?PHP echo $style?>;></div>
                 </div>
             </div><!--end collinks-->
             <div id="colrechts"class="col-sm-6 text-left">
