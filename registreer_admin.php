@@ -17,7 +17,7 @@ if (!empty($_POST))
         $a->Password = $_POST['pass'];
         $a->save();
 
-        //header("Location: index.php");
+        header("Location: admin_home.php");
     }
     catch(Exception $e)
     {
@@ -50,28 +50,55 @@ $all_users = $a->getAll();
 
 <div class="container-fluid registercontainer">
 
-    <div class="col-md-1 styleguide">
-        <h2>Admin registratie</h2>
-        <form action="" method="post" enctype="multipart/form-data">
-            <div class="form-group">
-                <label for="name">Naam</label>
-                <input type="text" class="form-control" id="name" name="name">
+    <!--nav-->
+    <nav class="navbar navbar-default navbar-static-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="admin_home.php">Rent-a-Student</a>
             </div>
-            <div class="form-group">
-                <label for="email">Email</label>
-                <input type="email" class="form-control" id="email" name="email">
-            </div>
-            <div class="form-group">
-                <label for="pass">Wachtwoord</label>
-                <input type="password" class="form-control" id="pass" name="pass">
-            </div>
-            <div class="form-group">
-                <label for="pass_rep">Wachtwoord herhalen</label>
-                <input type="password" class="form-control" id="pass_rep" name="pass_rep">
-            </div>
-            <button type="submit" class="btn btn-default">Submit</button>
-        </form>
-    </div>
+            <div id="navbar" class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li><a href="admin_home.php">Home</a></li>
+                    <li class="active"><a href="registreer_admin.php">Account toevoegen</a></li>
+
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a class="btn" id="btnlogout" href="logout.php">Logout</a></li>
+                </ul>
+            </div><!--/.nav-collapse -->
+        </div>
+    </nav><!--end nav-->
+
+    <div class="row rowhomepage">
+        <div class="col-md-1 styleguide">
+            <h2>Admin registratie</h2>
+            <form action="" method="post" enctype="multipart/form-data">
+                <div class="form-group">
+                    <label for="name">Naam</label>
+                    <input type="text" class="form-control" id="name" name="name">
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" class="form-control" id="email" name="email">
+                </div>
+                <div class="form-group">
+                    <label for="pass">Wachtwoord</label>
+                    <input type="password" class="form-control" id="pass" name="pass">
+                </div>
+                <div class="form-group">
+                    <label for="pass_rep">Wachtwoord herhalen</label>
+                    <input type="password" class="form-control" id="pass_rep" name="pass_rep">
+                </div>
+                <button type="submit" class="btn btn-default">Submit</button>
+            </form>
+        </div>
+    </div> <!-- end rowhomepage -->
 
 </div> <!-- end container -->
 </body>
