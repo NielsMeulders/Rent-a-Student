@@ -1,8 +1,7 @@
 <?PHP
 include_once('classes/Admin.class.php');
 session_start();
-$a = new Admin();
-$allstudents = $a->getAll();
+$u = new Admin();
 
 $conn = Db::getInstance();
 
@@ -12,6 +11,13 @@ $statement->bindParam(':id',$_SESSION['id']);
 $statement->execute();
 $user = $statement->fetch(PDO::FETCH_ASSOC);
 
+$all_emails = $conn->query('SELECT * FROM email LIMIT 5');
+
+if (isset($_REQUEST['download']))
+{
+    $u->download();
+    $ready = true;
+}
 
 ?>
 
@@ -71,38 +77,39 @@ $user = $statement->fetch(PDO::FETCH_ASSOC);
         <div id="welcomewrap">
             <div id="collinks"class="col-sm-6 text-left" >
                 <div class="jumbotron">
-                    <?PHP $style = "background-image:url(".$user['picture'].");" ?>
-                    <div class="profile_pic_full" style=<?PHP echo $style?>;></div>
+                    <h3>Boekingen</h3>
                 </div>
             </div><!--end collinks-->
             <div id="colrechts"class="col-sm-6 text-left">
                 <div class="jumbotron">
-                    <p>Email: <?PHP echo $user['email']; ?></p>
-                    <p>Jaar: <?PHP echo $user['year']; ?></p>
+                    <h3>Email-adressen nieuwsbrief</h3>
                     <?PHP
-
-                    switch($user['branch'])
-                    {
-                        case '1':
-                            $branch = "Design";
-                            break;
-
-                        case '2':
-                            $branch = "Development";
-                            break;
-                    }
-
+                        echo '<ul>';
+                        while ($single_email = $all_emails->fetch(PDO::FETCH_ASSOC))
+                        {
+                            echo '<li>' . $single_email['email'] . '</li>';
+                        }
+                        echo '</ul>';
                     ?>
-                    <p>Opleiding: <?PHP echo $branch ?></p>
+                    <form action="">
+                    <input type="submit" name="download" value="Create download" />
+                    </form>
+                    <?PHP if (isset($ready)): echo '<a download href="emails.txt">Download file</a>'; endif; ?>
+                </div>
+            </div><!--end colrechts-->
+            <div id="collinks"class="col-sm-6 text-left" >
+                <div class="jumbotron">
+                    <h3>Geboekte studenten</h3>
+
+                </div>
+            </div><!--end collinks-->
+            <div id="colrechts"class="col-sm-6 text-left" >
+                <div class="jumbotron">
+                    <h3>Nieuwe data toevoegen</h3>
+
                 </div>
             </div><!--end colrechts-->
         </div><!--end welcomewrap-->
-        <div id="collinks"class="col-sm-12 text-left" >
-            <div class="jumbotron">
-                <h3>Meer over mij:</h3>
-                <p><?PHP echo nl2br($user['description']); ?></p>
-            </div>
-        </div><!--end collinks-->
     </div><!-- end row -->
 
     <div class="row" >
