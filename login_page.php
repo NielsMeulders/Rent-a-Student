@@ -46,7 +46,9 @@ if (!empty($_POST))
 
                 case 3:
                     $_SESSION['type']='admin';
-                    header('location: bezoeker_home.php');
+                    $getId = $conn->prepare("SELECT id FROM admin WHERE email=?");
+                    $getId->execute(array($_POST['email']));
+                    header('location: admin_home.php');
                     break;
             }
             $getterId = $getId->fetch(PDO::FETCH_ASSOC);
@@ -61,7 +63,7 @@ if (!empty($_POST))
     }
     catch(Exception $e)
     {
-        $error = $e->getMessage();        
+        $error = $e->getMessage();
     }
 }
 

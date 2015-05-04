@@ -51,7 +51,7 @@ $user = $statement->fetch(PDO::FETCH_ASSOC);
             <div id="navbar" class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
                     <li class="active"><a href="#">Home</a></li>
-                    <li><a href="#">Account aanpassen</a></li>
+                    <li><a href="student_aanpassen.php">Account aanpassen</a></li>
 
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
