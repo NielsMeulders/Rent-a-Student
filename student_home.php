@@ -102,7 +102,7 @@ $user = $statement->fetch(PDO::FETCH_ASSOC);
         <div class="clearfix"></div>
         <div id="collinks"class="col-sm-12 text-left" >
             <div class="jumbotron">
-                <h3>Meer over mij:</h3>
+                <h3>Meer over mij</h3>
                 <p><?PHP echo nl2br($user['description']); ?></p>
             </div>
         </div><!--end collinks-->

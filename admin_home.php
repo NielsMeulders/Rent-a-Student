@@ -36,6 +36,7 @@ if (isset($_REQUEST['download']))
     <![endif]-->
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
+
 </head>
 
 <body>
@@ -84,10 +85,10 @@ if (isset($_REQUEST['download']))
                 <div class="jumbotron">
                     <h3>Email-adressen nieuwsbrief</h3>
                     <?PHP
-                        echo '<ul>';
+                        echo '<ul class="list-group">';
                         while ($single_email = $all_emails->fetch(PDO::FETCH_ASSOC))
                         {
-                            echo '<li>' . $single_email['email'] . '</li>';
+                            echo '<li class="list-group-item">' . $single_email['email'] . '</li>';
                         }
                         echo '</ul>';
                     ?>

@@ -120,13 +120,13 @@ catch (Exception $e)
         </div><!--end welcomewrap-->
         <div id="collinks"class="col-sm-12 text-left" >
             <div class="jumbotron">
-                <h3>Meer over mij:</h3>
+                <h3>Meer over mij</h3>
                 <p><?PHP echo nl2br($current_student['description']); ?></p>
             </div>
         </div><!--end collinks-->
-        <div id="collinks"class="col-sm-12 text-left" >
+        <div id="collinks"class="col-sm-6 text-left" >
             <div class="jumbotron">
-                <h3>Contacteer mij:</h3>
+                <h3>Contacteer mij</h3>
                 <form id="contactform" class="text-left" action="" method="post">
                     <div class="form-group">
                         <textarea class="studarea form-control" placeholder="Hoe kan ik je helpen?" name="message" class="form-control" id="message" cols="30" rows="10"></textarea>
@@ -134,6 +134,12 @@ catch (Exception $e)
                     </br>
                     <button type="submit" class="btn btn-default">Verzend!</button>
                 </form>
+            </div>
+        </div><!--end collinks-->
+        <div id="colrechts"class="col-sm-6 text-left" >
+            <div class="jumbotron">
+                <h3>Mijn beschikbare uren</h3>
+
             </div>
         </div><!--end collinks-->
     </div><!-- end row -->

@@ -63,6 +63,7 @@ box-shadow: inset 0px 21px 30px -27px rgba(0,0,0,0.75);}
 #btnlogout{ padding: 8px;margin: 7px;color: white;}
 .navbar{margin-bottom: 0;background-color: #F2F2F2;border: none;}
 .navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:focus, .navbar-default .navbar-nav>.active>a:hover {background-color:#B6B9BB;color: white;}
+.navbar-right {margin-right: 0}
 
 h1 {font-family: "Nexa Bold"; color: #333;margin: 0;}
 #bezhometitle{padding: 30px;}
