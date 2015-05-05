@@ -87,3 +87,7 @@ h1 {font-family: "Nexa Bold"; color: #333;margin: 0;}
 .profile_pic_full {height: 400px;width:400px;max-width:100%;background-size: cover; background-position: center center}
 
 .studarea textarea, .form-control textarea {text-align: left;}
+
+#contactform {padding: 20px 0;}
+
+#contactform input, #contactform textarea {margin: 0;text-align: left;}

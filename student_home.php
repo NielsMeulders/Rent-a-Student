@@ -12,6 +12,7 @@ $statement->bindParam(':id',$_SESSION['id']);
 $statement->execute();
 $user = $statement->fetch(PDO::FETCH_ASSOC);
 
+
 ?>
 
 <!DOCTYPE html>

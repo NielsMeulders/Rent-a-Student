@@ -9,6 +9,31 @@ if (!empty($_GET))
     $current_student = $a->getOne($_GET['id']);
 }
 
+try
+{
+    if (!empty($_POST))
+    {
+        if (!empty($_POST['message']))
+        {
+            $name = $current_student['name'];
+            $adr = $current_student['email'];
+            $msg = $_POST['message'];
+            $headers = 'From: ' . $current_student['email'] . "\r\n" .
+                'Reply-To: ' . $current_student['email'] . "\r\n";
+            mail($adr, "Bericht van " . $name, $msg, $headers);
+        }
+        else
+        {
+            throw new Exception("Een bericht ingeven is verplicht!");
+        }
+
+    }
+}
+catch (Exception $e)
+{
+    $error = $e->getMessage();
+}
+
 ?>
 
 <!DOCTYPE html>
@@ -97,6 +122,18 @@ if (!empty($_GET))
             <div class="jumbotron">
                 <h3>Meer over mij:</h3>
                 <p><?PHP echo nl2br($current_student['description']); ?></p>
+            </div>
+        </div><!--end collinks-->
+        <div id="collinks"class="col-sm-12 text-left" >
+            <div class="jumbotron">
+                <h3>Contacteer mij:</h3>
+                <form id="contactform" class="text-left" action="" method="post">
+                    <div class="form-group">
+                        <textarea class="studarea form-control" placeholder="Hoe kan ik je helpen?" name="message" class="form-control" id="message" cols="30" rows="10"></textarea>
+                    </div>
+                    </br>
+                    <button type="submit" class="btn btn-default">Verzend!</button>
+                </form>
             </div>
         </div><!--end collinks-->
     </div><!-- end row -->
