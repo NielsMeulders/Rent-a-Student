@@ -158,6 +158,13 @@
                 </div>
             <p><button type="submit" class="btn btn-default">Hou me op de hoogte!</button></p>
             </form>
+           <script>
+
+               $('#email').keyup(function(){
+                   console.log("hello");
+               });
+
+           </script>
         </div>
     </div><!--end welcomewrap-->
     </div><!-- end row -->
