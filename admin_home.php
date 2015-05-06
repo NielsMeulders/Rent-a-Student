@@ -1,5 +1,7 @@
 <?PHP
 include_once('classes/Admin.class.php');
+include_once('classes/Date_available.class.php');
+
 session_start();
 $u = new Admin();
 
@@ -19,6 +21,24 @@ if (isset($_REQUEST['download']))
     $ready = true;
 }
 
+
+if(!empty($_POST['date_submit']))
+{
+    try
+    {
+    $d = new Date_available();
+    $d->Date = $_POST['date_input'];
+    $d->save();
+    $feedback = "Nieuwe datum is toegevoegd";
+}
+catch (Exception $e)
+{
+    $error = $e->getMessage();
+}
+}
+
+
+
 ?>
 
 <!DOCTYPE html>
@@ -28,6 +48,7 @@ if (isset($_REQUEST['download']))
     <title>Home | Admin</title>
     <script src="js/script.js"></script>
     <!-- Bootstrap -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no;">
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
 
@@ -53,8 +74,19 @@ if (isset($_REQUEST['download']))
 <?PHP if (!empty($_SESSION['loggedIn']) && $_SESSION['type']=='admin'): ?>
 <div class="container-fluid" >
 
+
     <!--nav-->
     <nav class="navbar navbar-default navbar-static-top">
+        <?PHP if(isset($error)): ?>
+
+            <div class="alert alert-danger" role="alert"><?PHP echo $error; ?></div>
+
+        <?PHP endif; ?>
+        <?PHP if(isset($feedback)): ?>
+
+            <div class="alert alert-success" role="alert"><?PHP echo $feedback; ?></div>
+
+        <?PHP endif; ?>
         <div class="container">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
@@ -81,7 +113,6 @@ if (isset($_REQUEST['download']))
     <div class="col-md-12" id="bezhometitle">
         <h1>Welkom <?PHP echo $user['name']; ?></h1>
     </div>
-
 
     <div class="row rowhomepage">
         <div id="welcomewrap">
@@ -116,9 +147,12 @@ if (isset($_REQUEST['download']))
             <div id="colrechts"class="col-sm-6 text-left" >
                 <div class="jumbotron">
                     <h3>Nieuwe data toevoegen</h3>
-                    <div id="sandbox-container">
-                        <input type="text" type="text" class="form-control">
-                    </div>
+                    <form action="" method="post" enctype="multipart/form-data" id="sandbox-container">
+                        <div class="form-group">
+                            <input type="text" class="form-control" id="date_input" name="date_input">
+                        </div>
+                        <input type="submit" name="date_submit" value="Voeg toe" class="btn btn-default"/>
+                    </form>
                     <script>
                         $('#sandbox-container input').datepicker({
                             weekStart: 1,
@@ -127,7 +161,8 @@ if (isset($_REQUEST['download']))
                             language: "nl",
                             daysOfWeekDisabled: "0,6",
                             autoclose: true,
-                            todayHighlight: true
+                            todayHighlight: true,
+                            format: "yyyy-mm-dd"
                         });
                     </script>
                 </div>

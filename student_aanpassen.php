@@ -29,7 +29,8 @@ if (!empty($_POST))
     <meta charset="UTF-8">
     <title>Rent-a-Student</title>
     <script src="js/script.js"></script>
-    <!-- Bootstrap -->    
+    <!-- Bootstrap -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no;">
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">

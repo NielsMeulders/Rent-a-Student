@@ -46,7 +46,8 @@ $all_users = $b->getAll();
     <meta charset="UTF-8">
     <title>Rent-a-Student</title>
     <script src="js/script.js"></script>
-    <!-- Bootstrap -->    
+    <!-- Bootstrap -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no;">
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
@@ -66,11 +67,16 @@ $all_users = $b->getAll();
     		 <div id="topbar"></div>
             <div class="jumbotron register" id="jumbologin"><h1>Registreer als student</h1></div> <!--end jumbotron-->
 
-			<?PHP if(isset($error)): ?>
-                   
-                   <div class="alert alert-danger" role="alert" ><?PHP echo $error;?></div>
-                   
-               <?PHP endif; ?>
+            <?PHP if(isset($error)): ?>
+
+                <div class="alert alert-danger" role="alert"><?PHP echo $error; ?></div>
+
+            <?PHP endif; ?>
+            <?PHP if(isset($feedback)): ?>
+
+                <div class="alert alert-success" role="alert"><?PHP echo $feedback; ?></div>
+
+            <?PHP endif; ?>
 			<form id="loginform" action="" method="post" enctype="multipart/form-data">
 				  <div class="form-group">
 				    <label for="name">Naam</label>

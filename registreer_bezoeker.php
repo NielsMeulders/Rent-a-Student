@@ -37,7 +37,8 @@
     <title>Rent-a-Student</title>
     <script src="js/script.js"></script>
     <link rel="stylesheet" href="css/reset.css">
-        <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no;">
     <link rel="stylesheet" href="css/style.css">
     <meta name="keywords" content="Rentastudent, rent a student, imd, interactive, multimedia, design, thomas, more, mechelen, app">
     <meta name="description" content="Zin om een dagje mee te volgen met een IMD-student? Boek hier je persoonlijke IMD-gids!" />

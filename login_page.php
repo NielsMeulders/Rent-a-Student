@@ -76,6 +76,7 @@ if (!empty($_POST))
     <title>Rent-a-Student | Login</title>
     <script src="js/script.js"></script>
     <!-- Bootstrap -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no;">
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
     <!--[if lt IE 9]>
@@ -94,12 +95,17 @@ if (!empty($_POST))
         <div id="topbar"></div>
         <div class="jumbotron" id="jumbologin"><h1>Login</h1></div> <!--end jumbotron-->
             <form id="loginform" method="post" action="">
-               
-               <?PHP if(isset($error)): ?>
-                   
-                   <div class="alert alert-danger" role="alert"><?PHP echo $error; ?></div>
-                   
-               <?PHP endif; ?>
+
+                <?PHP if(isset($error)): ?>
+
+                    <div class="alert alert-danger" role="alert"><?PHP echo $error; ?></div>
+
+                <?PHP endif; ?>
+                <?PHP if(isset($feedback)): ?>
+
+                    <div class="alert alert-success" role="alert"><?PHP echo $feedback; ?></div>
+
+                <?PHP endif; ?>
                 <div class="form-group">
                     <label for="type">Ik ben een </label>
                     <select name="type" id="type">

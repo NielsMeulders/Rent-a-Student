@@ -43,6 +43,7 @@ catch (Exception $e)
     <title>Home | Bezoeker</title>
     <script src="js/script.js"></script>
     <!-- Bootstrap -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no;">
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
     <!--[if lt IE 9]>
@@ -60,6 +61,16 @@ catch (Exception $e)
 
     <!--nav-->
     <nav class="navbar navbar-default navbar-static-top">
+        <?PHP if(isset($error)): ?>
+
+            <div class="alert alert-danger" role="alert"><?PHP echo $error; ?></div>
+
+        <?PHP endif; ?>
+        <?PHP if(isset($feedback)): ?>
+
+            <div class="alert alert-success" role="alert"><?PHP echo $feedback; ?></div>
+
+        <?PHP endif; ?>
         <div class="container">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">

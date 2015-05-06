@@ -1,8 +1,12 @@
 <?PHP
 include_once('classes/Imd_student.class.php');
+include_once('classes/Date_available.class.php');
 session_start();
 $a = new Imd_student();
 $allstudents = $a->getAll();
+
+$d = new Date_available();
+$allDates = $d->getAll();
 
 $conn = Db::getInstance();
 
@@ -22,6 +26,7 @@ $user = $statement->fetch(PDO::FETCH_ASSOC);
     <title>Home | Bezoeker</title>
     <script src="js/script.js"></script>
     <!-- Bootstrap -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no;">
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
     <!--[if lt IE 9]>
@@ -39,6 +44,16 @@ $user = $statement->fetch(PDO::FETCH_ASSOC);
 
     <!--nav-->
     <nav class="navbar navbar-default navbar-static-top">
+        <?PHP if(isset($error)): ?>
+
+            <div class="alert alert-danger" role="alert"><?PHP echo $error; ?></div>
+
+        <?PHP endif; ?>
+        <?PHP if(isset($feedback)): ?>
+
+            <div class="alert alert-success" role="alert"><?PHP echo $feedback; ?></div>
+
+        <?PHP endif; ?>
         <div class="container">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
@@ -106,6 +121,17 @@ $user = $statement->fetch(PDO::FETCH_ASSOC);
                 <p><?PHP echo nl2br($user['description']); ?></p>
             </div>
         </div><!--end collinks-->
+            <div id="collinks"class="col-sm-12 text-left" >
+                <div class="jumbotron">
+                    <h3>Nieuwe beschikbaarheid</h3>
+                    <select>
+                        <?PHP while($date = $allDates->fetch(PDO::FETCH_ASSOC)): ?>
+                            <option><?PHP echo $date['date'] ?></option>
+                        <?PHP endwhile; ?>
+                    </select>
+
+                </div>
+            </div><!--end collinks-->
         </div><!--end welcomewrap-->
     </div><!-- end row -->
 
