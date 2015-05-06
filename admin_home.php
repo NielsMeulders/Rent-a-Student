@@ -4,6 +4,8 @@ include_once('classes/Date_available.class.php');
 
 session_start();
 $u = new Admin();
+$d = new Date_available();
+$allDates = $d->getAll();
 
 $conn = Db::getInstance();
 
@@ -26,7 +28,6 @@ if(!empty($_POST['date_submit']))
 {
     try
     {
-    $d = new Date_available();
     $d->Date = $_POST['date_input'];
     $d->save();
     $feedback = "Nieuwe datum is toegevoegd";
@@ -37,7 +38,11 @@ catch (Exception $e)
 }
 }
 
-
+if(!empty($_GET))
+{
+    $d->remove($_GET['id']);
+    header('location: admin_home.php');
+}
 
 ?>
 
@@ -140,8 +145,12 @@ catch (Exception $e)
             </div><!--end colrechts-->
             <div id="collinks"class="col-sm-6 text-left" >
                 <div class="jumbotron">
-                    <h3>Geboekte studenten</h3>
-
+                    <h3>Beschikbare data</h3>
+                    <ul class="list-group" id="list-available-dates">
+                        <?PHP while($date = $allDates->fetch(PDO::FETCH_ASSOC)): ?>
+                            <li class="list-group-item"><?PHP echo $date['date'] ?><span class="badge"><a style="color: #F2F2F2" href="?id=<?PHP echo $date['id'] ?>">delete</a></span></li>
+                        <?PHP endwhile; ?>
+                    </ul>
                 </div>
             </div><!--end collinks-->
             <div id="colrechts"class="col-sm-6 text-left" >
@@ -154,7 +163,7 @@ catch (Exception $e)
                         <input type="submit" name="date_submit" value="Voeg toe" class="btn btn-default"/>
                     </form>
                     <script>
-                        $('#sandbox-container input').datepicker({
+                        $('#sandbox-container #date_input').datepicker({
                             weekStart: 1,
                             startDate: "today",
                             clearBtn: true,

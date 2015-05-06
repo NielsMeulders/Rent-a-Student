@@ -2,16 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6313ee07-faa8-4d25-ba5f-7c6a283132fa" name="Default" comment="added class">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/classes/Date_available.class.php" afterPath="$PROJECT_DIR$/classes/Date_available.class.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin_home.php" afterPath="$PROJECT_DIR$/admin_home.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bezoeker_home.php" afterPath="$PROJECT_DIR$/bezoeker_home.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/detailstudent.php" afterPath="$PROJECT_DIR$/detailstudent.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/login_page.php" afterPath="$PROJECT_DIR$/login_page.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/registreer_admin.php" afterPath="$PROJECT_DIR$/registreer_admin.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/registreer_bezoeker.php" afterPath="$PROJECT_DIR$/registreer_bezoeker.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/registreer_student.php" afterPath="$PROJECT_DIR$/registreer_student.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/student_aanpassen.php" afterPath="$PROJECT_DIR$/student_aanpassen.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/student_home.php" afterPath="$PROJECT_DIR$/student_home.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/style.css" afterPath="$PROJECT_DIR$/css/style.css" />
     </list>
     <ignored path="Rent-a-Student.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -35,73 +28,7 @@
     <favorites_list name="Rent-a-Student" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file leaf-file-name="student_home.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/student_home.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.5365854" vertical-offset="1590" max-vertical-offset="3090">
-              <caret line="128" column="58" selection-start-line="128" selection-start-column="58" selection-end-line="128" selection-end-column="58" />
-              <folding>
-                <marker date="1430939661000" expanded="true" signature="285:319" placeholder="SELECT * FRO..student..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="admin_home.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/admin_home.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-19.375" vertical-offset="1995" max-vertical-offset="3615">
-              <caret line="164" column="48" selection-start-line="164" selection-start-column="48" selection-end-line="164" selection-end-column="48" />
-              <folding>
-                <marker date="1430926539000" expanded="true" signature="191:223" placeholder="SELECT * FRO..admin..." />
-                <marker date="1430926539000" expanded="true" signature="371:398" placeholder="SELECT * FRO..email..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="bezoeker_home.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/bezoeker_home.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-55.0" vertical-offset="0" max-vertical-offset="2895">
-              <caret line="88" column="69" selection-start-line="88" selection-start-column="69" selection-end-line="88" selection-end-column="69" />
-              <folding>
-                <marker date="1430925197000" expanded="true" signature="184:219" placeholder="SELECT * FRO..bezoeker..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Imd_student.class.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/classes/Imd_student.class.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-11.25" vertical-offset="1440" max-vertical-offset="2145">
-              <caret line="114" column="29" selection-start-line="114" selection-start-column="29" selection-end-line="114" selection-end-column="29" />
-              <folding>
-                <marker date="1430754867000" expanded="true" signature="2055:2198" placeholder="INSERT INTO ..." />
-                <marker date="1430754867000" expanded="true" signature="3067:3133" placeholder="UPDATE stude..." />
-                <marker date="1430754867000" expanded="true" signature="3709:3730" placeholder="SELECT * FRO..student..." />
-                <marker date="1430754867000" expanded="true" signature="3898:3934" placeholder="SELECT * FRO..student..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Date_available.class.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/classes/Date_available.class.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-18.125" vertical-offset="270" max-vertical-offset="885">
-              <caret line="47" column="80" selection-start-line="47" selection-start-column="80" selection-end-line="47" selection-end-column="80" />
-              <folding>
-                <marker date="1430939656000" expanded="true" signature="780:830" placeholder="INSERT INTO ..." />
-                <marker date="1430939656000" expanded="true" signature="1028:1093" placeholder="SELECT DATE_..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf />
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -119,7 +46,6 @@
         <option value="$PROJECT_DIR$/classes/Db.class.php" />
         <option value="$PROJECT_DIR$/classes/Imd_student.class.php" />
         <option value="$PROJECT_DIR$/classes/Admin.class.php" />
-        <option value="$PROJECT_DIR$/css/style.css" />
         <option value="$PROJECT_DIR$/index.php" />
         <option value="$PROJECT_DIR$/js/bootstrap-datepicker.js" />
         <option value="$PROJECT_DIR$/registreer_bezoeker.php" />
@@ -129,9 +55,10 @@
         <option value="$PROJECT_DIR$/login_page.php" />
         <option value="$PROJECT_DIR$/registreer_admin.php" />
         <option value="$PROJECT_DIR$/registreer_student.php" />
+        <option value="$PROJECT_DIR$/student_home.php" />
+        <option value="$PROJECT_DIR$/css/style.css" />
         <option value="$PROJECT_DIR$/admin_home.php" />
         <option value="$PROJECT_DIR$/classes/Date_available.class.php" />
-        <option value="$PROJECT_DIR$/student_home.php" />
       </list>
     </option>
   </component>
@@ -141,8 +68,8 @@
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds">
     <option name="y" value="23" />
-    <option name="width" value="1280" />
-    <option name="height" value="736" />
+    <option name="width" value="1920" />
+    <option name="height" value="1016" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -278,8 +205,8 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1280" height="736" extended-state="6" />
-    <editor active="true" />
+    <frame x="0" y="23" width="1920" height="1016" extended-state="6" />
+    <editor active="false" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -287,7 +214,7 @@
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2109375" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.140625" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -572,14 +499,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/css/style.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="756" max-vertical-offset="1485">
-          <caret line="65" column="30" selection-start-line="65" selection-start-column="30" selection-end-line="65" selection-end-column="30" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/css/bootstrap.min.css">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="13110">
@@ -658,14 +577,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/registreer_bezoeker.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-1.25" vertical-offset="570" max-vertical-offset="1815">
-          <caret line="40" column="93" selection-start-line="40" selection-start-column="93" selection-end-line="40" selection-end-column="93" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/registreer_student.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-16.583334" vertical-offset="772" max-vertical-offset="2190">
@@ -684,37 +595,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/classes/User.class.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.19512194" vertical-offset="0" max-vertical-offset="1740">
-          <caret line="8" column="26" selection-start-line="8" selection-start-column="26" selection-end-line="8" selection-end-column="26" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/bezoeker_home.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-55.0" vertical-offset="0" max-vertical-offset="2895">
-          <caret line="88" column="69" selection-start-line="88" selection-start-column="69" selection-end-line="88" selection-end-column="69" />
-          <folding>
-            <marker date="1430925197000" expanded="true" signature="184:219" placeholder="SELECT * FRO..bezoeker..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/classes/Imd_student.class.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-11.25" vertical-offset="1440" max-vertical-offset="2145">
-          <caret line="114" column="29" selection-start-line="114" selection-start-column="29" selection-end-line="114" selection-end-column="29" />
-          <folding>
-            <marker date="1430754867000" expanded="true" signature="2055:2198" placeholder="INSERT INTO ..." />
-            <marker date="1430754867000" expanded="true" signature="3067:3133" placeholder="UPDATE stude..." />
-            <marker date="1430754867000" expanded="true" signature="3709:3730" placeholder="SELECT * FRO..student..." />
-            <marker date="1430754867000" expanded="true" signature="3898:3934" placeholder="SELECT * FRO..student..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/classes/Admin.class.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.29268292" vertical-offset="840" max-vertical-offset="1500">
@@ -727,34 +607,85 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/css/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="566" max-vertical-offset="1515">
+          <caret line="95" column="58" selection-start-line="95" selection-start-column="58" selection-end-line="95" selection-end-column="58" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/registreer_bezoeker.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.033519555" vertical-offset="570" max-vertical-offset="1815">
+          <caret line="40" column="93" selection-start-line="40" selection-start-column="93" selection-end-line="40" selection-end-column="93" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/classes/Imd_student.class.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-63.541668" vertical-offset="185" max-vertical-offset="2145">
+          <caret line="114" column="29" selection-start-line="114" selection-start-column="29" selection-end-line="114" selection-end-column="29" />
+          <folding>
+            <marker date="1430754867000" expanded="true" signature="-1:-1" placeholder="INSERT INTO ..." />
+            <marker date="1430754867000" expanded="true" signature="-1:-1" placeholder="UPDATE stude..." />
+            <marker date="1430754867000" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..student..." />
+            <marker date="1430754867000" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..student..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/classes/User.class.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.8324022" vertical-offset="845" max-vertical-offset="1740">
+          <caret line="106" column="9" selection-start-line="106" selection-start-column="9" selection-end-line="106" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/student_home.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.5810056" vertical-offset="1415" max-vertical-offset="3090">
+          <caret line="129" column="42" selection-start-line="129" selection-start-column="42" selection-end-line="129" selection-end-column="42" />
+          <folding>
+            <marker date="1430939661000" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..student..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/admin_home.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-19.375" vertical-offset="1995" max-vertical-offset="3615">
-          <caret line="164" column="48" selection-start-line="164" selection-start-column="48" selection-end-line="164" selection-end-column="48" />
+        <state vertical-scroll-proportion="0.5027933" vertical-offset="2025" max-vertical-offset="3750">
+          <caret line="165" column="47" selection-start-line="165" selection-start-column="47" selection-end-line="165" selection-end-column="47" />
           <folding>
-            <marker date="1430926539000" expanded="true" signature="191:223" placeholder="SELECT * FRO..admin..." />
-            <marker date="1430926539000" expanded="true" signature="371:398" placeholder="SELECT * FRO..email..." />
+            <element signature="n#style#0;n#a#0;n#span#0;n#li#0;n#ul#0;n#div#0;n#div#2;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <marker date="1430951847000" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..admin..." />
+            <marker date="1430951847000" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..email..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bezoeker_home.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.79888266" vertical-offset="605" max-vertical-offset="2895">
+          <caret line="88" column="69" selection-start-line="88" selection-start-column="69" selection-end-line="88" selection-end-column="69" />
+          <folding>
+            <marker date="1430925197000" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..bezoeker..." />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/classes/Date_available.class.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-18.125" vertical-offset="270" max-vertical-offset="885">
-          <caret line="47" column="80" selection-start-line="47" selection-start-column="80" selection-end-line="47" selection-end-column="80" />
+        <state vertical-scroll-proportion="0.53072625" vertical-offset="440" max-vertical-offset="1440">
+          <caret line="61" column="42" selection-start-line="61" selection-start-column="42" selection-end-line="61" selection-end-column="42" />
           <folding>
-            <marker date="1430939656000" expanded="true" signature="780:830" placeholder="INSERT INTO ..." />
-            <marker date="1430939656000" expanded="true" signature="1028:1093" placeholder="SELECT DATE_..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/student_home.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5365854" vertical-offset="1590" max-vertical-offset="3090">
-          <caret line="128" column="58" selection-start-line="128" selection-start-column="58" selection-end-line="128" selection-end-column="58" />
-          <folding>
-            <marker date="1430939661000" expanded="true" signature="285:319" placeholder="SELECT * FRO..student..." />
+            <marker date="1430952113000" expanded="true" signature="-1:-1" placeholder="INSERT INTO ..." />
+            <marker date="1430952113000" expanded="true" signature="-1:-1" placeholder="SELECT id,DA..." />
+            <marker date="1430952113000" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..date_available..." />
+            <marker date="1430952113000" expanded="true" signature="-1:-1" placeholder="DELETE FROM ..." />
+            <marker date="1430952113000" expanded="true" signature="-1:-1" placeholder="DELETE FROM ..." />
           </folding>
         </state>
       </provider>
