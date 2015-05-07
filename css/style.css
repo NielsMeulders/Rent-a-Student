@@ -71,7 +71,7 @@ h1 {font-family: "Nexa Bold"; color: #333;margin: 0;}
 /*--Registreer Bezoeker--*/
 .register h1{font-size: 30px;}
 
-#loginwithfb{background-color: red;background-image: url("../img/loginfb.jpg");display: inline-block;height: 50px;width: 260px;text-indent: -99999px}
+#loginwithfb{background-color: red;background-image: url("../img/loginfb.jpg");display: inline-block;background-repeat: no-repeat; background-position:center;background-size: 230px;height: 44px;width: 230px;text-indent: -99999px}
 .regfb {background-color: #F2F2F2;padding: 30px;}
 
 .studarea {text-align: center;width: 100%;max-width: 600px; margin: auto;}

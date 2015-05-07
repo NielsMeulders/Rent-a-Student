@@ -73,7 +73,7 @@ $user = $statement->fetch(PDO::FETCH_ASSOC);
             
           </ul>
           <ul class="nav navbar-nav navbar-right">
-              <li><p><?PHP echo $_SESSION['FULLNAME'] ?></p></li>
+              <li><a><?PHP echo $_SESSION['FULLNAME'] ?></a></li>
               <?PHP $style = "background-image:url('https://graph.facebook.com/". $_SESSION['FBID'] ."/picture');" ?>
               <li class="login_icon" style=<?PHP echo $style ?>></li>
             <li><a class="btn" id="btnlogout" href="logout.php">Logout</a></li>

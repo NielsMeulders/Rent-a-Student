@@ -30,13 +30,6 @@ if (!empty($_POST))
             $_SESSION['loggedIn']=true;
             switch($_POST['type'])
             {
-                case 1:
-                    $_SESSION['type']='bezoeker';
-                    $getId = $conn->prepare("SELECT id FROM bezoeker WHERE email=?");
-                    $getId->execute(array($_POST['email']));
-                    header('location: bezoeker_home.php');
-                    break;
-
                 case 2:
                     $_SESSION['type']='student';
                     $getId = $conn->prepare("SELECT id FROM student WHERE email=?");
@@ -109,7 +102,6 @@ if (!empty($_POST))
                 <div class="form-group">
                     <label for="type">Ik ben een </label>
                     <select name="type" id="type">
-                        <option value="1">bezoeker</option>
                         <option value="2">student</option>
                         <option value="3">administrator</option>
                     </select>

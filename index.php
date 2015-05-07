@@ -153,10 +153,7 @@
             <div id="icon1"></div>
             <h3>Ontdek IMD!</h3>
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. <strong>Quam ratione</strong>, fugiat illum non corporis iure sint fuga tempora pariatur nesciunt repellat error. Non exercitationem adipisci amet voluptate eius earum vero?</p>
-            <div class="col-xs-12 no-padding regfb">
-                <a href="fbconfig.php" id="loginwithfb">Login with Facebook</a>
-
-            </div>
+            <p><a class="btn btn-primary btn-lg" id="loginwithfb" href="fbconfig.php" role="button">Login with Facebook</a></p>
         </div>
        </div><!--end collinks-->
       <div id="colrechts"class="col-sm-6">
