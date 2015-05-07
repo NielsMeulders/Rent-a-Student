@@ -106,7 +106,7 @@
     <script src="js/jssocials.min.js"></script>
 </head>
 <body>
-<div class="container-fluid" >
+<div class="container-fluid footer_with_social" >
     <div class="row"> 
     <div class="col-md-12 no-padding">
         <div id="topbar">
@@ -184,7 +184,7 @@
         </div><!--end relatedlinks-->
     </div><!--end row-->
 
-    <footer class="footer footer_with_social"><div id="share"></div>&copy Thomas More</footer>
+    <footer class="footer"><div id="share"></div>&copy Thomas More</footer>
     <script>  console.log("here");$("#share").jsSocials({shares: ["twitter", "facebook", "googleplus"]});  </script>
 
 </div> <!--end container-->

@@ -44,7 +44,7 @@ $user = $statement->fetch(PDO::FETCH_ASSOC);
 <body>
 
 <?PHP if (!empty($_SESSION['loggedIn']) && $_SESSION['type']=='student'): ?>
-<div class="container-fluid" >
+<div class="container-fluid footer_with_social" >
 
     <!--nav-->
     <nav class="navbar navbar-default navbar-static-top">

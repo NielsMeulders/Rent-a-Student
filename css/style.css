@@ -94,3 +94,5 @@ h1 {font-family: "Nexa Bold"; color: #333;margin: 0;}
 #contactform input, #contactform textarea {margin: 0;text-align: left;}
 
 #list-available-dates {overflow: scroll; max-height: 210px}
+
+.footer_with_social {margin-bottom: 100px;}
