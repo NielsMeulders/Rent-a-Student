@@ -38,8 +38,10 @@ if ( isset( $session ) ) {
 	    $_SESSION['FBID'] = $fbid;           
         $_SESSION['FULLNAME'] = $fbfullname;
 	    $_SESSION['EMAIL'] =  $femail;
+        $_SESSION['type'] ='bezoeker';
+        $_SESSION['loggedIn'] = true;
     /* ---- header location after session ----*/
-  header("Location: registreer_bezoeker.php");
+  header("Location: bezoeker_home.php");
 } else {
   $loginUrl = $helper->getLoginUrl(array('scope'=>'email'));
  header("Location: ".$loginUrl);
