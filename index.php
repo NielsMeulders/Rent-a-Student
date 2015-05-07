@@ -67,7 +67,7 @@
     <!-- Bootstrap -->    
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no;">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
         <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
@@ -106,24 +106,36 @@
     <script src="js/jssocials.min.js"></script>
 </head>
 <body>
-<div class="container-fluid footer_with_social" >
-    <div class="row"> 
-    <div class="col-md-12 no-padding">
-        <div id="topbar">
-           <?PHP if(isset($error)): ?>
-                   
-                   <div class="alert alert-danger" role="alert" style="position: fixed; top: 0; width: 100%; z-index: 101"><?PHP echo $error;?></div>
-                   
-               <?PHP endif; ?>
-            <?PHP if(isset($feedback)): ?>
+<div class="container-fluid " >
+    <nav class="navbar navbar-default navbar-static-top">
+        <?PHP if(isset($error)): ?>
 
-                <div class="alert alert-success" role="alert" style="position: fixed; top: 0; width: 100%; z-index: 101"><?PHP echo $feedback;?></div>
+            <div class="alert alert-danger" role="alert"><?PHP echo $error; ?></div>
 
-            <?PHP endif; ?>
-            <div id="welcomewrap">
-            <a href="login_page.php" class="btn">Login</a>
+        <?PHP endif; ?>
+        <?PHP if(isset($feedback)): ?>
+
+            <div class="alert alert-success" role="alert"><?PHP echo $feedback; ?></div>
+
+        <?PHP endif; ?>
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+
             </div>
+            <div id="navbar" class="navbar-collapse collapse">
+                <a class="navbar-brand" id="logo" href="index.php"><img src="img/logo.svg" alt="Logo"/></a>
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a class="btn" id="btnlogout" href="login_page.php">Login</a></li>
+                </ul>
+            </div><!--/.nav-collapse -->
         </div>
+    </nav><!--end nav-->
 
         <!--jumbohead-->
         <div class="jumbotron" id="jumbohead">

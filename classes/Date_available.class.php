@@ -52,7 +52,7 @@ class Date_available
     public function getAll()
     {
         $conn = Db::getInstance();
-        $allposts = $conn->query("SELECT id,DATE_FORMAT(`date`,'%d-%c-%Y') as date FROM date_available ORDER BY Year(date), Month(date), Day(date)");
+        $allposts = $conn->query("SELECT id,DATE_FORMAT(date,'%d-%c-%Y') as date FROM date_available ORDER BY Year(date), Month(date), Day(date)");
         return $allposts;
     }
 

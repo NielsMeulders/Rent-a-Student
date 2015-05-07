@@ -50,7 +50,7 @@ html {  position: relative;  min-height: 100%;}body { /* Margin bottom by footer
 #relatedlinks,#bezhometitle {width: 100%;background-color:#B3B3B3;-webkit-box-shadow: inset 0px 21px 40px -27px rgba(0,0,0,0.75);
 -moz-box-shadow: inset 0px 21px 40px -27px rgba(0,0,0,0.75);
 box-shadow: inset 0px 21px 30px -27px rgba(0,0,0,0.75);}
-#relatedlinks ul {max-width: 1200px; min-height: 180px; margin: auto;padding: 40px 0 0 0;}
+#relatedlinks ul {max-width: 1200px; min-height: 180px; margin: auto;padding: 40px 0 0 0;padding-bottom: 170px;}
 #relatedlinks ul li{float: left;list-style-type:none;width: 33%;}
 #relatedlinks ul li img {;width:100%;max-width: 160px;padding: 20px;}
 
@@ -96,3 +96,7 @@ h1 {font-family: "Nexa Bold"; color: #333;margin: 0;}
 #list-available-dates {overflow: scroll; max-height: 210px}
 
 .footer_with_social {margin-bottom: 100px;}
+
+.login_icon a:link,.login_icon a:visited,.login_icon a:hover,.login_icon a:active{height: 40px}
+
+#logo img{width: 175px;}

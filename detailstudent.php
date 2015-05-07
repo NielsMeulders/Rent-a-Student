@@ -3,6 +3,14 @@
 include_once("classes/imd_student.class.php");
 session_start();
 
+$conn = Db::getInstance();
+
+$statement = $conn->prepare('SELECT * FROM bezoeker WHERE id=:id');
+
+$statement->bindParam(':id',$_SESSION['id']);
+$statement->execute();
+$user = $statement->fetch(PDO::FETCH_ASSOC);
+
 if (!empty($_GET))
 {
     $a = new Imd_student();
@@ -15,11 +23,11 @@ try
     {
         if (!empty($_POST['message']))
         {
-            $name = $current_student['name'];
+            $name = $user['name'];
             $adr = $current_student['email'];
             $msg = $_POST['message'];
-            $headers = 'From: ' . $current_student['email'] . "\r\n" .
-                'Reply-To: ' . $current_student['email'] . "\r\n";
+            $headers = 'From: ' . $user['email'] . "\r\n" .
+                'Reply-To: ' . $user['email'] . "\r\n";
             mail($adr, "Bericht van " . $name, $msg, $headers);
         }
         else
@@ -109,8 +117,12 @@ catch (Exception $e)
             </div><!--end collinks-->
             <div id="colrechts"class="col-sm-6 text-left">
                 <div class="jumbotron">
-                    <p>Email: <?PHP echo $current_student['email']; ?></p>
-                    <p>Jaar: <?PHP echo $current_student['year']; ?></p>
+
+                    <h3>Meer over mij</h3>
+                    <p><?PHP echo nl2br($current_student['description']); ?></p>
+
+                    <p><?PHP echo $current_student['name']; ?> zit momenteel in het <?PHP echo $current_student['year']; ?>e jaar
+                        en volgt het keuzetraject
                     <?PHP
 
                     switch($current_student['branch'])
@@ -125,16 +137,11 @@ catch (Exception $e)
                     }
 
                     ?>
-                    <p>Opleiding: <?PHP echo $branch ?></p>
+                    <?PHP echo $branch ?></p>
                 </div>
             </div><!--end colrechts-->
         </div><!--end welcomewrap-->
-        <div id="collinks"class="col-sm-12 text-left" >
-            <div class="jumbotron">
-                <h3>Meer over mij</h3>
-                <p><?PHP echo nl2br($current_student['description']); ?></p>
-            </div>
-        </div><!--end collinks-->
+
         <div id="collinks"class="col-sm-6 text-left" >
             <div class="jumbotron">
                 <h3>Contacteer mij</h3>

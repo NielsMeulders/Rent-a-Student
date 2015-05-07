@@ -115,7 +115,6 @@ if (!empty($_POST))
 				  <div class="form-group">
 				    <label for="branch">Keuzerichting</label>
 				    <select name="branch" id="year">
-				        <option value="null"></option>
 				        <option value="1" <?php if($user['branch'] == 1) echo "selected"; ?>>Design</option>
 				        <option value="2" <?php if($user['branch'] == 2) echo "selected"; ?>>Development</option>
 				    </select>

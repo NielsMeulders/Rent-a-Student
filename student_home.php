@@ -16,6 +16,18 @@ $statement->bindParam(':id',$_SESSION['id']);
 $statement->execute();
 $user = $statement->fetch(PDO::FETCH_ASSOC);
 
+if(!empty($_POST['date_submit']))
+{
+    $statement = $conn->prepare('INSERT INTO date_gids_available (student_id,date_id) VALUES  (:stud,:date)');
+
+    $statement->bindValue(':stud',$user['id']);
+    $statement->bindValue(':date',$_POST['date_choose']);
+    $statement->execute();
+}
+
+$conn2 = Db::getInstance();
+$dates_available = $conn2->query("SELECT DATE_FORMAT(date,'%d-%c-%Y') as date, date_gids_available.date_id as gids_id FROM date_available INNER JOIN date_gids_available on date_available.id = date_gids_available.date_id WHERE date_gids_available.student_id = 6");
+
 
 ?>
 
@@ -23,7 +35,7 @@ $user = $statement->fetch(PDO::FETCH_ASSOC);
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Home | Bezoeker</title>
+    <title>Home | Student</title>
     <script src="js/script.js"></script>
     <!-- Bootstrap -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -76,7 +88,7 @@ $user = $statement->fetch(PDO::FETCH_ASSOC);
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
                     <?PHP $style = "background-image:url(". $user['picture'] .");" ?>
-                    <li class="login_icon" style=<?PHP echo $style ?>></li>
+                    <li class="login_icon" style=<?PHP echo $style ?>><a href="student_aanpassen.php"></a></li>
                     <li><a class="btn" id="btnlogout" href="logout.php">Logout</a></li>
                 </ul>
             </div><!--/.nav-collapse -->
@@ -92,50 +104,40 @@ $user = $statement->fetch(PDO::FETCH_ASSOC);
         <div id="welcomewrap">
             <div id="collinks"class="col-sm-6 text-left" >
                 <div class="jumbotron">
-                    <?PHP $style = "background-image:url(".$user['picture'].");" ?>
-                    <div class="profile_pic_full" style=<?PHP echo $style?>;></div>
+                    <h3>Recente boekingen</h3>
                 </div>
             </div><!--end collinks-->
             <div id="colrechts"class="col-sm-6 text-left">
                 <div class="jumbotron">
-                    <p>Email: <?PHP echo $user['email']; ?></p>
-                    <p>Jaar: <?PHP echo $user['year']; ?></p>
-                    <?PHP
-
-                        switch($user['branch'])
-                        {
-                            case '1':
-                                $branch = "Design";
-                                break;
-
-                            case '2':
-                                $branch = "Development";
-                                break;
-                        }
-
-                    ?>
-                    <p>Opleiding: <?PHP echo $branch ?></p>
+                    <h3>Laatste reviews</h3>
                 </div>
             </div><!--end colrechts-->
 
         <div class="clearfix"></div>
-        <div id="collinks"class="col-sm-12 text-left" >
-            <div class="jumbotron">
-                <h3>Meer over mij</h3>
-                <p><?PHP echo nl2br($user['description']); ?></p>
-            </div>
-        </div><!--end collinks-->
-            <div id="collinks"class="col-sm-12 text-left" >
+            <div id="collinks"class="col-sm-6 text-left" >
                 <div class="jumbotron">
-                    <h3>Nieuwe beschikbaarheid</h3>
-                    <select>
-                        <?PHP while($date = $allDates->fetch(PDO::FETCH_ASSOC)): ?>
-                            <option><?PHP echo $date['date'] ?></option>
-                        <?PHP endwhile; ?>
-                    </select>
-
+                    <h3>Datums beschikbaar</h3>
+                    <ul class="list-group">
+                    <?PHP while($date_available = $dates_available->fetch()): ?>
+                        <li class="list-group-item"><?PHP echo $date_available['date'] ?><span class="badge"><a style="color: #F2F2F2" href="?id=<?PHP echo $date_available['gids_id'] ?>">delete</a></span></li>
+                    <?PHP endwhile; ?>
+                    </ul>
                 </div>
             </div><!--end collinks-->
+            <div id="colrechts"class="col-sm-6 text-left" >
+                <div class="jumbotron">
+                    <h3>Nieuwe beschikbaarheid</h3>
+
+                    <form action="" method="post" enctype="multipart/form-data" id="sandbox-container">
+                    <select name="date_choose">
+                        <?PHP while($date = $allDates->fetch(PDO::FETCH_ASSOC)): ?>
+                            <option value="<?PHP echo $date['id'] ?>"><?PHP echo $date['date'] ?></option>
+                        <?PHP endwhile; ?>
+                    </select>
+                        <input type="submit" name="date_submit" value="Voeg toe" class="btn btn-default"/>
+                    </form>
+                </div>
+            </div><!--end colrechts-->
         </div><!--end welcomewrap-->
     </div><!-- end row -->
 
