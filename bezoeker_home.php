@@ -33,6 +33,10 @@ $user = $statement->fetch(PDO::FETCH_ASSOC);
           <![endif]-->
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="css/jssocials.css" />
+    <link rel="stylesheet" type="text/css" href="css/jssocials-theme-flat.css" />
+    <script src="js/jssocials.min.js"></script>
 </head>
 
 <body>
@@ -131,7 +135,8 @@ $user = $statement->fetch(PDO::FETCH_ASSOC);
             </ul>
         </div><!--end relatedlinks-->
     </div><!--end row-->
-    <footer class="footer">&copy Thomas More</footer>
+    <footer class="footer"><div id="share"></div>&copy Thomas More</footer>
+    <script>  $("#share").jsSocials({shares: ["twitter", "facebook", "googleplus"]});  </script>
 
 <?PHP else: ?>
     <nav class="navbar navbar-default navbar-static-top">

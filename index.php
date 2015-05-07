@@ -100,6 +100,10 @@
 
         feed.run();
     </script>
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="css/jssocials.css" />
+    <link rel="stylesheet" type="text/css" href="css/jssocials-theme-flat.css" />
+    <script src="js/jssocials.min.js"></script>
 </head>
 <body>
 <div class="container-fluid" >
@@ -179,7 +183,9 @@
             </ul>
         </div><!--end relatedlinks-->
     </div><!--end row-->
-    <footer class="footer">&copy Thomas More</footer>
+
+    <footer class="footer footer_with_social"><div id="share"></div>&copy Thomas More</footer>
+    <script>  console.log("here");$("#share").jsSocials({shares: ["twitter", "facebook", "googleplus"]});  </script>
 
 </div> <!--end container-->
 </body>
