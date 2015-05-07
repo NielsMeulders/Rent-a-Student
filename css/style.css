@@ -76,7 +76,7 @@ h1 {font-family: "Nexa Bold"; color: #333;margin: 0;}
 
 .studarea {text-align: center;width: 100%;max-width: 600px; margin: auto;}
 
-#instafeed {max-height: 300px; overflow: hidden; margin-top: 40px; }
+#instafeed {max-height: 180px; overflow: hidden; padding-top: 40px; }
 #instafeed a img {-webkit-filter: grayscale(100%);}
 
 /*instafeed*/
