@@ -8,8 +8,9 @@ body {text-align:center;font-family: "Nexa Light", sans-serif;background-color:#
 .jumbotron {border-radius: 0;margin-bottom:0;background-color: transparent;}
 .row{margin: 0; }.rowhomepage{background-color: #F2F2F2;}
 .jumbotron h1{font-family: "Nexa Bold"; color: #EDEDED;}	h3{font-family: "Nexa Bold";font-size: 28px;} .jumbotron h2{color:#EDEDED;}
-#collinks, #colrechts {;background-color: #F2F2F2; min-height: 100px; opacity: 0.8}
-#jumbohead {margin-bottom: 0;padding: 120px;margin: 0;border-radius: 0;background-image: url("../img/banner.jpg");background-attachment: fixed;background-size: cover;background-position: bottom;background-color:#B3B3B3;-webkit-box-shadow: inset 0px 21px 40px -27px rgba(0,0,0,0.75);
+#collinks, #colrechts {background-color: #F2F2F2; min-height: 100px; opacity: 0.8; padding: 0 50px}
+#collinks p, #colrechts p {text-align: left}
+#jumbohead {margin-bottom: 0;padding: 120px;margin: 0;border-radius: 0;background-image: url("../img/banner.jpg");background-attachment: fixed;background-size: cover;background-position: left;background-color:#B3B3B3;-webkit-box-shadow: inset 0px 21px 40px -27px rgba(0,0,0,0.75);
 -moz-box-shadow: inset 0px 21px 40px -27px rgba(0,0,0,0.75);
 box-shadow: inset 0px 21px 40px -27px rgba(0,0,0,0.75);}
 #icon1, #icon2{display:block;height:64px;width:64px;margin:auto;background-repeat: no-repeat;}
@@ -36,7 +37,7 @@ box-shadow: inset 0px 21px 40px -27px rgba(0,0,0,0.75);}
 
 
 /*--form--*/
-.form-control{text-align: center;max-width: 600px;border-radius: 0;}
+.form-control{text-align: left;max-width: 600px;border-radius: 0;}
 input{margin: auto;border: none;}
 
 
@@ -55,9 +56,10 @@ box-shadow: inset 0px 21px 30px -27px rgba(0,0,0,0.75);}
 #relatedlinks ul li img {;width:100%;max-width: 160px;padding: 20px;}
 
 /*--Login--*/
-#jumbologin {padding: 20px;margin: 0;border-radius: 0;background-image: url("../img/banner.jpg");background-attachment: fixed;background-size: cover;background-position: bottom;background-color:#B3B3B3;-webkit-box-shadow: inset 0px 21px 40px -27px rgba(0,0,0,0.75);}
+#jumbologin {padding: 20px;margin: 0;border-radius: 0;background-image: url("../img/banner.jpg");background-attachment: fixed;background-size: cover;background-position: left;background-color:#B3B3B3;-webkit-box-shadow: inset 0px 21px 40px -27px rgba(0,0,0,0.75);}
 
 #loginform {background-color: #F2F2F2;padding: 20px;}
+#loginform label {font-weight: 100;}
 
 /*--Home Visitor--*/
 #btnlogout{ padding: 8px;margin: 7px;color: white;}
@@ -74,7 +76,7 @@ h1 {font-family: "Nexa Bold"; color: #333;margin: 0;}
 #loginwithfb{background-color: red;background-image: url("../img/loginfb.jpg");display: inline-block;background-repeat: no-repeat; background-position:center;background-size: 230px;height: 44px;width: 230px;text-indent: -99999px}
 .regfb {background-color: #F2F2F2;padding: 30px;}
 
-.studarea {text-align: center;width: 100%;max-width: 600px; margin: auto;}
+.studarea {text-align: left;width: 100%;max-width: 600px; margin: auto;}
 
 #instafeed {max-height: 180px; overflow: hidden; padding-top: 40px; }
 #instafeed a img {-webkit-filter: grayscale(100%);}
@@ -87,8 +89,6 @@ h1 {font-family: "Nexa Bold"; color: #333;margin: 0;}
 
 .profile_pic_full {height: 400px;width:400px;max-width:100%;background-size: cover; background-position: center center}
 
-.studarea textarea, .form-control textarea {text-align: left;}
-
 #contactform {padding: 20px 0;}
 
 #contactform input, #contactform textarea {margin: 0;text-align: left;}
@@ -100,3 +100,5 @@ h1 {font-family: "Nexa Bold"; color: #333;margin: 0;}
 .login_icon a:link,.login_icon a:visited,.login_icon a:hover,.login_icon a:active{height: 40px}
 
 #logo img{width: 175px;}
+
+p#center {text-align: center}

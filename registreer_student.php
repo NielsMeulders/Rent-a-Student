@@ -62,9 +62,35 @@ $all_users = $b->getAll();
 <body>
     
 <div class="container-fluid">
+    <nav class="navbar navbar-default navbar-static-top">
+        <?PHP if(isset($error)): ?>
+
+            <div class="alert alert-danger" role="alert"><?PHP echo $error; ?></div>
+
+        <?PHP endif; ?>
+        <?PHP if(isset($feedback)): ?>
+
+            <div class="alert alert-success" role="alert"><?PHP echo $feedback; ?></div>
+
+        <?PHP endif; ?>
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+
+            </div>
+            <div id="navbar" class="navbar-collapse collapse">
+                <a class="navbar-brand" id="logo" href="index.php"><img src="img/logo.svg" alt="Logo"/></a>
+            </div><!--/.nav-collapse -->
+        </div>
+    </nav><!--end nav-->
+
     <div class="row">
     	<div class="col-xs-12 no-padding" >
-    		 <div id="topbar"></div>
             <div class="jumbotron register" id="jumbologin"><h1>Registreer als student</h1></div> <!--end jumbotron-->
 
             <?PHP if(isset($error)): ?>
@@ -95,7 +121,7 @@ $all_users = $b->getAll();
 				    <input type="password" class="form-control" id="pass_rep" name="pass_rep">
 				  </div>
 				  <div class="form-group">
-				    <label for="year">Opleidingsjaar</label>
+				    <label for="year">Opleidingsjaar</label><br/>
 				    <select name="year" id="year" >
 				        <option value="1">1</option>
 				        <option value="2">2</option>
@@ -103,7 +129,7 @@ $all_users = $b->getAll();
 				    </select >
 				  </div>
 				  <div class="form-group">
-				    <label for="branch">Keuzerichting</label>
+				    <label for="branch">Keuzerichting</label><br/>
 				    <select name="branch" id="year">
 				        <option value="null"></option>
 				        <option value="1">Design</option>

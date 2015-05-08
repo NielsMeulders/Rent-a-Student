@@ -138,10 +138,12 @@
     </nav><!--end nav-->
 
         <!--jumbohead-->
-        <div class="jumbotron" id="jumbohead">
+        <div class="jumbotron intro_picture" id="jumbohead">
         
             <h1>Welkom!</h1>
-            <p><h2>Ontdek de wereld van <strong>Interactive Multimedia Design!</strong></h2></p>
+            <h2>Graag een <strong>openlesdag</strong> meevolgen?</h2>
+            <h2>Kies hier je <strong>peter</strong> of <strong>meter</strong> en</h2>
+            <h2>ontdek de wereld van <strong>Interactive Multimedia Design!</strong></h2>
         </div> <!--end jumbotron-->
     </div>
      </div><!--end row-->
@@ -152,7 +154,9 @@
         <div class="jumbotron">
             <div id="icon1"></div>
             <h3>Ontdek IMD!</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. <strong>Quam ratione</strong>, fugiat illum non corporis iure sint fuga tempora pariatur nesciunt repellat error. Non exercitationem adipisci amet voluptate eius earum vero?</p>
+            <p>Ga je verder studeren en ben je net als ons helemaal <strong>zot van pixels en programmeren?</strong> In de professionele bachelor-opleiding Interactive Multimedia Design leer je de volledige mix tussen <strong>web design en development.</strong></p>
+            <p>Om je hierop voor te bereiden organiseren wij <strong>openlesdagen</strong> waar je samen met je peter of meter alles leert kennen over IMD.</p>
+            <p>Registreer je hieronder snel en gemakkelijk via Facebook.</p>
             <p><a class="btn btn-primary btn-lg" id="loginwithfb" href="fbconfig.php" role="button">Login with Facebook</a></p>
         </div>
        </div><!--end collinks-->
@@ -160,10 +164,12 @@
         <div class="jumbotron">
             <div id="icon2"></div>
             <h3>Start als gids</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quam ratione, fugiat illum non corporis iure sint fuga tempora pariatur nesciunt repellat error. Non exercitationem adipisci amet voluptate eius earum vero?</p>
+            <p>Om de potentieel <strong>nieuwe generatie IMD'ers</strong> klaar te stomen voor onze richting zijn de huidige studenten onze eerste hulp.</p>
+            <p>Zie jij het zitten om jouw <strong>passie</strong> uit IMD te delen met jonge pixel-freaks? Registreer je dan hier en stel je beschikbaar als <strong>peter of meter</strong>!</p>
             <p><a class="btn btn-primary btn-lg" href="registreer_student.php" role="button">Registreer!</a></p>
         </div>
-       </div><!--end colrechts-->       
+       </div><!--end colrechts-->
+        <div class="clearfix"></div>
        <div class="jumbotron">
             <form action="" method="post">
             <p>Blijf op de hoogte van al onze <strong>updates</strong></p>
@@ -187,6 +193,7 @@
 
     <div class="row" >        
         <div class="col-md-12" id="relatedlinks">
+            <h3>Instagram met ons mee! &#35;WeAreImd</h3>
             <div id="instafeed"></div>
             <ul>
                 <li><a href="http://www.thecreativitygym.be/"><img src="img/gym_logo.png" alt="Creativity Gym logo"></a></li>
