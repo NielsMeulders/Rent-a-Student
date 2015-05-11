@@ -2,10 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6313ee07-faa8-4d25-ba5f-7c6a283132fa" name="Default" comment="added class">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/classes/Date_available.class.php" afterPath="$PROJECT_DIR$/classes/Date_available.class.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin_home.php" afterPath="$PROJECT_DIR$/admin_home.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/detailstudent.php" afterPath="$PROJECT_DIR$/detailstudent.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.php" afterPath="$PROJECT_DIR$/index.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/style.css" afterPath="$PROJECT_DIR$/css/style.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="Rent-a-Student.iws" />
@@ -31,6 +29,29 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
+      <file leaf-file-name="index.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/index.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-11.25" vertical-offset="2685" max-vertical-offset="3300">
+              <caret line="197" column="43" selection-start-line="197" selection-start-column="43" selection-end-line="197" selection-end-column="43" />
+              <folding>
+                <marker date="1431351890000" expanded="true" signature="831:850" placeholder="SELECT * FRO..email..." />
+                <marker date="1431351890000" expanded="true" signature="1173:1215" placeholder="INSERT INTO ..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="style.css" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/css/style.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.9061033" vertical-offset="1056" max-vertical-offset="1725">
+              <caret line="109" column="26" selection-start-line="109" selection-start-column="26" selection-end-line="109" selection-end-column="26" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="admin_home.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/admin_home.php">
           <provider selected="true" editor-type-id="text-editor">
@@ -60,10 +81,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="detailstudent.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="detailstudent.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/detailstudent.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.6585366" vertical-offset="2055" max-vertical-offset="3645">
+            <state vertical-scroll-proportion="-16.875" vertical-offset="2055" max-vertical-offset="3645">
               <caret line="164" column="42" selection-start-line="164" selection-start-column="42" selection-end-line="164" selection-end-column="42" />
               <folding>
                 <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -146,12 +167,12 @@
         <option value="$PROJECT_DIR$/login_page.php" />
         <option value="$PROJECT_DIR$/registreer_student.php" />
         <option value="$PROJECT_DIR$/bezoeker_home.php" />
-        <option value="$PROJECT_DIR$/css/style.css" />
         <option value="$PROJECT_DIR$/admin_home.php" />
-        <option value="$PROJECT_DIR$/index.php" />
         <option value="$PROJECT_DIR$/classes/Date_available_student.class.php" />
         <option value="$PROJECT_DIR$/classes/Date_available.class.php" />
         <option value="$PROJECT_DIR$/detailstudent.php" />
+        <option value="$PROJECT_DIR$/index.php" />
+        <option value="$PROJECT_DIR$/css/style.css" />
       </list>
     </option>
   </component>
@@ -216,7 +237,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="classes" />
+              <option name="myItemId" value="css" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -691,25 +712,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.33333334" vertical-offset="2180" max-vertical-offset="3240">
-          <caret line="159" column="14" selection-start-line="159" selection-start-column="14" selection-end-line="159" selection-end-column="14" />
-          <folding>
-            <marker date="1431349824000" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..email..." />
-            <marker date="1431349824000" expanded="true" signature="-1:-1" placeholder="INSERT INTO ..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/css/style.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.2550861" vertical-offset="743" max-vertical-offset="1635">
-          <caret line="103" column="1" selection-start-line="103" selection-start-column="1" selection-end-line="103" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/classes/Bezoeker.class.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-20.0" vertical-offset="0" max-vertical-offset="810">
@@ -771,7 +773,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/detailstudent.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6585366" vertical-offset="2055" max-vertical-offset="3645">
+        <state vertical-scroll-proportion="-16.875" vertical-offset="2055" max-vertical-offset="3645">
           <caret line="164" column="42" selection-start-line="164" selection-start-column="42" selection-end-line="164" selection-end-column="42" />
           <folding>
             <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -824,6 +826,25 @@
             <marker date="1431351391000" expanded="true" signature="8800:9306" placeholder="..." />
             <marker date="1431351391000" expanded="true" signature="8821:9287" placeholder="..." />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-11.25" vertical-offset="2685" max-vertical-offset="3300">
+          <caret line="197" column="43" selection-start-line="197" selection-start-column="43" selection-end-line="197" selection-end-column="43" />
+          <folding>
+            <marker date="1431351890000" expanded="true" signature="831:850" placeholder="SELECT * FRO..email..." />
+            <marker date="1431351890000" expanded="true" signature="1173:1215" placeholder="INSERT INTO ..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.9061033" vertical-offset="1056" max-vertical-offset="1725">
+          <caret line="109" column="26" selection-start-line="109" selection-start-column="26" selection-end-line="109" selection-end-column="26" />
+          <folding />
         </state>
       </provider>
     </entry>

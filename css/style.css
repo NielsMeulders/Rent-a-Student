@@ -102,3 +102,9 @@ h1 {font-family: "Nexa Bold"; color: #333;margin: 0;}
 #logo img{width: 175px;}
 
 p#center {text-align: center}
+
+#footer_images td{vertical-align: middle}
+
+#footer_images td img{width: 120px}
+
+.table{margin-bottom: 50px}

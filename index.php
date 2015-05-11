@@ -195,11 +195,15 @@
         <div class="col-md-12" id="relatedlinks">
             <h3>Instagram met ons mee! &#35;WeAreImd</h3>
             <div id="instafeed"></div>
-            <ul>
-                <li><a href="http://www.thecreativitygym.be/"><img src="img/gym_logo.png" alt="Creativity Gym logo"></a></li>
-                <li><a id="weareimd" href="http://www.weareimd.be/"><img src="img/weareimd_logo.svg" alt="We Are IMD logo"></a></li>
-                <li><a id="thomasmore" href="http://www.thomasmore.be/interactive-multimedia-design-imd"><img src="img/thomasmore_logo.png" alt="Thomas More logo"></a></li>
-            </ul>
+            <table class="table" id="footer_images">
+                <tbody>
+                <tr>
+                    <td><a href="http://www.thecreativitygym.be/"><img src="img/gym_logo.png" alt="Creativity Gym logo"></a></td>
+                    <td><a id="weareimd" href="http://www.weareimd.be/"><img src="img/weareimd_logo.svg" alt="We Are IMD logo"></a></td>
+                    <td><a id="thomasmore" href="http://www.thomasmore.be/interactive-multimedia-design-imd"><img src="img/thomasmore_logo.png" alt="Thomas More logo"></a></td>
+                </tr>
+                </tbody>
+            </table>
         </div><!--end relatedlinks-->
     </div><!--end row-->
 
