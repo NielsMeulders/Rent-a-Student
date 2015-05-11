@@ -164,7 +164,7 @@
         <div class="jumbotron">
             <div id="icon2"></div>
             <h3>Start als gids</h3>
-            <p>Om de potentieel <strong>nieuwe generatie IMD'ers</strong> klaar te stomen voor onze richting zijn de huidige studenten onze eerste hulp.</p>
+            <p>Om de potentieel <strong>nieuwe generatie IMD'ers</strong> klaar te stomen voor onze richting zijn de huidige studenten onze eerste hulp en daarom hebben we jouw hulp nodig.</p>
             <p>Zie jij het zitten om jouw <strong>passie</strong> uit IMD te delen met jonge pixel-freaks? Registreer je dan hier en stel je beschikbaar als <strong>peter of meter</strong>!</p>
             <p><a class="btn btn-primary btn-lg" href="registreer_student.php" role="button">Registreer!</a></p>
         </div>

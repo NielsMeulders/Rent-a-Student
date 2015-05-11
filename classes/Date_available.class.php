@@ -66,7 +66,7 @@ class Date_available
     public function remove($p_vValue)
     {
         $conn = Db::getInstance();
-        $allposts = $conn->query("DELETE FROM date_available WHERE id=$p_vValue;");
+        $conn->query("DELETE FROM date_available WHERE id=$p_vValue;");
     }
 
     public function checkDate($p_sDate)
@@ -84,6 +84,15 @@ class Date_available
         }
 
         return $ret;
+    }
+
+    public function get_dates_for_student($p_vValue)
+    {
+        $conn = Db::getInstance();
+        $page_id = $_GET['id'];
+
+        return $dates_available;
+
     }
 
 }

@@ -38,7 +38,7 @@ catch (Exception $e)
 }
 }
 
-if(!empty($_GET))
+if(!empty($_GET['id']))
 {
     $d->remove($_GET['id']);
     header('location: admin_home.php');

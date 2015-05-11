@@ -1,6 +1,7 @@
 <?PHP
 
-include_once("classes/imd_student.class.php");
+include_once("classes/Imd_student.class.php");
+include_once("classes/Date_available.class.php");
 session_start();
 
 $conn = Db::getInstance();
@@ -10,6 +11,9 @@ $statement = $conn->prepare('SELECT * FROM bezoeker WHERE id=:id');
 $statement->bindParam(':id',$_SESSION['id']);
 $statement->execute();
 $user = $statement->fetch(PDO::FETCH_ASSOC);
+
+$page_id = $_GET['id'];
+$dates_available = $conn->query("SELECT * FROM date_gids_available INNER JOIN date_available ON date_gids_available.date_id = date_available.id WHERE student_id = $page_id");
 
 if (!empty($_GET))
 {
@@ -23,11 +27,11 @@ try
     {
         if (!empty($_POST['message']))
         {
-            $name = $user['name'];
+            $name = $_SESSION['FULLNAME'];
             $adr = $current_student['email'];
             $msg = $_POST['message'];
-            $headers = 'From: ' . $user['email'] . "\r\n" .
-                'Reply-To: ' . $user['email'] . "\r\n";
+            $headers = 'From: ' . $_SESSION['EMAIL'] . "\r\n" .
+                'Reply-To: ' . $_SESSION['EMAIL'] . "\r\n";
             mail($adr, "Bericht van " . $name, $msg, $headers);
         }
         else
@@ -122,6 +126,7 @@ catch (Exception $e)
                     <p><?PHP echo nl2br($current_student['description']); ?></p>
 
                     <p><?PHP echo $current_student['name']; ?> zit momenteel in het <?PHP echo $current_student['year']; ?>e jaar
+                        <?PHP if (isset($current_student['branch'])): ?>
                         en volgt het keuzetraject
                     <?PHP
 
@@ -138,6 +143,7 @@ catch (Exception $e)
 
                     ?>
                     <?PHP echo $branch ?></p>
+                    <?PHP endif; ?>
                 </div>
             </div><!--end colrechts-->
         </div><!--end welcomewrap-->
@@ -156,8 +162,12 @@ catch (Exception $e)
         </div><!--end collinks-->
         <div id="colrechts"class="col-sm-6 text-left" >
             <div class="jumbotron">
-                <h3>Mijn beschikbare uren</h3>
-
+                <h3>Mijn beschikbare dagen</h3>
+                <ul class="list-group" id="list-available-dates">
+                    <?PHP while($date = $dates_available->fetch(PDO::FETCH_ASSOC)): ?>
+                        <li class="list-group-item"><?PHP echo $date['date'] ?></li>
+                    <?PHP endwhile; ?>
+                </ul>
             </div>
         </div><!--end collinks-->
     </div><!-- end row -->
