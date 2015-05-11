@@ -7,7 +7,10 @@ body {text-align:center;font-family: "Nexa Light", sans-serif;background-color:#
 .container-fluid {padding: 0;}
 .jumbotron {border-radius: 0;margin-bottom:0;background-color: transparent;}
 .row{margin: 0; }.rowhomepage{background-color: #F2F2F2;}
-.jumbotron h1{font-family: "Nexa Bold"; color: #EDEDED;}	h3{font-family: "Nexa Bold";font-size: 28px;} .jumbotron h2{color:#EDEDED;}
+.jumbotron h1{font-family: "Nexa Bold"; color: #EDEDED;}
+h3{font-family: "Nexa Bold";font-size: 28px;}
+h4{font-family: "Nexa Bold";font-size: 22px;}
+.jumbotron h2{color:#EDEDED;}
 #collinks, #colrechts {background-color: #F2F2F2; min-height: 100px; opacity: 0.8; padding: 0 50px}
 #collinks p, #colrechts p {text-align: left}
 #jumbohead {margin-bottom: 0;padding: 120px;margin: 0;border-radius: 0;background-image: url("../img/banner.jpg");background-attachment: fixed;background-size: cover;background-position: left;background-color:#B3B3B3;-webkit-box-shadow: inset 0px 21px 40px -27px rgba(0,0,0,0.75);
@@ -42,7 +45,7 @@ input{margin: auto;border: none;}
 
 
 /*--Sticky footer-- */
-.footer{width:100%;background-color:#377BA5;padding: 20px;color: white;font-family: "Nexa Bold";}
+.footer{width:100%;background-color:#374550;padding: 20px;color: white;font-family: "Nexa Bold";}
 html {  position: relative;  min-height: 100%;}body { /* Margin bottom by footer height */  margin-bottom: 60px;}
 .footer {  position: absolute;  bottom: 0;  width: 100%;  /* Set the fixed height of the footer here */ }
 
@@ -103,8 +106,12 @@ h1 {font-family: "Nexa Bold"; color: #333;margin: 0;}
 
 p#center {text-align: center}
 
-#footer_images td{vertical-align: middle}
+#footer_images td{vertical-align: middle; border: none}
 
 #footer_images td img{width: 120px}
 
 .table{margin-bottom: 50px}
+
+.btn_center{text-align: center;}
+
+.fullwidth{width: 100%}

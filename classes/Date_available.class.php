@@ -56,6 +56,13 @@ class Date_available
         return $allposts;
     }
 
+    public function getAllJoin()
+    {
+        $conn = Db::getInstance();
+        $allposts = $conn->query("SELECT DATE_FORMAT(date,'%d-%c-%Y') as date, date_available.id as id FROM date_available LEFT JOIN date_gids_available ON date_available.id = date_gids_available.date_id WHERE date_gids_available.date_id IS NULL ORDER BY Year(date), Month(date), Day(date)");
+        return $allposts;
+    }
+
     public function getAllOriginal()
     {
         $conn = Db::getInstance();
@@ -85,16 +92,6 @@ class Date_available
 
         return $ret;
     }
-
-    public function get_dates_for_student($p_vValue)
-    {
-        $conn = Db::getInstance();
-        $page_id = $_GET['id'];
-
-        return $dates_available;
-
-    }
-
 }
 
 ?>

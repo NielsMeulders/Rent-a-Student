@@ -15,12 +15,22 @@ $statement->bindParam(':id',$_SESSION['id']);
 $statement->execute();
 $user = $statement->fetch(PDO::FETCH_ASSOC);
 
-$all_emails = $conn->query('SELECT * FROM email LIMIT 5');
+$get_count = $conn->query('SELECT count(*) as email FROM email');
+$count_email = $get_count->fetch();
 
-if (isset($_REQUEST['download']))
+$get_count = $conn->query('SELECT count(*) as aantal FROM student');
+$count_students = $get_count->fetch();
+
+if (isset($_REQUEST['download_newsletter']))
 {
-    $u->download();
-    $ready = true;
+    $u->download_newsletter();
+    $ready_newsletter = true;
+}
+
+if (isset($_REQUEST['download_students']))
+{
+    $u->download_students();
+    $ready_students = true;
 }
 
 
@@ -84,12 +94,12 @@ if(!empty($_GET['id']))
     <nav class="navbar navbar-default navbar-static-top">
         <?PHP if(isset($error)): ?>
 
-            <div class="alert alert-danger" role="alert"><?PHP echo $error; ?></div>
+            <div class="alert alert-danger" role="alert"><?PHP echo $error?></div>
 
         <?PHP endif; ?>
         <?PHP if(isset($feedback)): ?>
 
-            <div class="alert alert-success" role="alert"><?PHP echo $feedback; ?></div>
+            <div class="alert alert-success" role="alert"><?PHP echo $feedback?></div>
 
         <?PHP endif; ?>
         <div class="container">
@@ -128,19 +138,28 @@ if(!empty($_GET['id']))
             </div><!--end collinks-->
             <div id="colrechts"class="col-sm-6 text-left">
                 <div class="jumbotron">
-                    <h3>Email-adressen nieuwsbrief</h3>
-                    <?PHP
-                        echo '<ul class="list-group">';
-                        while ($single_email = $all_emails->fetch(PDO::FETCH_ASSOC))
-                        {
-                            echo '<li class="list-group-item">' . $single_email['email'] . '</li>';
-                        }
-                        echo '</ul>';
-                    ?>
-                    <form action="">
-                    <input type="submit" name="download" value="Create download" />
-                    </form>
-                    <?PHP if (isset($ready)): echo '<a download href="emails.txt">Download file</a>'; endif; ?>
+                    <h3>Statistieken</h3>
+                    <div id="collinks" class="col-sm-6 text-left">
+                        <h4>Nieuwsbrief</h4>
+                        <?PHP
+                        echo '<li class="list-group-item text-center">' . $count_email['email'] . '</li>';
+                        ?>
+                        <form action="">
+                            <input type="submit" name="download_newsletter" value="Download" class="fullwidth"/>
+                        </form>
+                        <?PHP if (isset($ready_newsletter)): echo '<a download href="emails.txt">Download file</a>'; endif; ?>
+                    </div>
+
+                    <div id="colrechts" class="col-sm-6 text-left">
+                        <h4>Studenten</h4>
+                        <?PHP
+                        echo '<li class="list-group-item text-center">' . $count_students['aantal'] . '</li>';
+                        ?>
+                        <form action="">
+                            <input type="submit" name="download_students" value="Download" class="fullwidth"/>
+                        </form>
+                        <?PHP if (isset($ready_students)): echo '<a download href="students.txt">Download file</a>'; endif; ?>
+                    </div>
                 </div>
             </div><!--end colrechts-->
             <div id="collinks"class="col-sm-6 text-left" >

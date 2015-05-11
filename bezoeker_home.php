@@ -113,7 +113,7 @@ $user = $statement->fetch(PDO::FETCH_ASSOC);
 
                 <p><?php echo substr($gebruiker['description'], 0, 100) ."..."?></p>
 
-                <p><a class="btn btn-primary btn-lg" href="detailstudent.php?id=<?php echo $gebruiker['id']?>" role="button">Meer info</a></p>
+                <a class="btn btn-primary btn-lg" href="detailstudent.php?id=<?php echo $gebruiker['id']?>" role="button">Meer info</a>
        </div><!--end collinks-->
 
     <?php endwhile; ?>

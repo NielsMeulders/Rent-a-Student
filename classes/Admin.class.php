@@ -77,11 +77,24 @@ class Admin extends User
         }
     }
 
-    public function download()
+    public function download_newsletter()
     {
         $conn = Db::getInstance();
         $all_emails = $conn->query('SELECT * FROM email');
         $myfile = fopen("emails.txt", "w") or die("Unable to open file!");
+        while ($single_email = $all_emails->fetch(PDO::FETCH_ASSOC))
+        {
+            $txt = $single_email['email'] . "\n";
+            fwrite($myfile, $txt);
+        }
+        fclose($myfile);
+    }
+
+    public function download_students()
+    {
+        $conn = Db::getInstance();
+        $all_emails = $conn->query('SELECT email FROM student');
+        $myfile = fopen("students.txt", "w") or die("Unable to open file!");
         while ($single_email = $all_emails->fetch(PDO::FETCH_ASSOC))
         {
             $txt = $single_email['email'] . "\n";

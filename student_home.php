@@ -1,32 +1,50 @@
 <?PHP
 include_once('classes/Imd_student.class.php');
 include_once('classes/Date_available.class.php');
-session_start();
-$a = new Imd_student();
-$allstudents = $a->getAll();
 
-$d = new Date_available();
-$allDates = $d->getAll();
+try {
+    session_start();
 
-$conn = Db::getInstance();
+    $a = new Imd_student();
+    $allstudents = $a->getAll();
 
-$statement = $conn->prepare('SELECT * FROM student WHERE id=:id');
+    $d = new Date_available();
+    $allDates = $d->getAllJoin();
 
-$statement->bindParam(':id',$_SESSION['id']);
-$statement->execute();
-$user = $statement->fetch(PDO::FETCH_ASSOC);
+    $conn = Db::getInstance();
 
-if(!empty($_POST['date_submit']))
-{
-    $statement = $conn->prepare('INSERT INTO date_gids_available (student_id,date_id) VALUES  (:stud,:date)');
+    $statement = $conn->prepare('SELECT * FROM student WHERE id=:id');
 
-    $statement->bindValue(':stud',$user['id']);
-    $statement->bindValue(':date',$_POST['date_choose']);
+    $statement->bindParam(':id', $_SESSION['id']);
     $statement->execute();
+    $user = $statement->fetch(PDO::FETCH_ASSOC);
+
+    if (!empty($_POST['date_submit'])) {
+        if (!empty($_POST['date_choose'])) {
+            $statement = $conn->prepare('INSERT INTO date_gids_available (student_id,date_id) VALUES  (:stud,:date)');
+
+            $statement->bindValue(':stud', $user['id']);
+            $statement->bindValue(':date', $_POST['date_choose']);
+            $statement->execute();
+            header('location: student_home.php');
+        } else {
+            throw new Exception("Geen datum beschikbaar");
+        }
+
+    }
+}
+catch(Exception $e)
+{
+    $error = $e->getMessage();
 }
 
-$conn2 = Db::getInstance();
-$dates_available = $conn2->query("SELECT DATE_FORMAT(date,'%d-%c-%Y') as date, date_gids_available.date_id as gids_id FROM date_available INNER JOIN date_gids_available on date_available.id = date_gids_available.date_id WHERE date_gids_available.student_id = 6");
+    $dates_available = $conn->query("SELECT date_gids_available.id as da_id, DATE_FORMAT(date,'%d-%c-%Y') as date, date_gids_available.date_id as gids_id FROM date_available INNER JOIN date_gids_available on date_available.id = date_gids_available.date_id WHERE date_gids_available.student_id = 6");
+
+    if (!empty($_GET['id'])) {
+        $curr_id = $_GET['id'];
+        $conn->query("DELETE FROM date_gids_available WHERE id=$curr_id;");
+        header('location: student_home.php');
+    }
 
 
 ?>
@@ -119,7 +137,7 @@ $dates_available = $conn2->query("SELECT DATE_FORMAT(date,'%d-%c-%Y') as date, d
                     <h3>Datums beschikbaar</h3>
                     <ul class="list-group">
                     <?PHP while($date_available = $dates_available->fetch()): ?>
-                        <li class="list-group-item"><?PHP echo $date_available['date'] ?><span class="badge"><a style="color: #F2F2F2" href="?id=<?PHP echo $date_available['gids_id'] ?>">delete</a></span></li>
+                        <li class="list-group-item"><?PHP echo $date_available['date'] ?><span class="badge"><a style="color: #F2F2F2" href="?id=<?PHP echo $date_available['da_id'] ?>">delete</a></span></li>
                     <?PHP endwhile; ?>
                     </ul>
                 </div>

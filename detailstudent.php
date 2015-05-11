@@ -13,7 +13,7 @@ $statement->execute();
 $user = $statement->fetch(PDO::FETCH_ASSOC);
 
 $page_id = $_GET['id'];
-$dates_available = $conn->query("SELECT * FROM date_gids_available INNER JOIN date_available ON date_gids_available.date_id = date_available.id WHERE student_id = $page_id");
+$dates_available = $conn->query("SELECT student_id, date_id, DATE_FORMAT(date,'%d-%c-%Y') as date FROM date_gids_available INNER JOIN date_available ON date_gids_available.date_id = date_available.id WHERE student_id = $page_id");
 
 if (!empty($_GET))
 {
@@ -146,7 +146,6 @@ catch (Exception $e)
                     <?PHP endif; ?>
                 </div>
             </div><!--end colrechts-->
-        </div><!--end welcomewrap-->
 
         <div id="collinks"class="col-sm-6 text-left" >
             <div class="jumbotron">
@@ -156,7 +155,7 @@ catch (Exception $e)
                         <textarea class="studarea form-control" placeholder="Hoe kan ik je helpen?" name="message" class="form-control" id="message" cols="30" rows="10"></textarea>
                     </div>
                     </br>
-                    <button type="submit" class="btn btn-default">Verzend!</button>
+                    <button type="submit" class="btn btn-default">Verzend</button>
                 </form>
             </div>
         </div><!--end collinks-->
@@ -171,6 +170,7 @@ catch (Exception $e)
             </div>
         </div><!--end collinks-->
     </div><!-- end row -->
+    </div><!--end welcomewrap-->
 
     <div class="row" >
         <div class="col-md-12" id="relatedlinks">

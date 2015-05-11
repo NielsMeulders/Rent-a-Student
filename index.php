@@ -157,7 +157,7 @@
             <p>Ga je verder studeren en ben je net als ons helemaal <strong>zot van pixels en programmeren?</strong> In de professionele bachelor-opleiding Interactive Multimedia Design leer je de volledige mix tussen <strong>web design en development.</strong></p>
             <p>Om je hierop voor te bereiden organiseren wij <strong>openlesdagen</strong> waar je samen met je peter of meter alles leert kennen over IMD.</p>
             <p>Registreer je hieronder snel en gemakkelijk via Facebook.</p>
-            <p><a class="btn btn-primary btn-lg" id="loginwithfb" href="fbconfig.php" role="button">Login with Facebook</a></p>
+            <a class="btn btn-primary btn-lg" id="loginwithfb" href="fbconfig.php" role="button">Login with Facebook</a>
         </div>
        </div><!--end collinks-->
       <div id="colrechts"class="col-sm-6">
@@ -166,7 +166,7 @@
             <h3>Start als gids</h3>
             <p>Om de potentieel <strong>nieuwe generatie IMD'ers</strong> klaar te stomen voor onze richting zijn de huidige studenten onze eerste hulp en daarom hebben we jouw hulp nodig.</p>
             <p>Zie jij het zitten om jouw <strong>passie</strong> uit IMD te delen met jonge pixel-freaks? Registreer je dan hier en stel je beschikbaar als <strong>peter of meter</strong>!</p>
-            <p><a class="btn btn-primary btn-lg" href="registreer_student.php" role="button">Registreer!</a></p>
+            <a class="btn btn-primary btn-lg" href="registreer_student.php" role="button">Registreer!</a>
         </div>
        </div><!--end colrechts-->
         <div class="clearfix"></div>
