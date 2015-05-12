@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+    .slideshow {
+  position: relative;
+  overflow: hidden;
+  max-width: 1430px;
+  margin: 0 auto;
+}
+.images {
+  background: url(infipano.jpg);
+  position: relative;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 4290px;
+  -webkit-animation: slideshow 50s linear infinite;
+  -moz-animation:    slideshow 50s linear infinite;
+}
+@-webkit-keyframes slideshow {
+  0%    { left: 0; }
+  100%  { left: -2860px; }
+}
+@moz-keyframes slideshow {
+  0%    { left: 0; }
+  100%  { left: -300%; }
+}
+.images {
+   ...
+   
+   /* Hey browser, use your GPU */
+   -webkit-transform: translate3d(0, 0, 0);
+}
+
+</style>
+</head>
+<body>
+	<div class="slideshow">
+   <div class="images">
+      <img src="infipano.jpg" alt="" style="width:1430px;height:218px;">
+   </div>
+</div>
+</div>
+</body>
+</html>
