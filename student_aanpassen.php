@@ -16,9 +16,17 @@ $statement->bindParam(':id',$_SESSION['id']);
 $statement->execute();
 $user = $statement->fetch(PDO::FETCH_ASSOC);
 
-if (!empty($_POST))
+try
 {
-   $a->update($_POST['name'],$_POST['pass'], $_POST['year'], $_POST['branch'], $_POST['description']);
+    if (!empty($_POST))
+    {
+        $a->checkPass($_POST['pass'], $_POST['pass_rep']);
+        $a->update($_POST['name'],$_POST['pass'], $_POST['year'], $_POST['branch'], $_POST['description']);
+    }
+}
+catch(Exception $e)
+{
+    $error = $e->getMessage();
 }
 
 ?>

@@ -93,14 +93,24 @@
         public function update($name, $pass, $year, $branch, $description)
         {
             $conn = Db::getInstance();
-            // errors doorsturen van de database
-            // $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
             $current_id = $_SESSION['id'];
             if (empty($pass))
             {
-                $statement = $conn->prepare('UPDATE student SET name=?,year=?,branch=?,description=? WHERE id=?');
-                $statement->execute(array($name, $year, $branch, $description, $current_id));
+                $statement = $conn->prepare('UPDATE student SET name=:name,year=:year,branch=:branch,description=:description WHERE id=:id');
+
             }
+            else
+            {
+                $this->Password = $pass;
+                $statement = $conn->prepare('UPDATE student SET name=:name,password=:password,year=:year,branch=:branch,description=:description WHERE id=:id');
+                $statement->bindValue(':password',$this->Password);
+            }
+            $statement->bindValue(':name',$name);
+            $statement->bindValue(':year',$year);
+            $statement->bindValue(':branch',$branch);
+            $statement->bindValue(':description',$description);
+            $statement->bindValue(':id',$current_id);
+            $statement->execute();
 
             header('location: student_home.php');
 

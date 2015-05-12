@@ -9,13 +9,11 @@
         {
 
             $conn = Db::getInstance();
-            // errors doorsturen van de database
-            // $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-            $statement = $conn->prepare('INSERT INTO bezoeker (name,email,picture,password) VALUES  ( :name, :email,:picture, :password)');
+            $statement = $conn->prepare('INSERT INTO bezoeker (name,email,fbid) VALUES  ( :name, :email,:fbid)');
 
             $statement->bindValue(':name',$this->Name);
             $statement->bindValue(':email',$this->Email);
-            $statement->bindValue(':picture',$this->Picture);
+            $statement->bindValue(':fbid',$this->Picture);
             $statement->bindValue(':password',$this->Password);
             $statement->execute();
         }
@@ -42,6 +40,21 @@
             {
                 throw new Exception("Passwords don't match!");
             }
+        }
+
+        public function checkDoubleMail($v_Vemail)
+        {
+            $ret = false;
+            $conn = Db::getInstance();
+            $allusers = $conn->query("SELECT * FROM bezoeker");
+            while ($user = $allusers->fetch(PDO::FETCH_ASSOC))
+            {
+                if ($user['email'] == $v_Vemail)
+                {
+                    $ret = true;
+                }
+            }
+            return $ret;
         }
 
     }

@@ -21,6 +21,9 @@ $count_email = $get_count->fetch();
 $get_count = $conn->query('SELECT count(*) as aantal FROM student');
 $count_students = $get_count->fetch();
 
+$get_count = $conn->query('SELECT count(*) as aantal FROM bezoeker');
+$count_visitors = $get_count->fetch();
+
 if (isset($_REQUEST['download_newsletter']))
 {
     $u->download_newsletter();
@@ -159,6 +162,25 @@ if(!empty($_GET['id']))
                             <input type="submit" name="download_students" value="Download" class="fullwidth"/>
                         </form>
                         <?PHP if (isset($ready_students)): echo '<a download href="students.txt">Download file</a>'; endif; ?>
+                    </div>
+
+                    <div class="clearfix"></div>
+                    <br/>
+
+                    <div id="collinks" class="col-sm-6 text-left">
+                        <h4>Gebruikers</h4>
+                        <?PHP
+                        echo '<li class="list-group-item text-center">' . $count_visitors['aantal'] . '</li>';
+                        ?>
+
+                    </div>
+
+                    <div id="colrechts" class="col-sm-6 text-left">
+                        <h4>Boekingen</h4>
+                        <?PHP
+                        echo '<li class="list-group-item text-center">' . $count_students['aantal'] . '</li>';
+                        ?>
+
                     </div>
                 </div>
             </div><!--end colrechts-->

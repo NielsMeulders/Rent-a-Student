@@ -13,6 +13,9 @@ use Facebook\GraphObject;
 use Facebook\Entities\AccessToken;
 use Facebook\HttpClients\FacebookCurlHttpClient;
 use Facebook\HttpClients\FacebookHttpable;
+include_once("classes/Bezoeker.class.php");
+$b = new Bezoeker();
+$conn = Db::getInstance();
 // init app with app id and secret
 FacebookSession::setDefaultApplication( '369182239939237','08d8f9b8d93af2f96b5b77ee7b639178' );
 // login helper with redirect_uri
@@ -40,6 +43,14 @@ if ( isset( $session ) ) {
 	    $_SESSION['EMAIL'] =  $femail;
         $_SESSION['type'] ='bezoeker';
         $_SESSION['loggedIn'] = true;
+        if (!$b->checkDoubleMail($femail))
+        {
+            $statement = $conn->prepare('INSERT INTO bezoeker (name,email,fbid) VALUES  ( :name, :email,:fbid)');
+            $statement->bindValue(':name',$fbfullname);
+            $statement->bindValue(':email',$femail);
+            $statement->bindValue(':fbid',$fbid);
+            $statement->execute();
+        }
     /* ---- header location after session ----*/
   header("Location: bezoeker_home.php");
 } else {
