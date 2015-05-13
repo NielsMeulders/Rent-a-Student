@@ -145,8 +145,6 @@
             <h2>Kies hier je <strong>peter</strong> of <strong>meter</strong> en</h2>
             <h2>ontdek de wereld van <strong>Interactive Multimedia Design!</strong></h2>
         </div> <!--end jumbotron-->
-    </div>
-     </div><!--end row-->
    
     <div class="row rowhomepage">
     <div id="welcomewrap">

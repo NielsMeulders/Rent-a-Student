@@ -15,6 +15,11 @@ $user = $statement->fetch(PDO::FETCH_ASSOC);
 $page_id = $_GET['id'];
 $dates_available = $conn->query("SELECT student_id, date_id, DATE_FORMAT(date,'%d-%c-%Y') as date FROM date_gids_available INNER JOIN date_available ON date_gids_available.date_id = date_available.id WHERE student_id = $page_id");
 
+$fbid = $_SESSION['FBID'];
+$statement = $conn->query("SELECT * FROM bezoeker WHERE fbid = $fbid");
+$visitor = $statement->fetch(PDO::FETCH_ASSOC);
+$visitor_id = $visitor['id'];
+
 if (!empty($_GET))
 {
     $a = new Imd_student();
@@ -24,15 +29,10 @@ if (!empty($_GET))
 if (!empty($_GET['book_id']))
 {
     $book = new Date_available();
-    echo $current_student['id'];
-    echo $page_id;
-    /*$from = ;
-    $to = ;
-    $date = ;
-    $book->bookDate($from,$to,$date);*/
-    echo '<pre>';
-    var_dump($_SESSION);
-    echo '</pre>';
+    $from = $visitor_id;
+    $to = $page_id;
+    $date = $_GET['book_id'];
+    $book->bookDate($from,$to,$date);
 }
 
 try
@@ -105,9 +105,9 @@ catch (Exception $e)
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="#">Rent-a-Student</a>
             </div>
             <div id="navbar" class="navbar-collapse collapse">
+                <a class="navbar-brand" id="logo" href="index.php"><img src="img/logo.svg" alt="Logo"/></a>
                 <ul class="nav navbar-nav">
                     <li ><a href="bezoeker_home.php">Browse</a></li>
                     <li><a href="#">Instellingen</a></li>
@@ -161,6 +161,8 @@ catch (Exception $e)
                 </div>
             </div><!--end colrechts-->
 
+            <div class="clearfix"></div>
+
         <div id="collinks"class="col-sm-6 text-left" >
             <div class="jumbotron">
                 <h3>Contacteer mij</h3>
@@ -177,7 +179,7 @@ catch (Exception $e)
             <div class="jumbotron">
                 <h3>Mijn beschikbare dagen</h3>
                 <p class="small_text">Hier staan alle beschikbare dagen. Als je een dag wilt boeken, twijfel dan niet om op 'Boek' te klikken!</p>
-                <ul class="list-group" id="list-available-dates">
+                <ul class="list-group">
                     <?PHP while($date = $dates_available->fetch(PDO::FETCH_ASSOC)): ?>
                         <li class="list-group-item"><?PHP echo $date['date'] ?><span class="badge"><a style="color: #F2F2F2;" href="?id=<?PHP echo $page_id ?>&book_id=<?PHP echo $date['date_id'] ?>">Boek</a></span></li>
                     <?PHP endwhile; ?>

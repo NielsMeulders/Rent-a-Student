@@ -71,9 +71,9 @@ $all_users = $a->getAll();
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="admin_home.php">Rent-a-Student</a>
             </div>
             <div id="navbar" class="navbar-collapse collapse">
+                <a class="navbar-brand" id="logo" href="index.php"><img src="img/logo.svg" alt="Logo"/></a>
                 <ul class="nav navbar-nav">
                     <li><a href="admin_home.php">Home</a></li>
                     <li class="active"><a href="registreer_admin.php">Account toevoegen</a></li>

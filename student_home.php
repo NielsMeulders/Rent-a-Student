@@ -8,9 +8,6 @@ try {
     $a = new Imd_student();
     $allstudents = $a->getAll();
 
-    $d = new Date_available();
-    $allDates = $d->getAllJoin();
-
     $conn = Db::getInstance();
 
     $statement = $conn->prepare('SELECT * FROM student WHERE id=:id');
@@ -18,6 +15,11 @@ try {
     $statement->bindParam(':id', $_SESSION['id']);
     $statement->execute();
     $user = $statement->fetch(PDO::FETCH_ASSOC);
+    $current_user = $user['id'];
+
+    $d = new Date_available();
+    $allDates = $d->getAllJoin($current_user);
+    $allBookings = $d->getBookingForStudent($current_user);
 
     if (!empty($_POST['date_submit'])) {
         if (!empty($_POST['date_choose'])) {
@@ -38,7 +40,7 @@ catch(Exception $e)
     $error = $e->getMessage();
 }
 
-    $dates_available = $conn->query("SELECT date_gids_available.id as da_id, DATE_FORMAT(date,'%d-%c-%Y') as date, date_gids_available.date_id as gids_id FROM date_available INNER JOIN date_gids_available on date_available.id = date_gids_available.date_id WHERE date_gids_available.student_id = 6");
+    $dates_available = $conn->query("SELECT date_gids_available.id as da_id, DATE_FORMAT(date,'%d-%c-%Y') as date, date_gids_available.date_id as gids_id FROM date_available INNER JOIN date_gids_available on date_available.id = date_gids_available.date_id WHERE date_gids_available.student_id = $current_user");
 
     if (!empty($_GET['id'])) {
         $curr_id = $_GET['id'];
@@ -96,9 +98,9 @@ catch(Exception $e)
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="#">Rent-a-Student</a>
             </div>
             <div id="navbar" class="navbar-collapse collapse">
+                <a class="navbar-brand" id="logo" href="index.php"><img src="img/logo.svg" alt="Logo"/></a>
                 <ul class="nav navbar-nav">
                     <li class="active"><a href="#">Home</a></li>
                     <li><a href="student_aanpassen.php">Account aanpassen</a></li>
@@ -117,20 +119,31 @@ catch(Exception $e)
         <h1>Welkom <?PHP echo $user['name']; ?></h1>
     </div>
 
-
     <div class="row rowhomepage">
         <div id="welcomewrap">
-            <div id="collinks"class="col-sm-6 text-left" >
+            <div id="collinks"class="col-sm-12 text-left" >
                 <div class="jumbotron">
                     <h3>Recente boekingen</h3>
+                    <table class="table table-hover">
+                        <thead>
+                        <tr>
+                            <th>Datum</th>
+                            <th>Naam</th>
+                            <th>Email</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <?PHP while($booking = $allBookings->fetch()): ?>
+                            <tr>
+                                <td><?PHP echo $booking['date'] ?></td>
+                                <td><?PHP echo $booking['name'] ?></td>
+                                <td><a href="mailto:<?PHP echo $booking['email'] ?>"><?PHP echo $booking['email'] ?></a></td>
+                            </tr>
+                        <?PHP endwhile; ?>
+                        </tbody>
+                    </table>
                 </div>
             </div><!--end collinks-->
-            <div id="colrechts"class="col-sm-6 text-left">
-                <div class="jumbotron">
-                    <h3>Laatste reviews</h3>
-                </div>
-            </div><!--end colrechts-->
-
         <div class="clearfix"></div>
             <div id="collinks"class="col-sm-6 text-left" >
                 <div class="jumbotron">
@@ -145,7 +158,6 @@ catch(Exception $e)
             <div id="colrechts"class="col-sm-6 text-left" >
                 <div class="jumbotron">
                     <h3>Nieuwe beschikbaarheid</h3>
-
                     <form action="" method="post" enctype="multipart/form-data" id="sandbox-container">
                     <select name="date_choose">
                         <?PHP while($date = $allDates->fetch(PDO::FETCH_ASSOC)): ?>
@@ -154,6 +166,11 @@ catch(Exception $e)
                     </select>
                         <input type="submit" name="date_submit" value="Voeg toe" class="btn btn-default"/>
                     </form>
+                </div>
+            </div><!--end colrechts-->
+            <div id="collinks"class="col-sm-12 text-left">
+                <div class="jumbotron">
+                    <h3>Laatste reviews</h3>
                 </div>
             </div><!--end colrechts-->
         </div><!--end welcomewrap-->

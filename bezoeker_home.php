@@ -64,10 +64,10 @@ $user = $statement->fetch(PDO::FETCH_ASSOC);
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="#">Rent-a-Student</a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
+              <a class="navbar-brand" id="logo" href="index.php"><img src="img/logo.svg" alt="Logo"/></a>
             <li class="active"><a href="#">Browse</a></li>
             <li><a href="#">Instellingen</a></li>
             

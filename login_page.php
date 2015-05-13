@@ -83,9 +83,24 @@ if (!empty($_POST))
 <body>
 
 <div class="container-fluid">
+    <nav class="navbar navbar-default navbar-static-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+
+            </div>
+            <div id="navbar" class="navbar-collapse collapse">
+                <a class="navbar-brand" id="logo" href="index.php"><img src="img/logo.svg" alt="Logo"/></a>
+            </div><!--/.nav-collapse -->
+        </div>
+    </nav>
     <div class="row">
         <div class="col-xs-12 no-padding">
-        <div id="topbar"></div>
         <div class="jumbotron" id="jumbologin"><h1>Login</h1></div> <!--end jumbotron-->
             <form id="loginform" method="post" action="">
 

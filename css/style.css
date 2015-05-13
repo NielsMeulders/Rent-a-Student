@@ -11,7 +11,7 @@ body {text-align:center;font-family: "Nexa Light", sans-serif;background-color:#
 h3{font-family: "Nexa Bold";font-size: 28px;}
 h4{font-family: "Nexa Bold";font-size: 22px;}
 .jumbotron h2{color:#EDEDED;}
-#collinks, #colrechts {background-color: #F2F2F2; min-height: 100px; opacity: 0.8; padding: 0 50px}
+#collinks, #colrechts {background-color: #F2F2F2; min-height: 100px; opacity: 0.8;}
 #collinks p, #colrechts p {text-align: left}
 #jumbohead {margin-bottom: 0;padding: 120px;margin: 0;border-radius: 0;background-image: url("../img/banner.jpg");background-attachment: fixed;background-size: cover;background-position: left;background-color:#B3B3B3;-webkit-box-shadow: inset 0px 21px 40px -27px rgba(0,0,0,0.75);
 -moz-box-shadow: inset 0px 21px 40px -27px rgba(0,0,0,0.75);
@@ -96,7 +96,7 @@ h1 {font-family: "Nexa Bold"; color: #333;margin: 0;}
 
 #contactform input, #contactform textarea {margin: 0;text-align: left;}
 
-#list-available-dates {overflow: scroll; max-height: 210px}
+#list-available-dates {overflow: auto; max-height: 210px}
 
 .footer_with_social {margin-bottom: 100px;}
 

@@ -56,10 +56,10 @@ class Date_available
         return $allposts;
     }
 
-    public function getAllJoin()
+    public function getAllJoin($student_id)
     {
         $conn = Db::getInstance();
-        $allposts = $conn->query("SELECT DATE_FORMAT(date,'%d-%c-%Y') as date, date_available.id as id FROM date_available LEFT JOIN date_gids_available ON date_available.id = date_gids_available.date_id WHERE date_gids_available.date_id IS NULL ORDER BY Year(date), Month(date), Day(date)");
+        $allposts = $conn->query("SELECT DATE_FORMAT(date,'%d-%c-%Y') as date, date_available.id as id FROM date_available LEFT JOIN (SELECT * FROM date_gids_available WHERE date_gids_available.student_id = $student_id) AS b ON date_available.id = b.date_id WHERE b.student_id IS NULL");
         return $allposts;
     }
 
@@ -74,6 +74,8 @@ class Date_available
     {
         $conn = Db::getInstance();
         $conn->query("DELETE FROM date_available WHERE id=$p_vValue;");
+        $conn->query("DELETE FROM date_gids_available WHERE date_id=$p_vValue;");
+        $conn->query("DELETE FROM boeking WHERE date_id=$p_vValue;");
     }
 
     public function checkDate($p_sDate)
@@ -96,7 +98,21 @@ class Date_available
     public function bookDate($p_vFrom, $p_vTo, $p_vDate)
     {
         $conn = Db::getInstance();
-        $conn->query("INSERT INTO booking(user_id,student_id,date_id) VALUES ($p_vFrom, $p_vTo,$p_vDate)");
+        $conn->query("INSERT INTO boeking(user_id,student_id,date_id) VALUES ($p_vFrom, $p_vTo,$p_vDate)");
+    }
+
+    public function getBookingForStudent($p_vId)
+    {
+        $conn = Db::getInstance();
+        $allBookings = $conn->query("SELECT name, email, DATE_FORMAT(date,'%d-%c-%Y') as date FROM boeking inner join bezoeker ON boeking.user_id = bezoeker.id inner join date_available on boeking.date_id = date_available.id WHERE student_id = $p_vId");
+        return $allBookings;
+    }
+
+    public function getBookingForAdmin()
+    {
+        $conn = Db::getInstance();
+        $allBookings = $conn->query("SELECT student.name as student_name, student.email as student_email, date, bezoeker.name as visitor_name, bezoeker.email as visitor_email FROM boeking inner join student ON boeking.student_id = student.id inner join date_available on boeking.date_id = date_available.id inner join bezoeker ON boeking.user_id = bezoeker.id");
+        return $allBookings;
     }
 }
 
