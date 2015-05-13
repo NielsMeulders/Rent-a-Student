@@ -117,3 +117,32 @@ p#center {text-align: center}
 .fullwidth{width: 100%}
 
 p.small_text{font-size: 17px}
+
+.slideshow {
+    position: relative;
+    overflow: hidden;
+}
+.images {
+    background: url("../img/infipano.jpg");
+    position: fixed;-webkit-box-shadow: inset 0px 21px 40px -27px rgba(0,0,0,01);
+    position: relative;
+    left: 0;
+    top: 0;
+    height: 480px;
+    width: 8910px;
+    -webkit-animation: slideshow 180s linear infinite;
+    -moz-animation:    slideshow 180s linear infinite;
+    opacity:0.4;
+
+}
+@-webkit-keyframes slideshow {
+    0%    { left: 0; }
+    100%  { left: -5940px; }
+}
+@-moz-keyframes slideshow {
+0%    { left: 0; }
+100%  { left: -5940px; }
+}
+
+.textoverlay {height: 360px; margin-top: -360px;position: relative;color: white;text-shadow: 4px 0 20px black;}
+.textoverlay h1{color: white;font-size: 60px;}

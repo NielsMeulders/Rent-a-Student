@@ -137,14 +137,16 @@
         </div>
     </nav><!--end nav-->
 
-        <!--jumbohead-->
-        <div class="jumbotron intro_picture" id="jumbohead">
-        
-            <h1>Welkom!</h1>
-            <h2>Graag een <strong>openlesdag</strong> meevolgen?</h2>
-            <h2>Kies hier je <strong>peter</strong> of <strong>meter</strong> en</h2>
-            <h2>ontdek de wereld van <strong>Interactive Multimedia Design!</strong></h2>
-        </div> <!--end jumbotron-->
+    <div class="slideshow">
+        <div class="images"></div>
+    </div>
+    <div class="textoverlay">
+
+        <h1>Welkom!</h1>
+        <h2>Graag een <strong>openlesdag</strong> meevolgen?</h2>
+        <h2>Kies hier je <strong>peter</strong> of <strong>meter</strong> en</h2>
+        <h2>ontdek de wereld van <strong>Interactive Multimedia Design!</strong></h2>
+    </div>
    
     <div class="row rowhomepage">
     <div id="welcomewrap">
