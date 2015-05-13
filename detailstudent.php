@@ -6,9 +6,9 @@ session_start();
 
 $conn = Db::getInstance();
 
-$statement = $conn->prepare('SELECT * FROM bezoeker WHERE id=:id');
+$statement = $conn->prepare('SELECT * FROM bezoeker WHERE email=:id');
 
-$statement->bindParam(':id',$_SESSION['id']);
+$statement->bindParam(':id',$_SESSION['EMAIL']);
 $statement->execute();
 $user = $statement->fetch(PDO::FETCH_ASSOC);
 
@@ -19,6 +19,20 @@ if (!empty($_GET))
 {
     $a = new Imd_student();
     $current_student = $a->getOne($_GET['id']);
+}
+
+if (!empty($_GET['book_id']))
+{
+    $book = new Date_available();
+    echo $current_student['id'];
+    echo $page_id;
+    /*$from = ;
+    $to = ;
+    $date = ;
+    $book->bookDate($from,$to,$date);*/
+    echo '<pre>';
+    var_dump($_SESSION);
+    echo '</pre>';
 }
 
 try
@@ -162,9 +176,10 @@ catch (Exception $e)
         <div id="colrechts"class="col-sm-6 text-left" >
             <div class="jumbotron">
                 <h3>Mijn beschikbare dagen</h3>
+                <p class="small_text">Hier staan alle beschikbare dagen. Als je een dag wilt boeken, twijfel dan niet om op 'Boek' te klikken!</p>
                 <ul class="list-group" id="list-available-dates">
                     <?PHP while($date = $dates_available->fetch(PDO::FETCH_ASSOC)): ?>
-                        <li class="list-group-item"><?PHP echo $date['date'] ?></li>
+                        <li class="list-group-item"><?PHP echo $date['date'] ?><span class="badge"><a style="color: #F2F2F2;" href="?id=<?PHP echo $page_id ?>&book_id=<?PHP echo $date['date_id'] ?>">Boek</a></span></li>
                     <?PHP endwhile; ?>
                 </ul>
             </div>

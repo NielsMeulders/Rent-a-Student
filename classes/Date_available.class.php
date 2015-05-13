@@ -92,6 +92,12 @@ class Date_available
 
         return $ret;
     }
+
+    public function bookDate($p_vFrom, $p_vTo, $p_vDate)
+    {
+        $conn = Db::getInstance();
+        $conn->query("INSERT INTO booking(user_id,student_id,date_id) VALUES ($p_vFrom, $p_vTo,$p_vDate)");
+    }
 }
 
 ?>
