@@ -13,7 +13,7 @@ $statement->execute();
 $user = $statement->fetch(PDO::FETCH_ASSOC);
 
 $page_id = $_GET['id'];
-$dates_available = $conn->query("SELECT student_id, date_id, DATE_FORMAT(date,'%d-%c-%Y') as date FROM date_gids_available INNER JOIN date_available ON date_gids_available.date_id = date_available.id WHERE student_id = $page_id");
+$dates_available = $conn->query("SELECT a.student_id, a.date_id, date FROM (SELECT student_id, date_id, DATE_FORMAT(date,'%d-%c-%Y') as date FROM date_gids_available INNER JOIN date_available ON date_gids_available.date_id = date_available.id WHERE student_id = $page_id) as a LEFT JOIN boeking as b ON a.student_id = b.student_id WHERE b.student_id IS NULL");
 
 $fbid = $_SESSION['FBID'];
 $statement = $conn->query("SELECT * FROM bezoeker WHERE fbid = $fbid");
@@ -33,6 +33,7 @@ if (!empty($_GET['book_id']))
     $to = $page_id;
     $date = $_GET['book_id'];
     $book->bookDate($from,$to,$date);
+    $feedback = "Uw boeking werd geregistreerd";
 }
 
 try
@@ -66,7 +67,7 @@ catch (Exception $e)
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Home | Bezoeker</title>
+    <title>Detail | Bezoeker</title>
     <script src="js/script.js"></script>
     <!-- Bootstrap -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no;">

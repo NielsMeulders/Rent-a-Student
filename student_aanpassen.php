@@ -53,6 +53,8 @@ catch(Exception $e)
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
 </head>
 <body>
+
+<?PHP if (!empty($_SESSION['loggedIn']) && $_SESSION['type']=='student'): ?>
     
 <div class="container-fluid">
    
@@ -152,6 +154,10 @@ catch(Exception $e)
    			</div><!--end row-->
 
     <footer class="footer">&copy Thomas More</footer>
+
+    <?PHP else: ?>
+        <?PHP include_once('404.php') ?>
+    <?PHP endif; ?>
 	
 </div> <!-- end container -->
 </body>
