@@ -67,6 +67,8 @@
     <!-- Bootstrap -->    
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
+    <link rel="icon" href="img/logo_badge.png" type="image/x-icon"/>
+    <link rel="shortcut icon" href="img/logo_badge.png" type="image/x-icon"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
         <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
@@ -166,7 +168,7 @@
             <h3>Start als gids</h3>
             <p>Om de potentieel <strong>nieuwe generatie IMD'ers</strong> klaar te stomen voor onze richting zijn de huidige studenten onze eerste hulp en daarom hebben we jouw hulp nodig.</p>
             <p>Zie jij het zitten om jouw <strong>passie</strong> uit IMD te delen met jonge pixel-freaks? Registreer je dan hier en stel je beschikbaar als <strong>peter of meter</strong>!</p>
-            <a class="btn btn-primary btn-lg" href="registreer_student.php" role="button">Registreer!</a>
+            <a class="btn btn-primary btn-lg" href="registreer_student.php" role="button">Registreer</a>
         </div>
        </div><!--end colrechts-->
         <div class="clearfix"></div>
@@ -178,7 +180,7 @@
             <div class="form-group">
                     <input type="email" class="form-control" id="email" name="email" placeholder="Uw emailadres" style="text-align: left">
                 </div>
-            <p><button type="submit" class="btn btn-default">Hou me op de hoogte!</button></p>
+            <p><button type="submit" class="btn btn-default">Hou me op de hoogte</button></p>
             </form>
            <script>
 
@@ -192,22 +194,13 @@
     </div><!-- end row -->
 
     <div class="row" >        
-        <div class="col-md-12" id="relatedlinks">
-            <h3>Instagram met ons mee! &#35;WeAreImd</h3>
+        <div class="col-md-12" id="instagram_footer">
+            <h3 id="instagram_header">Instagram met ons mee! &#35;WeAreImd</h3>
             <div id="instafeed"></div>
-            <table class="table" id="footer_images">
-                <tbody>
-                <tr>
-                    <td><a href="http://www.thecreativitygym.be/"><img src="img/gym_logo.png" alt="Creativity Gym logo"></a></td>
-                    <td><a id="weareimd" href="http://www.weareimd.be/"><img src="img/weareimd_logo.svg" alt="We Are IMD logo"></a></td>
-                    <td><a id="thomasmore" href="http://www.thomasmore.be/interactive-multimedia-design-imd"><img src="img/thomasmore_logo.png" alt="Thomas More logo"></a></td>
-                </tr>
-                </tbody>
-            </table>
         </div><!--end relatedlinks-->
     </div><!--end row-->
 
-    <footer class="footer"><div id="share"></div>&copy Thomas More</footer>
+    <footer class="footer"><div id="share"></div></footer>
     <script>  console.log("here");$("#share").jsSocials({shares: ["twitter", "facebook", "googleplus"]});  </script>
 
 </div> <!--end container-->

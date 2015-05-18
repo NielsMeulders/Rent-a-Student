@@ -57,6 +57,7 @@ box-shadow: inset 0px 21px 30px -27px rgba(0,0,0,0.75);}
 #relatedlinks ul {max-width: 1200px; min-height: 180px; margin: auto;padding: 40px 0 0 0;padding-bottom: 170px;}
 #relatedlinks ul li{float: left;list-style-type:none;width: 33%;}
 #relatedlinks ul li img {;width:100%;max-width: 160px;padding: 20px;}
+#instagram_footer{padding-bottom: 100px;}
 
 /*--Login--*/
 #jumbologin {padding: 20px;margin: 0;border-radius: 0;background-image: url("../img/banner.jpg");background-attachment: fixed;background-size: cover;background-position: left;background-color:#B3B3B3;-webkit-box-shadow: inset 0px 21px 40px -27px rgba(0,0,0,0.75);}
@@ -130,8 +131,8 @@ p.small_text{font-size: 17px}
     top: 0;
     height: 480px;
     width: 8910px;
-    -webkit-animation: slideshow 180s linear infinite;
-    -moz-animation:    slideshow 180s linear infinite;
+    -webkit-animation: slideshow 120s linear infinite;
+    -moz-animation:    slideshow 120s linear infinite;
     opacity:0.4;
 
 }
@@ -146,3 +147,5 @@ p.small_text{font-size: 17px}
 
 .textoverlay {height: 360px; margin-top: -360px;position: relative;color: white;text-shadow: 4px 0 20px black;}
 .textoverlay h1{color: white;font-size: 60px;}
+
+#instagram_header{margin-top: 0; padding-top: 20px;}

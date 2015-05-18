@@ -40,6 +40,8 @@
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no;">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" href="img/logo_badge.png" type="image/x-icon"/>
+    <link rel="shortcut icon" href="img/logo_badge.png" type="image/x-icon"/>
     <meta name="keywords" content="Rentastudent, rent a student, imd, interactive, multimedia, design, thomas, more, mechelen, app">
     <meta name="description" content="Zin om een dagje mee te volgen met een IMD-student? Boek hier je persoonlijke IMD-gids!" />
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
