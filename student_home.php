@@ -23,7 +23,7 @@ try {
     $allBookings = $d->getBookingForStudent($current_user);
 
     $r = new Rating();
-    $allRatings = $r->getAll(7);
+    $allRatings = $r->getAll(6);
 
     if (!empty($_POST['date_submit'])) {
         if (!empty($_POST['date_choose'])) {
@@ -82,7 +82,7 @@ catch(Exception $e)
 <body>
 
 <?PHP if (!empty($_SESSION['loggedIn']) && $_SESSION['type']=='student'): ?>
-<div class="container-fluid footer_with_social" >
+<div class="container-fluid" >
 
     <!--nav-->
     <nav class="navbar navbar-default navbar-static-top">
@@ -189,9 +189,9 @@ catch(Exception $e)
                         <tbody>
                         <?PHP while($rating = $allRatings->fetch()): ?>
                             <tr>
+                                <td><?PHP echo $rating['date'] ?></td>
                                 <td><?PHP echo $rating['name'] ?></td>
-                                <td><?PHP echo $rating['name'] ?></td>
-                                <td><?PHP echo $rating['rating'] ?></td>
+                                <td><?PHP echo $rating['rating'] . "/5" ?></td>
                                 <td><?PHP echo $rating['comment'] ?></td>
                             </tr>
                         <?PHP endwhile; ?>
@@ -203,7 +203,7 @@ catch(Exception $e)
     </div><!-- end row -->
 
     <div class="row" >
-        <div class="col-md-12" id="relatedlinks">
+        <div class="col-xs-12" id="relatedlinks">
             <ul>
                 <li><a href="http://www.thecreativitygym.be/"><img src="img/gym_logo.png" alt="Creativity Gym logo"></a></li>
                 <li><a id="weareimd" href="http://www.weareimd.be/"><img src="img/weareimd_logo.svg" alt="We Are IMD logo"></a></li>

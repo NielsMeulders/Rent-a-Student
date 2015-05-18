@@ -65,8 +65,15 @@ class Admin extends User
     public function getAll()
     {
         $conn = Db::getInstance();
-        $allposts = $conn->query("SELECT * FROM admin");
-        return $allposts;
+        $alladmins = $conn->query("SELECT * FROM admin");
+        return $alladmins;
+    }
+
+    public function getAllId($id)
+    {
+        $conn = Db::getInstance();
+        $alladmins2 = $conn->query("SELECT * FROM admin WHERE id!=$id");
+        return $alladmins2;
     }
 
     public function delete_admin($p_vValue)

@@ -29,7 +29,7 @@ $count_booking = $get_count->fetch();
 
 $allBookings = $d->getBookingForAdmin();
 
-$allAdmins = $u->getAll();
+$allAdmins = $u->getAllId($_SESSION['id']);
 
 if (isset($_REQUEST['download_newsletter']))
 {

@@ -5,6 +5,7 @@ include_once("classes/Imd_student.class.php");
 
 session_start();
 $b = new Imd_student();
+$conn = Db::getInstance();
 
 if (!empty($_POST))
 {
@@ -28,7 +29,14 @@ if (!empty($_POST))
 
         $b->save();
 
-        header("Location: index.php");
+        $_SESSION['loggedIn']=true;
+        $_SESSION['type']='student';
+        $getId = $conn->prepare("SELECT id FROM student WHERE email=?");
+        $getId->execute(array($_POST['email']));
+        $getterId = $getId->fetch(PDO::FETCH_ASSOC);
+        $_SESSION['id']=$getterId['id'];
+
+        header("Location: student_home.php");
     }
     catch(Exception $e)
     {

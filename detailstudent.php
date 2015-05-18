@@ -2,6 +2,7 @@
 
 include_once("classes/Imd_student.class.php");
 include_once("classes/Date_available.class.php");
+include_once("classes/Rating.class.php");
 session_start();
 
 $conn = Db::getInstance();
@@ -19,6 +20,9 @@ $fbid = $_SESSION['FBID'];
 $statement = $conn->query("SELECT * FROM bezoeker WHERE fbid = $fbid");
 $visitor = $statement->fetch(PDO::FETCH_ASSOC);
 $visitor_id = $visitor['id'];
+
+$r = new Rating();
+$allRatings = $r->getAll($page_id);
 
 if (!empty($_GET))
 {
@@ -196,6 +200,31 @@ catch (Exception $e)
                 </ul>
             </div>
         </div><!--end collinks-->
+            <div id="collinks"class="col-sm-12 text-left">
+                <div class="jumbotron">
+                    <h3>Laatste reviews</h3>
+                    <table class="table table-hover">
+                        <thead>
+                        <tr>
+                            <th>Datum</th>
+                            <th>Naam</th>
+                            <th>Rating</th>
+                            <th>Commentaar</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <?PHP while($rating = $allRatings->fetch()): ?>
+                            <tr>
+                                <td><?PHP echo $rating['date'] ?></td>
+                                <td><?PHP echo $rating['name'] ?></td>
+                                <td><?PHP echo $rating['rating'] . "/5" ?></td>
+                                <td><?PHP echo $rating['comment'] ?></td>
+                            </tr>
+                        <?PHP endwhile; ?>
+                        </tbody>
+                    </table>
+                </div>
+            </div><!--end colrechts-->
     </div><!-- end row -->
     </div><!--end welcomewrap-->
 

@@ -111,6 +111,12 @@ $user = $statement->fetch(PDO::FETCH_ASSOC);
                         echo "Development";
                         break;
                 }?> </strong></p>
+                <?PHP
+                $id = $gebruiker['id'];
+                $s = $conn->query("SELECT ROUND(AVG(rating)) as avg FROM rating WHERE student_id = $id");
+                $score = $s->fetch();
+                ?>
+                <p id="center">Score: <?PHP if(isset($score['avg'])): echo $score['avg'] . "/5"; else: echo "nvt"; endif;?></p>
 
                 <p><?php echo substr($gebruiker['description'], 0, 100) ."..."?></p>
 
@@ -126,7 +132,7 @@ $user = $statement->fetch(PDO::FETCH_ASSOC);
     </div><!-- end row -->
 
     <div class="row" >        
-        <div class="col-md-12" id="relatedlinks">
+        <div class="col-md-12">
             <ul>
                 <li><a href="http://www.thecreativitygym.be/"><img src="img/gym_logo.png" alt="Creativity Gym logo"></a></li>
                 <li><a id="weareimd" href="http://www.weareimd.be/"><img src="img/weareimd_logo.svg" alt="We Are IMD logo"></a></li>
