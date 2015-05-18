@@ -67,7 +67,7 @@ catch (Exception $e)
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Detail | Bezoeker</title>
+    <title>Detail | <?PHP echo $current_student['name'] ?></title>
     <script src="js/script.js"></script>
     <!-- Bootstrap -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no;">
@@ -81,6 +81,10 @@ catch (Exception $e)
     <![endif]-->
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="css/jssocials.css" />
+    <link rel="stylesheet" type="text/css" href="css/jssocials-theme-flat.css" />
+    <script src="js/jssocials.min.js"></script>
 </head>
 
 <body>
@@ -113,10 +117,13 @@ catch (Exception $e)
                 <a class="navbar-brand" id="logo" href="index.php"><img src="img/logo.svg" alt="Logo"/></a>
                 <ul class="nav navbar-nav">
                     <li ><a href="bezoeker_home.php">Browse</a></li>
-                    <li><a href="#">Instellingen</a></li>
+                    <li><a href="rate_student.php?id=<?PHP echo $_GET['id'] ?>">Beoordeel</a></li>
 
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
+                    <li><a><?PHP echo $_SESSION['FULLNAME'] ?></a></li>
+                    <?PHP $style = "background-image:url('https://graph.facebook.com/". $_SESSION['FBID'] ."/picture');" ?>
+                    <li class="login_icon" style=<?PHP echo $style ?>></li>
                     <li><a class="btn" id="btnlogout" href="logout.php">Logout</a></li>
                 </ul>
             </div><!--/.nav-collapse -->
@@ -201,7 +208,8 @@ catch (Exception $e)
             </ul>
         </div><!--end relatedlinks-->
     </div><!--end row-->
-    <footer class="footer">&copy Thomas More</footer>
+    <footer class="footer"><div id="share"></div>&copy Thomas More</footer>
+    <script>  $("#share").jsSocials({shares: ["twitter", "facebook", "googleplus"]});  </script>
 
     <?PHP else: ?>
         <?PHP include_once('404.php') ?>

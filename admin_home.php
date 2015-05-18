@@ -29,6 +29,8 @@ $count_booking = $get_count->fetch();
 
 $allBookings = $d->getBookingForAdmin();
 
+$allAdmins = $u->getAll();
+
 if (isset($_REQUEST['download_newsletter']))
 {
     $u->download_newsletter();
@@ -60,6 +62,12 @@ if(!empty($_GET['id']))
 {
     $d->remove($_GET['id']);
     header('location: admin_home.php');
+}
+
+if(!empty($_GET['delete_id']))
+{
+    $u->delete_admin($_GET['delete_id']);
+    $feedback = "Admin account is verwijderd";
 }
 
 ?>
@@ -214,7 +222,18 @@ if(!empty($_GET['id']))
                     </div>
                 </div>
             </div><!--end colrechts-->
-            <div id="collinks"class="col-sm-6 text-left" >
+            <div id="colrechts"class="col-sm-6 text-left" >
+                <div class="jumbotron">
+                    <h3>Admins</h3>
+                    <ul class="list-group" id="list-available-dates">
+                        <?PHP while($admin = $allAdmins->fetch(PDO::FETCH_ASSOC)): ?>
+                            <li class="list-group-item"><?PHP echo $admin['name'] ?><span class="badge"><a style="color: #F2F2F2" href="?delete_id=<?PHP echo $admin['id'] ?>">delete</a></span></li>
+                        <?PHP endwhile; ?>
+                    </ul>
+                </div>
+            </div><!--end colrechts-->
+            <div class="clearfix"></div>
+            <div id="colrechts"class="col-sm-6 text-left" >
                 <div class="jumbotron">
                     <h3>Beschikbare data</h3>
                     <ul class="list-group" id="list-available-dates">
@@ -223,7 +242,7 @@ if(!empty($_GET['id']))
                         <?PHP endwhile; ?>
                     </ul>
                 </div>
-            </div><!--end collinks-->
+            </div><!--end colrechts-->
             <div id="colrechts"class="col-sm-6 text-left" >
                 <div class="jumbotron">
                     <h3>Nieuwe data toevoegen</h3>

@@ -71,7 +71,6 @@ $user = $statement->fetch(PDO::FETCH_ASSOC);
           <ul class="nav navbar-nav">
               <a class="navbar-brand" id="logo" href="index.php"><img src="img/logo.svg" alt="Logo"/></a>
             <li class="active"><a href="#">Browse</a></li>
-            <li><a href="#">Instellingen</a></li>
             
           </ul>
           <ul class="nav navbar-nav navbar-right">
@@ -135,8 +134,7 @@ $user = $statement->fetch(PDO::FETCH_ASSOC);
             </ul>
         </div><!--end relatedlinks-->
     </div><!--end row-->
-    <footer class="footer"><div id="share"></div>&copy Thomas More</footer>
-    <script>  $("#share").jsSocials({shares: ["twitter", "facebook", "googleplus"]});  </script>
+    <footer class="footer">&copy Thomas More</footer>
 
 <?PHP else: ?>
     <?PHP include_once('404.php') ?>

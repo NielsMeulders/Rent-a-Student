@@ -2,22 +2,29 @@
 
 include_once("classes/Imd_student.class.php");
 include_once("classes/Date_available.class.php");
+include_once("classes/Rating.class.php");
 session_start();
+$conn=Db::getInstance();
+
+$page_id = $_GET['id'];
+$a = new Imd_student();
+$current_student = $a->getOne($_GET['id']);
+
+$fbid = $_SESSION['FBID'];
+$statement = $conn->query("SELECT * FROM bezoeker WHERE fbid = $fbid");
+$visitor = $statement->fetch(PDO::FETCH_ASSOC);
 
 if (!empty($_POST))
 {
     try
-    {       
-        $gidsrating = $_POST['gidsrating'];
-        $gidscomment = $_POST['gidscomment'];
-
-        $sql = "INSERT INTO rating(bezoeker_id,student_id,rating,comment) VALUES ('$bezoeker_id','$student_id',rating,comment );";
-        $statement = $conn->prepare("INSERT INTO rating(bezoeker_id,student_id,rating,comment)VALUES(:bezoeker_id,:student_id,:rating,:comment)");
-        $statement->bindValue(":longitude",$longitude);
-        $statement->bindValue(":latitude",$latitude);
-        $statement->execute();
-        
-        header("Location: index.php");
+    {
+        $r = new Rating();
+        $r->Rating=$_POST['gidsrating'];
+        $r->Comment=$_POST['gidscomment'];
+        $current_user_id= $visitor['id'];
+        $current_student_id= $current_student['id'];
+        $r->save($current_user_id, $current_student_id);
+        $feedback = "Uw feedback is verstuurd. Bedankt!";
     }
     catch(Exception $e)
     {
@@ -30,7 +37,7 @@ if (!empty($_POST))
 // $statement->execute();
 // $user = $statement->fetch(PDO::FETCH_ASSOC);
 
-// $page_id = $_GET['id'];
+
 // $dates_available = $conn->query("SELECT student_id, date_id, DATE_FORMAT(date,'%d-%c-%Y') as date FROM date_gids_available INNER JOIN date_available ON date_gids_available.date_id = date_available.id WHERE student_id = $page_id");
 
 // $fbid = $_SESSION['FBID'];
@@ -84,7 +91,7 @@ if (!empty($_POST))
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Rate <?PHP if (isset($name_student)): echo $name_student; endif;?></title>
+    <title>Rate <?PHP if (isset($current_student['name'])): echo $current_student['name']; endif;?></title>
     <script src="js/script.js"></script>
     <!-- Bootstrap -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no;">
@@ -129,7 +136,15 @@ if (!empty($_POST))
             </div>
             <div id="navbar" class="navbar-collapse collapse">
                 <a class="navbar-brand" id="logo" href="index.php"><img src="img/logo.svg" alt="Logo"/></a>
+                <ul class="nav navbar-nav">
+                    <li ><a href="bezoeker_home.php">Browse</a></li>
+                    <li class="active"><a href="rate_student.php?id=<?PHP echo $_GET['id'] ?>">Beoordeel</a></li>
+
+                </ul>
                 <ul class="nav navbar-nav navbar-right">
+                    <li><a><?PHP echo $_SESSION['FULLNAME'] ?></a></li>
+                    <?PHP $style = "background-image:url('https://graph.facebook.com/". $_SESSION['FBID'] ."/picture');" ?>
+                    <li class="login_icon" style=<?PHP echo $style ?>></li>
                     <li><a class="btn" id="btnlogout" href="logout.php">Logout</a></li>
                 </ul>
             </div><!--/.nav-collapse -->
@@ -144,19 +159,16 @@ if (!empty($_POST))
         <div id="welcomewrap">
             <div id="collinks"class="col-xs-12 text-left container">
                 <div class="jumbotron ratediv">
-                    <!--                         <h3>U heeft geen toegang tot deze pagina!</h3>
-                                            <p>Sorry,</p>
-                                            <p>om deze pagina te bekijken moet u in
-                                            gelogd zijn als bezoeker.
-                                                Als u <a href="index.php">hier</a> klikt, zorgen wij ervoor dat u op de juist pagina terecht komt.</p> -->
-                    <div style="width:200px;height:200px;background-color:darkgrey;margin:auto;">Foto van gids</div>
-                    <label for="gidsrating"><h3>Rate jouw gids</h3></label>
-                    <input id="gidsrating" id="input-id" type="number" class="rating" data-size="sm" data-rtl="false" hoverEnabled="false">
-                    <label for="gidscomment"><h3>Wat vond je van de tour?</h3></label>
-                    </br>
-                    <textarea id="gidscomment" type="textarea" placeholder="Laat even kort weten wat je ervan vond."></textarea>
-                    </br>
-                    <button type="submit" class="btn">Verstuur</button>
+                    <div class="rate_image" style='background-image: url("<?PHP echo $current_student['picture'] ?>");'></div>
+                    <h3>Rate jouw gids</h3>
+                    <form action="" method="post">
+                        <input name="gidsrating" id="input-id" type="number" step="any" class="rating" data-size="sm" data-rtl="false" hoverEnabled="false">
+                        <label for="gidscomment"><h3>Wat vond je van de tour?</h3></label>
+                        </br>
+                        <textarea name="gidscomment" id="gidscomment" type="textarea" placeholder="Laat even kort weten wat je ervan vond."></textarea>
+                        </br>
+                        <button type="submit" class="btn">Verstuur</button>
+                    </form>
                 </div>
             </div><!--end collinks-->
         </div><!--end welcomewrap-->

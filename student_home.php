@@ -1,6 +1,7 @@
 <?PHP
 include_once('classes/Imd_student.class.php');
 include_once('classes/Date_available.class.php');
+include_once('classes/Rating.class.php');
 
 try {
     session_start();
@@ -21,6 +22,9 @@ try {
     $allDates = $d->getAllJoin($current_user);
     $allBookings = $d->getBookingForStudent($current_user);
 
+    $r = new Rating();
+    $allRatings = $r->getAll(7);
+
     if (!empty($_POST['date_submit'])) {
         if (!empty($_POST['date_choose'])) {
             $statement = $conn->prepare('INSERT INTO date_gids_available (student_id,date_id) VALUES  (:stud,:date)');
@@ -34,11 +38,6 @@ try {
         }
 
     }
-}
-catch(Exception $e)
-{
-    $error = $e->getMessage();
-}
 
     $dates_available = $conn->query("SELECT date_gids_available.id as da_id, DATE_FORMAT(date,'%d-%c-%Y') as date, date_gids_available.date_id as gids_id FROM date_available INNER JOIN date_gids_available on date_available.id = date_gids_available.date_id WHERE date_gids_available.student_id = $current_user");
 
@@ -48,6 +47,11 @@ catch(Exception $e)
         header('location: student_home.php');
     }
 
+}
+catch(Exception $e)
+{
+    $error = $e->getMessage();
+}
 
 ?>
 
@@ -173,6 +177,26 @@ catch(Exception $e)
             <div id="collinks"class="col-sm-12 text-left">
                 <div class="jumbotron">
                     <h3>Laatste reviews</h3>
+                    <table class="table table-hover">
+                        <thead>
+                        <tr>
+                            <th>Datum</th>
+                            <th>Naam</th>
+                            <th>Rating</th>
+                            <th>Commentaar</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <?PHP while($rating = $allRatings->fetch()): ?>
+                            <tr>
+                                <td><?PHP echo $rating['name'] ?></td>
+                                <td><?PHP echo $rating['name'] ?></td>
+                                <td><?PHP echo $rating['rating'] ?></td>
+                                <td><?PHP echo $rating['comment'] ?></td>
+                            </tr>
+                        <?PHP endwhile; ?>
+                        </tbody>
+                    </table>
                 </div>
             </div><!--end colrechts-->
         </div><!--end welcomewrap-->
@@ -187,8 +211,7 @@ catch(Exception $e)
             </ul>
         </div><!--end relatedlinks-->
     </div><!--end row-->
-    <footer class="footer"><div id="share"></div>&copy Thomas More</footer>
-    <script>  $("#share").jsSocials({shares: ["twitter", "facebook", "googleplus"]});  </script>
+    <footer class="footer">&copy Thomas More</footer>
 
     <?PHP else: ?>
         <?PHP include_once('404.php') ?>

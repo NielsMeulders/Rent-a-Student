@@ -69,6 +69,12 @@ class Admin extends User
         return $allposts;
     }
 
+    public function delete_admin($p_vValue)
+    {
+        $conn = Db::getInstance();
+        $conn->query("DELETE FROM admin WHERE id=$p_vValue");
+    }
+
     public function checkPass($val1, $val2)
     {
         if ($val1 != $val2)
